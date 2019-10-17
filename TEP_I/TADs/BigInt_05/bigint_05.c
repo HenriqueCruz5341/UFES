@@ -36,7 +36,7 @@ void LeNumero(tIntGrande *n) {
 void ImprimirIntGrande(tIntGrande n) {
     int i = 0;
 
-    while (n.intGrande[i] == 0) {
+    while (n.intGrande[i] == 0 && i < 100) {
         i++;
     }
 

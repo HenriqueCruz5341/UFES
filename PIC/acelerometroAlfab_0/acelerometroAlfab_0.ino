@@ -171,8 +171,7 @@ void loop()
     } 
    
    else if(Xg >= 0.5 && !cima){
-     Serial.print("CIMA");
-     Serial.println(" ");
+     Serial.print("C");
      cima = true;
      sequencia += "C";
    }
@@ -180,14 +179,12 @@ void loop()
      baixo = true;
    }
    else if(Yg >= 0.5 && !esquerda){
-     Serial.print("ESQUERDA");
-     Serial.println(" ");
+     Serial.print("E");
      esquerda = true;
      sequencia += "E";
    }
    else if(Yg <= -0.5 && !direita){
-     Serial.print("DIREITA");
-     Serial.println(" ");
+     Serial.print("D");
      direita = true;
      sequencia += "D";
    }
@@ -222,7 +219,10 @@ void loop()
      mudou = true; // como houve alteracao na string palavra, ela sera impressa
    }
    if(mudou){ //caso palavra tenha sofrido alguma alteracao, ela sera impressa
-     Serial.println(palavra);
+     Serial.println(" ");
+     Serial.print("Confirmado");
+     Serial.println(" ");
+     Serial.println("Voce digitou: " + palavra);
    }
    sequencia = "\0";
    baixo = false; //baixo recebe falso para que sequencia possa novamente comecar a armazenar a sequencia de movimentos feitos
