@@ -12,7 +12,7 @@ Ponto* pto_cria(float x, float y){
     
     if(p == NULL){
         printf("Nao foi possivel alocar ponto\n");
-        exit(1);
+        return p;
     }
     
     p->x = x;
