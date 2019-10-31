@@ -25,16 +25,16 @@ int main()
 	imprimeMatriz(mat);
 
 	//chamando a função do TAD para gerar a matriz transposta
-	Matriz* trp = transposta(mat);
+	/*Matriz* trp = transposta(mat);
 	printf ("A matriz transposta eh: \n");
-	imprimeMatriz(trp);
+	imprimeMatriz(trp);*/
 	
 	//chamando a função do TAD para gerar a matriz multiplicacao
-	Matriz* mlt = multiplicacao(mat,trp);
+	/*Matriz* mlt = multiplicacao(mat,trp);
 	printf ("A matriz multiplicacao eh: \n");
-	imprimeMatriz(mlt);
+	imprimeMatriz(mlt);*/
 
         destroiMatriz(mat);
-        destroiMatriz(trp);
-	destroiMatriz(mlt);
+        /*destroiMatriz(trp);
+	destroiMatriz(mlt);*/
 }
