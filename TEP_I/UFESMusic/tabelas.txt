@@ -31,3 +31,10 @@ typedef struct playlist
     Midia* midia;
 }Playlist;
 
+1 - problema com o sizeof (vi q a sctruct deve estar no .h para funcionar)
+2 - como faço para retornar artistas/compositores de uma musica
+3 - as atributos das structs devem estar como ponteiros ou vetores
+4 - struct album tendo midia e struct midia tendo album
+5 - em album.c na linha 196
+6 - as funcoes que estao na main devem passar para os outros .c
+

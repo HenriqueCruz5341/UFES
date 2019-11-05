@@ -6,7 +6,7 @@ typedef struct midia Midia;
 
 Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], 
     char artistas[][50], char* genero, char* gravadora, char* duracao,
-    Album* album);
+    Album* idAlbum);
 
 void modificaNomeMidia(Midia* midia, char* nNome);
 
