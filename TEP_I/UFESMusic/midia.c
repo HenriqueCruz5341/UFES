@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "midia.h"
+#include "album.h"
 
 struct midia
 {
@@ -13,10 +14,10 @@ struct midia
     char genero[15];
     char gravadora[15];
     char duracao[10];
-    Album* album;
+    int idAlbum;
 };
 
-Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artistas[][50], char* genero, char* gravadora, char* duracao, Album* album){
+Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artistas[][50], char* genero, char* gravadora, char* duracao, int idAlbum){
     Midia* midia = (Midia*) malloc(sizeof(Midia));
 
     if (midia == NULL)
@@ -37,10 +38,21 @@ Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artis
     strcpy(midia->genero, genero);
     strcpy(midia->gravadora, gravadora);
     strcpy(midia->duracao, duracao);
-    midia->album = album;
+    midia->idAlbum = idAlbum;
 
     return midia;
 }
+
+Midia* alocarMidia(Midia* midia, int qtd){
+    return (Midia*) malloc(sizeof(Midia) * qtd);
+}
+
+void colocarMidiaPosicao(Midia* midiaPrinc, Midia* midia, int pos){
+    midiaPrinc = (Midia*) malloc(sizeof(Midia)*20);
+
+    midiaPrinc[pos] = *midia;
+}
+
 
 void modificaNomeMidia(Midia* midia, char* nNome){
     strcpy(midia->nome, nNome);
@@ -67,10 +79,6 @@ void modificaGravadoraMidia(Midia* midia, char* nGravadora){
 }
 
 void modificaDuracaoMidia(Midia* midia, char* nDuracao){
-
-}
-
-void modificaAlbumMidia(Midia* midia, Album* nAlbum){
 
 }
 
@@ -102,18 +110,21 @@ char* pegaDuracaoMidia(Midia* midia){
     return midia->duracao;
 }
 
-Album* pegaAlbumMidia(Midia* midia){
-    return midia->album;
-}
 
 int pegaIdMidia(Midia* midia){
     return midia->idMidia;
+}
+
+int pegaAlbumMidia(Midia *midia){
+    return midia->idAlbum;
 }
 
 void imprimeMidia(Midia* midia){
     printf("\nID: %d", pegaIdMidia(midia));
     printf("\nNome: %s", pegaNomeMidia(midia));
     printf("\nDuracao: %s", pegaDuracaoMidia(midia));
+    printf("\nGenero: %s", pegaGeneroMidia(midia));
+    printf("\nAlbum: %s", pegaNomeAlbum(buscarAlbum(pegaAlbumMidia(midia))));
 }
 
 void destroiMidia(Midia* midia){
@@ -132,7 +143,7 @@ void atualizaArquivoMidias(Midia* midia){
         return;
     }
 
-    while (*(midia+i)->nome != '\0')
+    while ((midia+i)->nome != '\0')
     {
         i++;
     }
@@ -147,6 +158,7 @@ void atualizaArquivoMidias(Midia* midia){
         scanf("%*c");
     }
     
+    fclose(arqMidia);
 }
 
 void listarTodasMidias(){
@@ -241,4 +253,26 @@ int quantidadeMidiasCadastradas(){
     fclose(arqMidia);
 
     return i;
+
+}
+
+void salvarMidiaArquivo(Midia* midia){
+    FILE* arqMidias;
+
+    if ((arqMidias = fopen("midias.dat", "ab")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de midias!");
+        getchar();
+        scanf("%*c");
+    }
+
+    if (fwrite(midia, sizeof(Midia), 1, arqMidias) == 1)
+    {
+        printf("\nNova midia adicionada com sucesso!");
+        printf("\nPressione ENTER para continuar...");
+        getchar();
+        scanf("%*c");
+    }
+    
+    fclose(arqMidias);
 }

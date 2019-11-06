@@ -32,8 +32,8 @@ void imprimeMenuGerenciarMidia(){
 void imprimeMenuGerenciarPlaylists(){
     printf("======| MENU GERENCIAR PLAYLISTS |======\n");
     printf("1 - Criar nova playlist.\n");
-    printf("2 - Editar playlist.\n");
-    printf("3 - Deletar playlist.\n");
+    printf("2 - Listar todas as playlists.\n");
+    printf("3 - Buscar playlist.\n");
     printf("4 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
@@ -41,17 +41,17 @@ void imprimeMenuGerenciarPlaylists(){
 void imprimeMenuGerenciarAlbuns(){
     printf("======| MENU GERENCIAR ALBUNS |======\n");
     printf("1 - Criar novo album.\n");
-    printf("2 - Editar album.\n");
-    printf("3 - Deletar album.\n");
-    printf("4 - Voltar\n");
+    printf("2 - Listar todos os albuns.\n");
+    printf("3 - Buscar album.\n");
+    printf("4 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
 
 void imprimeMenuGerenciarUsuarios(){
     printf("======| MENU GERENCIAR USUARIOS |======\n");
     printf("1 - Criar novo usuario.\n");
-    printf("2 - Editar usuario.\n");
-    printf("3 - Deletar usuario.\n");
+    printf("2 - Listar todos os usuarios.\n");
+    printf("3 - Buscar usuario.\n");
     printf("4 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
