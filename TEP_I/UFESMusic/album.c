@@ -205,23 +205,10 @@ void adicionarMidiasAlbum(Album* album, Midia* midia){
         i++;
     }
 
-<<<<<<< HEAD
-    Midia* midiaAlbum = (listaAlbuns+i)->midia;    
-
-    for (int j = 0; j < pegaQtdMidiasAlbum(listaAlbuns+i); j++)
-    {
-        //Quero adicionar musica no final na lista de midias do album
-        (midiaAlbum+j) = midia;
-    }
-    
-
-    midiaAlbum = midia;
-=======
     int pos = pegaQtdMidiasAlbum(listaAlbuns+i);
     colocarMidiaPosicao((listaAlbuns+i)->midia, midia, pos);
     modificaQtdMidias((listaAlbuns+i),pegaQtdMidiasAlbum(listaAlbuns+i)+1);
     atualizarArquivoAlbuns(listaAlbuns+i);
->>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
 }
 
 int quantidadeAlbunsCadastrados(){

@@ -1,0 +1,40 @@
+typedef struct midia
+{
+    char* nome;
+    int tipo; // Musica = 0, Video = 1
+    char** compositores;
+    char** artistas;
+    char* genero;
+    char* gravadora;
+    char* duracao;
+    Album* album;
+}Midia;
+
+typedef struct album
+{
+    char* nome;
+    char** participantes;
+    char* dataLancamento;
+}Album;
+
+typedef struct usuario
+{
+    char* nome;
+    int tipo; // Normal = 0, Admin = 1
+    char* senha;
+}Usuario;
+
+typedef struct playlist
+{
+    int privacidade; // Publica = 0, Privada = 1, Compartilhada = 2
+    Usuario* contribuintes;
+    Midia* midia;
+}Playlist;
+
+1 - problema com o sizeof (vi q a sctruct deve estar no .h para funcionar)
+2 - como faço para retornar artistas/compositores de uma musica
+3 - as atributos das structs devem estar como ponteiros ou vetores
+4 - struct album tendo midia e struct midia tendo album
+5 - em album.c na linha 196
+6 - as funcoes que estao na main devem passar para os outros .c
+

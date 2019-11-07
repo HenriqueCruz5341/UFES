@@ -4,15 +4,11 @@
 typedef struct midia Midia;
 
 Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], 
-<<<<<<< HEAD
-    char artistas[][50], char* genero, char* gravadora, char* duracao);
-=======
     char artistas[][50], char* genero, char* gravadora, char* duracao, int idAlbum);
 
 Midia* alocarMidia(Midia* midia, int qtd);
 
 void colocarMidiaPosicao(Midia* midiaPrinc, Midia* midia, int pos);
->>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
 
 void modificaNomeMidia(Midia* midia, char* nNome);
 

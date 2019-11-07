@@ -137,7 +137,7 @@ void gerenciarMidia(){
 
     do
     {
-        //system("clear");
+        //system("clear")
         imprimeMenuGerenciarMidia();
         scanf("%d", &opcao);
         switch (opcao)
@@ -205,22 +205,7 @@ void lerMidia(){
         album = lerAlbum();
     }else
     {
-<<<<<<< HEAD
-        album = buscarAlbum(indiceAlbum);
-    }*/
-    
-    midia = inicializaMidia(nome, tipo, compositores, artistas, genero, gravadora, duracao);
-    
-    FILE* arqMidias;
-
-    if ((arqMidias = fopen("midias.dat", "ab")) == NULL)
-    {
-        printf("\nErro ao abrir arquivo de midias!");
-        getchar();
-        scanf("%*c");
-=======
         album = buscarAlbum(idAlbum);
->>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
     }
     
     midia = inicializaMidia(nome, tipo, compositores, artistas, genero, gravadora, duracao, pegaIdAlbum(album));
