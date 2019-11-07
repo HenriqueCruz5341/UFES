@@ -1,5 +1,6 @@
 #ifndef ALBUM_H
 #define ALBUM_H
+#include "midia.h"
 
 typedef struct album Album;
 
@@ -23,15 +24,23 @@ int pegaQtdMidiasAlbum(Album* album);
 
 int pegaIdAlbum(Album* album);
 
+Midia* pegaMidiaAlbum(Album* album);
+
 void imprimeAlbum(Album* album);
 
 void destroiAlbum(Album* album);
 
-void listarTodosAlbum();
+int listarTodosAlbuns();
 
 Album* buscarAlbum();
 
+void salvarAlbumArquivo(Album* album);
+
 int quantidadeAlbunsCadastrados();
+
+void adicionarMidiasAlbum(Album* album, Midia* midia);
+
+void atualizarArquivoAlbuns(Album* listaAlbuns);
 
 #endif /* ALBUM_H */
 

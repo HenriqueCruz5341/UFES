@@ -3,6 +3,7 @@
 #include <string.h>
 #include "album.h"
 #include "midia.h"
+#include "playlist.h"
 
 struct album
 {
@@ -32,7 +33,7 @@ Album* inicializaAlbum(char* nome, char participantes[][50], char* dataLancament
     }
     strcpy(album->dataLancamento, dataLancamento);
     album->qtdMidias = 0;
-    album->midia = (Midia*) malloc((398 + sizeof(Album*)) * 20);
+    album->midia = alocarMidia(album->midia, 20);
 
     if (album->midia == NULL)
     {
@@ -83,6 +84,11 @@ int pegaIdAlbum(Album* album){
     return album->idAlbum;
 }
 
+Midia* pegaMidiaAlbum(Album* album){
+    return album->midia;
+}
+
+
 void imprimeAlbum(Album* album){
     char* participantes[50];
     //pegaParticipantesAlbum(album, participantes);
@@ -91,13 +97,16 @@ void imprimeAlbum(Album* album){
     printf("\nNome: %s", pegaNomeAlbum(album));
     printf("\nQuantidade midias: %d", pegaQtdMidiasAlbum(album));
     printf("\nLancado em: %s", pegaDataLancamentoAlbum(album));
+    if(pegaQtdMidiasAlbum(album) != 0){
+        imprimeMidia(pegaMidiaAlbum(album));
+    }
 }
 
 void destroiAlbum(Album* album){
 
 }
 
-void listarTodosAlbum(){
+int listarTodosAlbuns(){
     Album* album = (Album*) malloc(sizeof(Album) * 50);
     int i = 0;
 
@@ -106,6 +115,7 @@ void listarTodosAlbum(){
         printf("\nErro ao alocar espaco para album!");
         getchar();
         scanf("%*c");
+        return 0;
     }
     
     FILE *arqAlbum;
@@ -113,19 +123,23 @@ void listarTodosAlbum(){
     if ((arqAlbum = fopen("albuns.dat", "rb")) == NULL)
     {
         printf("\nAinda não existem albuns cadastrados!");
-        return;
+        return 0;
     }
 
-    while (fread(album, sizeof(Album), 1, arqAlbum) == 1){
-        fread(album, sizeof(Album), 1, arqAlbum);
+    fread(album, sizeof(Album), 1, arqAlbum);
+    do
+    {
         imprimeAlbum(album);
         printf("\n----------");
-        i++;
-    }
+        fread(album, sizeof(Album), 1, arqAlbum);
+    }while (!feof(arqAlbum));
+    
+    fclose(arqAlbum);
+    
+    return 1;
 }
 
-Album* buscarAlbum(int indice){
-    indice--;
+Album* buscarAlbum(int idAlbum){
     Album *album = (Album*) malloc(sizeof(Album)*50);
 
     int i = 0;
@@ -145,8 +159,8 @@ Album* buscarAlbum(int indice){
         getchar();
         scanf("%*c");
     }
-       
-    while (fread(album+i, sizeof(Album), 1, arqAlbum) == 1 && (album+i)->idAlbum == indice)
+
+    while (fread(album+i, sizeof(Album), 1, arqAlbum) == 1 && (album+i)->idAlbum != idAlbum)
     {
         i++;
     }
@@ -175,20 +189,23 @@ void adicionarMidiasAlbum(Album* album, Midia* midia){
         getchar();
         scanf("%*c");
     }
-       
-    while (fread(listaAlbuns+i, sizeof(Album), 1, arqAlbum) == 1)
+
+    fread(listaAlbuns+i, sizeof(Album), 1, arqAlbum);
+    do
     {
         i++;
-    }
+        fread(listaAlbuns+i, sizeof(Album), 1, arqAlbum);
+    } while (!feof(arqAlbum));
 
     fclose(arqAlbum);
     i = 0;
-
-    while (strcmp((listaAlbuns+i)->nome, album->nome))
+    
+    while ((listaAlbuns+i)->idAlbum != album->idAlbum)
     {
         i++;
     }
 
+<<<<<<< HEAD
     Midia* midiaAlbum = (listaAlbuns+i)->midia;    
 
     for (int j = 0; j < pegaQtdMidiasAlbum(listaAlbuns+i); j++)
@@ -199,6 +216,12 @@ void adicionarMidiasAlbum(Album* album, Midia* midia){
     
 
     midiaAlbum = midia;
+=======
+    int pos = pegaQtdMidiasAlbum(listaAlbuns+i);
+    colocarMidiaPosicao((listaAlbuns+i)->midia, midia, pos);
+    modificaQtdMidias((listaAlbuns+i),pegaQtdMidiasAlbum(listaAlbuns+i)+1);
+    atualizarArquivoAlbuns(listaAlbuns+i);
+>>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
 }
 
 int quantidadeAlbunsCadastrados(){
@@ -223,6 +246,61 @@ int quantidadeAlbunsCadastrados(){
     while (fread(album, sizeof(Album), 1, arqAlbum) == 1){
         i++;
     }
+    
+    fclose(arqAlbum);
 
     return i;
+}
+
+void salvarAlbumArquivo(Album* album){
+    FILE* arqAlbuns;
+
+    if ((arqAlbuns = fopen("albuns.dat", "ab")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de albuns!");
+        getchar();
+        scanf("%*c");
+    }
+
+    if ((fwrite(album, sizeof(Album), 1, arqAlbuns)) == 1){
+        printf("\nAlbum adicionado com sucesso!");
+        printf("\nPressione ENTER para continuar...");
+        getchar();
+        scanf("%*c");
+    }
+
+    fclose(arqAlbuns);
+}
+
+void atualizarArquivoAlbuns(Album* listaAlbuns){
+    imprimeAlbum(listaAlbuns);
+    int i = 0;
+    Album* album = (Album*) malloc(sizeof(Album) * 50);
+    
+    FILE* arqAlbuns;
+
+    if ((arqAlbuns = fopen("albuns.dat", "r+b")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de albuns!");
+        getchar();
+        scanf("%*c");
+    }
+    
+    while (fread(album+i, sizeof(Album), 1, arqAlbuns) == 1 && pegaIdAlbum(album+i) != pegaIdAlbum(listaAlbuns))
+    {
+        imprimeAlbum(album+i);
+        i++;
+    }
+    
+    fseek(arqAlbuns, i*sizeof(Album), SEEK_SET);
+    
+    if ((fwrite(listaAlbuns, sizeof(Album), 1, arqAlbuns)) == 1){
+        printf("\nAlbum adicionado com sucesso!");
+        printf("\nPressione ENTER para continuar...");
+        getchar();
+        scanf("%*c");
+    }
+    
+    free(album);
+    fclose(arqAlbuns);
 }

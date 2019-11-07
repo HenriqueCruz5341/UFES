@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "midia.h"
+#include "album.h"
 
 struct midia
 {
@@ -13,9 +14,16 @@ struct midia
     char genero[15];
     char gravadora[15];
     char duracao[10];
+<<<<<<< HEAD
 };
 
 Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artistas[][50], char* genero, char* gravadora, char* duracao){
+=======
+    int idAlbum;
+};
+
+Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artistas[][50], char* genero, char* gravadora, char* duracao, int idAlbum){
+>>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
     Midia* midia = (Midia*) malloc(sizeof(Midia));
 
     if (midia == NULL)
@@ -36,9 +44,24 @@ Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artis
     strcpy(midia->genero, genero);
     strcpy(midia->gravadora, gravadora);
     strcpy(midia->duracao, duracao);
+<<<<<<< HEAD
+=======
+    midia->idAlbum = idAlbum;
+>>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
 
     return midia;
 }
+
+Midia* alocarMidia(Midia* midia, int qtd){
+    return (Midia*) malloc(sizeof(Midia) * qtd);
+}
+
+void colocarMidiaPosicao(Midia* midiaPrinc, Midia* midia, int pos){
+    midiaPrinc = (Midia*) malloc(sizeof(Midia)*20);
+
+    midiaPrinc[pos] = *midia;
+}
+
 
 void modificaNomeMidia(Midia* midia, char* nNome){
     strcpy(midia->nome, nNome);
@@ -96,14 +119,24 @@ char* pegaDuracaoMidia(Midia* midia){
     return midia->duracao;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3c688d9e3d629856891e9068f08b0b349eb3bde
 int pegaIdMidia(Midia* midia){
     return midia->idMidia;
+}
+
+int pegaAlbumMidia(Midia *midia){
+    return midia->idAlbum;
 }
 
 void imprimeMidia(Midia* midia){
     printf("\nID: %d", pegaIdMidia(midia));
     printf("\nNome: %s", pegaNomeMidia(midia));
     printf("\nDuracao: %s", pegaDuracaoMidia(midia));
+    printf("\nGenero: %s", pegaGeneroMidia(midia));
+    printf("\nAlbum: %s", pegaNomeAlbum(buscarAlbum(pegaAlbumMidia(midia))));
 }
 
 void destroiMidia(Midia* midia){
@@ -122,10 +155,10 @@ void atualizaArquivoMidias(Midia* midia){
         return;
     }
 
-    while (*(midia+i)->nome != '\0')
+    /*while ((midia+i)->nome != '\0')
     {
         i++;
-    }
+    }*/
     
     
 
@@ -137,9 +170,10 @@ void atualizaArquivoMidias(Midia* midia){
         scanf("%*c");
     }
     
+    fclose(arqMidia);
 }
 
-void listarTodasMidias(){
+int listarTodasMidias(){
     Midia* midia = (Midia*) malloc(sizeof(Midia));
     int i = 0;
 
@@ -148,7 +182,7 @@ void listarTodasMidias(){
         printf("\nErro ao alocar espaco para midia!");
         getchar();
         scanf("%*c");
-        return;
+        return 0;
     }
     
     FILE *arqMidia;
@@ -158,7 +192,7 @@ void listarTodasMidias(){
         printf("\nErro ao abrir arquivo de midia!");
         getchar();
         scanf("%*c");
-        return;
+        return 0;
     }
     
     fread(midia, sizeof(Midia), 1, arqMidia);
@@ -170,6 +204,7 @@ void listarTodasMidias(){
     }while(!feof(arqMidia));
 
     fclose(arqMidia);
+    return 1;
 }
 
 Midia* buscarMidia(int indice){
@@ -231,4 +266,26 @@ int quantidadeMidiasCadastradas(){
     fclose(arqMidia);
 
     return i;
+
+}
+
+void salvarMidiaArquivo(Midia* midia){
+    FILE* arqMidias;
+
+    if ((arqMidias = fopen("midias.dat", "ab")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de midias!");
+        getchar();
+        scanf("%*c");
+    }
+
+    if (fwrite(midia, sizeof(Midia), 1, arqMidias) == 1)
+    {
+        printf("\nNova midia adicionada com sucesso!");
+        printf("\nPressione ENTER para continuar...");
+        getchar();
+        scanf("%*c");
+    }
+    
+    fclose(arqMidias);
 }
