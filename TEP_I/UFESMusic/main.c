@@ -136,7 +136,7 @@ void gerenciarMidia(){
 
     do
     {
-        //system("clear")
+        //system("clear");
         imprimeMenuGerenciarMidia();
         scanf("%d", &opcao);
         switch (opcao)
@@ -208,7 +208,7 @@ void adicionarMidia(){
         album = buscarAlbum(indiceAlbum);
     }*/
     
-    midia = inicializaMidia(nome, tipo, compositores, artistas, genero, gravadora, duracao, album);
+    midia = inicializaMidia(nome, tipo, compositores, artistas, genero, gravadora, duracao);
     
     FILE* arqMidias;
 

@@ -194,7 +194,7 @@ void adicionarMidiasAlbum(Album* album, Midia* midia){
     for (int j = 0; j < pegaQtdMidiasAlbum(listaAlbuns+i); j++)
     {
         //Quero adicionar musica no final na lista de midias do album
-        //(midiaAlbum+j) = midia;
+        (midiaAlbum+j) = midia;
     }
     
 

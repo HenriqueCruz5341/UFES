@@ -1,12 +1,10 @@
 #ifndef MIDIA_H
 #define MIDIA_H
-#include "album.h"
 
 typedef struct midia Midia;
 
 Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], 
-    char artistas[][50], char* genero, char* gravadora, char* duracao,
-    Album* idAlbum);
+    char artistas[][50], char* genero, char* gravadora, char* duracao);
 
 void modificaNomeMidia(Midia* midia, char* nNome);
 
@@ -22,8 +20,6 @@ void modificaGravadoraMidia(Midia* midia, char* nGravadora);
 
 void modificaDuracaoMidia(Midia* midia, char* nDuracao);
 
-void modificaAlbumMidia(Midia* midia, Album* nAlbum);
-
 char* pegaNomeMidia(Midia* midia);
 
 int pegaTipoMidia(Midia* midia);
@@ -37,8 +33,6 @@ char* pegaGeneroMidia(Midia* midia);
 char* pegaGravadoraMidia(Midia* midia);
 
 char* pegaDuracaoMidia(Midia* midia);
-
-Album* pegaAlbumMidia(Midia* midia);
 
 int pegaIdMidia(Midia* midia);
 

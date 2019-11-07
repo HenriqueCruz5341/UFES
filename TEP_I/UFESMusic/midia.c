@@ -13,10 +13,9 @@ struct midia
     char genero[15];
     char gravadora[15];
     char duracao[10];
-    Album* album;
 };
 
-Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artistas[][50], char* genero, char* gravadora, char* duracao, Album* album){
+Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artistas[][50], char* genero, char* gravadora, char* duracao){
     Midia* midia = (Midia*) malloc(sizeof(Midia));
 
     if (midia == NULL)
@@ -37,7 +36,6 @@ Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artis
     strcpy(midia->genero, genero);
     strcpy(midia->gravadora, gravadora);
     strcpy(midia->duracao, duracao);
-    midia->album = album;
 
     return midia;
 }
@@ -70,10 +68,6 @@ void modificaDuracaoMidia(Midia* midia, char* nDuracao){
 
 }
 
-void modificaAlbumMidia(Midia* midia, Album* nAlbum){
-
-}
-
 char* pegaNomeMidia(Midia* midia){
     return midia->nome;
 }
@@ -100,10 +94,6 @@ char* pegaGravadoraMidia(Midia* midia){
 
 char* pegaDuracaoMidia(Midia* midia){
     return midia->duracao;
-}
-
-Album* pegaAlbumMidia(Midia* midia){
-    return midia->album;
 }
 
 int pegaIdMidia(Midia* midia){
