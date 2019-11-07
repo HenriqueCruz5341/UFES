@@ -6,8 +6,8 @@ struct playlist
 {
     int idPlaylist;
     int privacidade; // Publica = 0, Privada = 1, Compartilhada = 2
-    Usuario* contribuintes;
-    Midia* midia;
+    int contribuintes[2];
+    int midia[50];
 };
 
 Playlist* inicializaPlaylist(int privacidade, Usuario* usuario, Midia* midia){

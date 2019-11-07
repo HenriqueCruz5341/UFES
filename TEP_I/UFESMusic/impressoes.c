@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "usuario.h"
 
-void imprimeMenuPrincipal(){
+void imprimeMenuPrincipal() {
     printf("======| BEM-VINDO AO UFES MUSIC |======\n");
     printf("1 - Fazer login.\n");
     printf("2 - Cadastrar-se.\n");
@@ -10,7 +10,7 @@ void imprimeMenuPrincipal(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuOpcoesAdmin(){
+void imprimeMenuOpcoesAdmin() {
     printf("======| MENU OPCOES ADMIN |======\n");
     printf("1 - Gerenciar midias.\n");
     printf("2 - Gerenciar playlists.\n");
@@ -20,7 +20,7 @@ void imprimeMenuOpcoesAdmin(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuGerenciarMidia(){
+void imprimeMenuGerenciarMidia() {
     printf("======| MENU GERENCIAR MIDIAS |======\n");
     printf("1 - Adicionar nova midia.\n");
     printf("2 - Listar todas as midias.\n");
@@ -29,7 +29,7 @@ void imprimeMenuGerenciarMidia(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuGerenciarPlaylists(){
+void imprimeMenuGerenciarPlaylists() {
     printf("======| MENU GERENCIAR PLAYLISTS |======\n");
     printf("1 - Criar nova playlist.\n");
     printf("2 - Listar todas as playlists.\n");
@@ -38,7 +38,7 @@ void imprimeMenuGerenciarPlaylists(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuGerenciarAlbuns(){
+void imprimeMenuGerenciarAlbuns() {
     printf("======| MENU GERENCIAR ALBUNS |======\n");
     printf("1 - Criar novo album.\n");
     printf("2 - Listar todos os albuns.\n");
@@ -47,7 +47,7 @@ void imprimeMenuGerenciarAlbuns(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuGerenciarUsuarios(){
+void imprimeMenuGerenciarUsuarios() {
     printf("======| MENU GERENCIAR USUARIOS |======\n");
     printf("1 - Criar novo usuario.\n");
     printf("2 - Listar todos os usuarios.\n");
@@ -56,7 +56,7 @@ void imprimeMenuGerenciarUsuarios(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuOpcoesUsuario(){
+void imprimeMenuOpcoesUsuario() {
     printf("======| MENU OPCOES USUARIO |======\n");
     printf("1 - Buscar midias.\n");
     printf("2 - Buscar playlists.\n");
@@ -66,7 +66,7 @@ void imprimeMenuOpcoesUsuario(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuBuscarMidias(){
+void imprimeMenuBuscarMidias() {
     printf("======| MENU BUSCAR MIDIAS |======\n");
     printf("1 - Filtrar por nome.\n");
     printf("2 - Filtrar por tipo.\n");
@@ -78,10 +78,19 @@ void imprimeMenuBuscarMidias(){
     printf("8 - Todas as midias.\n");
     printf("9 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
-
 }
 
-void imprimeMenuOpcoesPerfil(){
+void imprimeMenuBuscarAlbuns() {
+    printf("======| MENU BUSCAR ALBUNS |======\n");
+    printf("1 - Filtrar por nome.\n");
+    printf("2 - Filtrar por participante.\n");
+    printf("3 - Filtrar por data de lancamento.\n");
+    printf("4 - Todas as midias.\n");
+    printf("5 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuOpcoesPerfil() {
     printf("======| MENU OPCOES PERFIL |======\n");
     printf("1 - Trocar nome.\n");
     printf("2 - Trocar senha.\n");
@@ -90,7 +99,7 @@ void imprimeMenuOpcoesPerfil(){
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuOpcoesMidiaAdmin(){
+void imprimeMenuOpcoesMidiaAdmin() {
     printf("======| MENU EDICAO MIDIA |======\n");
     printf("1 - Trocar nome.\n");
     printf("2 - Trocar tipo.\n");
@@ -101,5 +110,16 @@ void imprimeMenuOpcoesMidiaAdmin(){
     printf("7 - Trocar duracao.\n");
     printf("8 - Excluir midia.\n");
     printf("9 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuOpcoesAlbumAdmin() {
+    printf("======| MENU EDICAO ALBUM |======\n");
+    printf("1 - Trocar nome.\n");
+    printf("2 - Trocar participantes.\n");
+    printf("3 - Trocar data de lancamento.\n");
+    printf("4 - Adicionar midia.\n");
+    printf("5 - Listar midias do album.\n");
+    printf("6 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }

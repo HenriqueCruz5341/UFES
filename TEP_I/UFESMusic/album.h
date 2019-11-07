@@ -6,6 +6,8 @@ typedef struct album Album;
 
 Album* inicializaAlbum(char* nome, char participantes[][50], char* dataLancamento);
 
+Album* alocarAlbum(Album* album, int qtd);
+
 void modificaNomeAlbum(Album* album, char* nNome);
 
 void modificaParticipantesAlbum(Album* album, char** nParticipantes);
@@ -24,7 +26,7 @@ int pegaQtdMidiasAlbum(Album* album);
 
 int pegaIdAlbum(Album* album);
 
-Midia* pegaMidiaAlbum(Album* album);
+int* pegaMidiaAlbum(Album* album);
 
 void imprimeAlbum(Album* album);
 
@@ -41,6 +43,8 @@ int quantidadeAlbunsCadastrados();
 void adicionarMidiasAlbum(Album* album, Midia* midia);
 
 void atualizarArquivoAlbuns(Album* listaAlbuns);
+
+void imprimirMidiasAlbum(Album* album);
 
 #endif /* ALBUM_H */
 

@@ -11,7 +11,7 @@ typedef struct ponto
 typedef struct retangulo
 {
     char nome[15];
-    Ponto* vertices;
+    int vertices[4];
 }Retangulo;
 
 Ponto* cadastrarPonto();
@@ -85,10 +85,10 @@ void cadastrarRetangulo(){
 
     strcpy(retangulo->nome, nome);
 
-    retangulo->vertices = (Ponto*) malloc(sizeof(Ponto) * 4);
     
     for(int i = 0; i < 4; i++){
-        retangulo->vertices[i] = *cadastrarPonto();
+        printf("\nDigite %d: ", i);
+        scanf("%d", &(retangulo->vertices[i]));
     }
 
     FILE* arquivo = fopen("teste.dat", "ab");
@@ -102,16 +102,15 @@ void imprimirRetangulos(){
     FILE* arquivo = fopen("teste.dat", "rb");
     int j = 0;
     Retangulo* retangulo = (Retangulo*) malloc(sizeof(Retangulo));
-    Ponto* ponto = (Ponto*) malloc(sizeof(Ponto));
+    //Ponto* ponto = (Ponto*) malloc(sizeof(Ponto));
 
 
-    while (fread(ponto, sizeof(Ponto), 1, arquivo) == 1)
-    {
-        imprimirPonto(ponto);
-    }
+
     while (fread(retangulo, sizeof(Retangulo), 1, arquivo) == 1)
     {
         printf("\nNome: %s", retangulo->nome);
+        printf("\nPonto 1: %d %d", retangulo->vertices[0], retangulo->vertices[1]);
+        printf("\nPonto 2: %d %d", retangulo->vertices[2], retangulo->vertices[3]);
     }
     
     fclose(arquivo);

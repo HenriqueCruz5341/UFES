@@ -6,7 +6,7 @@ typedef struct midia Midia;
 Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], 
     char artistas[][50], char* genero, char* gravadora, char* duracao, int idAlbum);
 
-Midia* alocarMidia(Midia* midia, int qtd);
+Midia* alocarMidia(int qtd);
 
 void colocarMidiaPosicao(Midia* midiaPrinc, Midia* midia, int pos);
 
@@ -53,6 +53,8 @@ Midia* buscarMidia(int idMidia);
 void salvarMidiaArquivo(Midia* midia);
 
 int quantidadeMidiasCadastradas();
+
+void atualizarArquivoMidias(Midia* midia);
 
 #endif /* MIDIA_H */
 
