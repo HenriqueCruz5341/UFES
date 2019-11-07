@@ -143,10 +143,10 @@ void atualizaArquivoMidias(Midia* midia){
         return;
     }
 
-    while ((midia+i)->nome != '\0')
+    /*while ((midia+i)->nome != '\0')
     {
         i++;
-    }
+    }*/
     
     
 
@@ -161,7 +161,7 @@ void atualizaArquivoMidias(Midia* midia){
     fclose(arqMidia);
 }
 
-void listarTodasMidias(){
+int listarTodasMidias(){
     Midia* midia = (Midia*) malloc(sizeof(Midia));
     int i = 0;
 
@@ -170,7 +170,7 @@ void listarTodasMidias(){
         printf("\nErro ao alocar espaco para midia!");
         getchar();
         scanf("%*c");
-        return;
+        return 0;
     }
     
     FILE *arqMidia;
@@ -180,7 +180,7 @@ void listarTodasMidias(){
         printf("\nErro ao abrir arquivo de midia!");
         getchar();
         scanf("%*c");
-        return;
+        return 0;
     }
     
     fread(midia, sizeof(Midia), 1, arqMidia);
@@ -192,6 +192,7 @@ void listarTodasMidias(){
     }while(!feof(arqMidia));
 
     fclose(arqMidia);
+    return 1;
 }
 
 Midia* buscarMidia(int indice){

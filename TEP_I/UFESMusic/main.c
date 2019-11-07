@@ -215,21 +215,26 @@ void lerMidia(){
 }
 
 void menuListarTodasMidias(){
-    Midia* midia = alocarMidia(midia, 1);
-    int id;
-
     printf("\nListando todas as midias...");
-    listarTodasMidias();
-    printf("\nDigite o id da midia ou 0 para voltar: ");
-    scanf("%d", &id);
-    midia = buscarMidia(id);
-
-    if (id)
+    if(listarTodasMidias())
     {
-        editarMidia(buscarMidia(id));
+        Midia* midia = alocarMidia(midia, 1);
+        int id;
+        printf("\nDigite o id da midia ou 0 para voltar: ");
+        scanf("%d", &id);
+
+        if (id)
+        {
+            midia = buscarMidia(id);
+            editarMidia(buscarMidia(id));
+            free(midia);
+        }
+    }else{
+        printf("\nArquivo de midias vazio!");
+        printf("\nPressione ENTER para voltar...");
+        getchar();
+        scanf("%*c");
     }
-    
-    free(midia);
 }
 
 void editarMidia(Midia* midia){

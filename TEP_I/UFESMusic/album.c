@@ -106,7 +106,7 @@ void destroiAlbum(Album* album){
 
 }
 
-void listarTodosAlbuns(){
+int listarTodosAlbuns(){
     Album* album = (Album*) malloc(sizeof(Album) * 50);
     int i = 0;
 
@@ -115,6 +115,7 @@ void listarTodosAlbuns(){
         printf("\nErro ao alocar espaco para album!");
         getchar();
         scanf("%*c");
+        return 0;
     }
     
     FILE *arqAlbum;
@@ -122,7 +123,7 @@ void listarTodosAlbuns(){
     if ((arqAlbum = fopen("albuns.dat", "rb")) == NULL)
     {
         printf("\nAinda não existem albuns cadastrados!");
-        return;
+        return 0;
     }
 
     fread(album, sizeof(Album), 1, arqAlbum);
@@ -134,6 +135,8 @@ void listarTodosAlbuns(){
     }while (!feof(arqAlbum));
     
     fclose(arqAlbum);
+    
+    return 1;
 }
 
 Album* buscarAlbum(int idAlbum){

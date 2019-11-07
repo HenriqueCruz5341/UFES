@@ -30,7 +30,7 @@ void imprimeAlbum(Album* album);
 
 void destroiAlbum(Album* album);
 
-void listarTodosAlbuns();
+int listarTodosAlbuns();
 
 Album* buscarAlbum();
 

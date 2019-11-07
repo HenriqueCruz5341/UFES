@@ -46,7 +46,7 @@ void imprimeMidia(Midia* midia);
 
 void destroiMidia(Midia* midia);
 
-void listarTodasMidias();
+int listarTodasMidias();
 
 Midia* buscarMidia(int idMidia);
 
