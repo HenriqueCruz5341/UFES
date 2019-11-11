@@ -6,7 +6,7 @@ struct playlist
 {
     int idPlaylist;
     int privacidade; // Publica = 0, Privada = 1, Compartilhada = 2
-    int contribuintes[2];
+    int contribuintes[2]; // a primeira posicao sera o dono, a segunda sera com quem ela esta sendo compartilhada
     int midia[50];
 };
 
@@ -18,11 +18,11 @@ void modificaPrivacidadePlaylist(Playlist* playlist, int nPrivacidade){
 
 }
 
-void modificaContribuintes(Playlist* playlist, Usuario* nContribuintes){
+void modificaContribuintes(Playlist* playlist, int* nContribuintes){
 
 }
 
-void modificaMidiaPlaylst(Playlist* playlist, Midia* nMidia){
+void modificaMidiaPlaylst(Playlist* playlist, int* nMidia){
 
 }
 
@@ -30,11 +30,11 @@ int pegaPrivacidadePlaylist(Playlist* playlist){
 
 }
 
-Usuario* pegaContribuintesPlaylist(Playlist* playlist){
+int* pegaContribuintesPlaylist(Playlist* playlist){
 
 }
 
-Midia* pegaMidiaPlaylist(Playlist* playlist){
+int* pegaMidiaPlaylist(Playlist* playlist){
 
 }
 

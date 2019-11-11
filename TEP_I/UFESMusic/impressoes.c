@@ -3,6 +3,7 @@
 #include "usuario.h"
 
 void imprimeMenuPrincipal() {
+    system("clear");
     printf("======| BEM-VINDO AO UFES MUSIC |======\n");
     printf("1 - Fazer login.\n");
     printf("2 - Cadastrar-se.\n");
@@ -11,6 +12,7 @@ void imprimeMenuPrincipal() {
 }
 
 void imprimeMenuOpcoesAdmin() {
+    system("clear");
     printf("======| MENU OPCOES ADMIN |======\n");
     printf("1 - Gerenciar midias.\n");
     printf("2 - Gerenciar playlists.\n");
@@ -21,6 +23,7 @@ void imprimeMenuOpcoesAdmin() {
 }
 
 void imprimeMenuGerenciarMidia() {
+    system("clear");
     printf("======| MENU GERENCIAR MIDIAS |======\n");
     printf("1 - Adicionar nova midia.\n");
     printf("2 - Listar todas as midias.\n");
@@ -30,6 +33,7 @@ void imprimeMenuGerenciarMidia() {
 }
 
 void imprimeMenuGerenciarPlaylists() {
+    system("clear");
     printf("======| MENU GERENCIAR PLAYLISTS |======\n");
     printf("1 - Criar nova playlist.\n");
     printf("2 - Listar todas as playlists.\n");
@@ -39,6 +43,7 @@ void imprimeMenuGerenciarPlaylists() {
 }
 
 void imprimeMenuGerenciarAlbuns() {
+    system("clear");
     printf("======| MENU GERENCIAR ALBUNS |======\n");
     printf("1 - Criar novo album.\n");
     printf("2 - Listar todos os albuns.\n");
@@ -48,6 +53,7 @@ void imprimeMenuGerenciarAlbuns() {
 }
 
 void imprimeMenuGerenciarUsuarios() {
+    system("clear");
     printf("======| MENU GERENCIAR USUARIOS |======\n");
     printf("1 - Criar novo usuario.\n");
     printf("2 - Listar todos os usuarios.\n");
@@ -57,16 +63,19 @@ void imprimeMenuGerenciarUsuarios() {
 }
 
 void imprimeMenuOpcoesUsuario() {
+    system("clear");
     printf("======| MENU OPCOES USUARIO |======\n");
     printf("1 - Buscar midias.\n");
     printf("2 - Buscar playlists.\n");
-    printf("3 - Gerenciar minhas playlists.\n");
-    printf("4 - Editar perfil.\n");
-    printf("5 - Sair.\n");
+    printf("3 - Buscar album.\n");
+    printf("4 - Gerenciar minhas playlists.\n");
+    printf("5 - Editar perfil.\n");
+    printf("6 - Sair.\n");
     printf("Digite o numero da opcao desejada: ");
 }
 
 void imprimeMenuBuscarMidias() {
+    system("clear");
     printf("======| MENU BUSCAR MIDIAS |======\n");
     printf("1 - Filtrar por nome.\n");
     printf("2 - Filtrar por tipo.\n");
@@ -81,16 +90,18 @@ void imprimeMenuBuscarMidias() {
 }
 
 void imprimeMenuBuscarAlbuns() {
+    system("clear");
     printf("======| MENU BUSCAR ALBUNS |======\n");
     printf("1 - Filtrar por nome.\n");
     printf("2 - Filtrar por participante.\n");
     printf("3 - Filtrar por data de lancamento.\n");
-    printf("4 - Todas as midias.\n");
+    printf("4 - Todas os albuns.\n");
     printf("5 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
 
 void imprimeMenuOpcoesPerfil() {
+    system("clear");
     printf("======| MENU OPCOES PERFIL |======\n");
     printf("1 - Trocar nome.\n");
     printf("2 - Trocar senha.\n");
@@ -100,6 +111,7 @@ void imprimeMenuOpcoesPerfil() {
 }
 
 void imprimeMenuOpcoesMidiaAdmin() {
+    system("clear");
     printf("======| MENU EDICAO MIDIA |======\n");
     printf("1 - Trocar nome.\n");
     printf("2 - Trocar tipo.\n");
@@ -114,12 +126,14 @@ void imprimeMenuOpcoesMidiaAdmin() {
 }
 
 void imprimeMenuOpcoesAlbumAdmin() {
+    system("clear");
     printf("======| MENU EDICAO ALBUM |======\n");
     printf("1 - Trocar nome.\n");
     printf("2 - Trocar participantes.\n");
     printf("3 - Trocar data de lancamento.\n");
     printf("4 - Adicionar midia.\n");
     printf("5 - Listar midias do album.\n");
-    printf("6 - Voltar.\n");
+    printf("6 - Excluir album.\n");
+    printf("7 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }

@@ -16,18 +16,22 @@ void gerenciarPlaylst();
 void gerenciarAlbuns();
 void gerenciarUsuarios();
 void lerMidia(Album* album);
-void editarMidia(Midia* midia);
+void opcoesMidiaAdmin(Midia* midia);
+void selecionarMidia();
 void menuListarTodasMidias();
+void menuBuscarMidias();
+void selecionarAlbum();
 void menuListarTodosAlbuns();
-void editarAlbum(Album* album);
-void excluirMidia();
+void menuBuscarAlbuns();
+void opcoesAlbumAdmin(Album* album);
+int excluirMidia(Midia* midia);
+int excluirAlbum(Album* album);
 Album* lerAlbum();
 
 int main(int argc, char** argv) {
     int opcao;
 
     do {
-        //system("clear");
         imprimeMenuPrincipal();
         scanf("%d", &opcao);
 
@@ -57,12 +61,11 @@ void fazerLogin() {
         return;
     }
     menuUsuario();
-
 }
 
 void cadastrarUsuario(int verificador) {
     char nome[50], senha[15];
-    int tipo;
+    int tipo, playlists[20];
     Usuario* usuario;
     printf("Digite seu nome: ");
     scanf("%s", nome);
@@ -75,32 +78,15 @@ void cadastrarUsuario(int verificador) {
         tipo = 0;
     }
 
-    usuario = inicializaUsuario(nome, tipo, senha);
+    usuario = inicializaUsuario(nome, tipo, senha, playlists);
 
-    FILE* arqUsuarios;
-
-    if ((arqUsuarios = fopen("usuarios.dat", "ab")) == NULL) {
-        printf("\nErro ao abrir arquivo de usuarios!");
-        getchar();
-        scanf("%*c");
-        return;
-    }
-
-    if (fwrite(usuario, 73, 1, arqUsuarios) == 1) {
-        printf("\nUsuario cadastrado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
-
-    fclose(arqUsuarios);
+    salvarUsuarioArquivo(usuario);
 }
 
 void menuAdmin() {
     int opcao;
 
     do {
-        //system("clear")
         imprimeMenuOpcoesAdmin();
         scanf("%d", &opcao);
         switch (opcao) {
@@ -128,7 +114,6 @@ void gerenciarMidia() {
     int opcao;
 
     do {
-        //system("clear")
         imprimeMenuGerenciarMidia();
         scanf("%d", &opcao);
         switch (opcao) {
@@ -141,7 +126,7 @@ void gerenciarMidia() {
                 break;
 
             case 3:
-                imprimeMenuBuscarMidias();
+                menuBuscarMidias();
                 break;
         }
     } while (opcao != 4);
@@ -161,7 +146,8 @@ void lerMidia(Album* album) {
     scanf("%d%*c", &qtdCompositores);
     for (i = 0; i < qtdCompositores; i++) {
         printf("\nDigite o compositor %d: ", i + 1);
-        scanf("%[^\n]s%*c", compositores[i]);
+        scanf("%[^\n]s", compositores[i]);
+        getchar();
     }
     for (i; i < qtdCompositores; i++) {
         compositores[i][0] = '\0';
@@ -195,51 +181,55 @@ void lerMidia(Album* album) {
     midia = inicializaMidia(nome, tipo, compositores, artistas, genero, gravadora, duracao, pegaIdAlbum(album));
     adicionarMidiasAlbum(album, midia);
     salvarMidiaArquivo(midia);
-
 }
 
 void menuListarTodasMidias() {
     printf("\nListando todas as midias...");
     if (listarTodasMidias()) {
-        Midia* midia = alocarMidia(1);
-        int id;
-        printf("\nDigite o id da midia ou 0 para voltar: ");
-        scanf("%d", &id);
-
-        if (id) {
-            midia = buscarMidia(id);
-            editarMidia(buscarMidia(id));
-            destroiMidia(midia);
-        }
+        selecionarMidia();
     } else {
         printf("\nArquivo de midias vazio!");
         printf("\nPressione ENTER para voltar...");
         getchar();
-        scanf("%*c");
     }
 }
 
-void editarMidia(Midia* midia) {
-    char nome[50], compositores[3][50], artistas[3][50], genero[15], gravadora[15], duracao[10];
-    int tipo, opcaoMenu;
+void selecionarMidia() {
+    Midia* midia = alocarMidia(1);
+    int id;
+    printf("\nDigite o id da midia ou 0 para voltar: ");
+    scanf("%d", &id);
+
+    if (id) {
+        midia = buscarMidia(id);
+        opcoesMidiaAdmin(buscarMidia(id));
+    }
+}
+
+void menuBuscarMidias() {
+    int opcaoMenu;
+    char string[50];
+    int tipo;
 
     do {
-        imprimeMenuOpcoesMidiaAdmin();
+        imprimeMenuBuscarMidias();
         scanf("%d", &opcaoMenu);
+        getchar();
         switch (opcaoMenu) {
             case 1:
-                printf("\nDigite o novo nome para a midia: ");
+                printf("Digite o nome ou parte do nome da midia que deseja procurar: ");
+                scanf("%[^\n]s", string);
                 getchar();
-                scanf("%[^\n]s", nome);
-                modificaNomeMidia(midia, nome);
-                atualizarArquivoMidias(midia);
+                listarMidiasFiltro(1, string, tipo);
+                selecionarMidia();
                 break;
 
             case 2:
-                printf("\nDigite o novo tipo para a midia (0 musica, 1 video): ");
+                printf("Digite o tipo da midia que deseja procurar: ");
                 scanf("%d", &tipo);
-                modificaTipoMidia(midia, tipo);
-                atualizarArquivoMidias(midia);
+                getchar();
+                listarMidiasFiltro(2, string, tipo);
+                selecionarMidia();
                 break;
 
             case 3:
@@ -251,27 +241,117 @@ void editarMidia(Midia* midia) {
                 break;
 
             case 5:
-                /* code */
+                printf("Digite o genero ou parte do genero da midia que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarMidiasFiltro(5, string, tipo);
+                selecionarMidia();
                 break;
 
             case 6:
-                /* code */
+                printf("Digite a gravadora ou parte da gravadora da midia que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarMidiasFiltro(6, string, tipo);
+                selecionarMidia();
                 break;
 
             case 7:
-                /* code */
+                printf("Digite o album ou parte do album da midia que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarMidiasFiltro(7, string, tipo);
+                selecionarMidia();
                 break;
 
             case 8:
-                /* code */
+                menuListarTodasMidias();
                 break;
 
+            default:
+                break;
+        }
+    } while (opcaoMenu != 9);
+
+}
+
+void opcoesMidiaAdmin(Midia* midia) {
+    char nome[50], compositores[3][50], artistas[3][50], genero[15], gravadora[15], duracao[10];
+    int tipo, opcaoMenu, excluiu;
+
+    do {
+        imprimeMenuOpcoesMidiaAdmin();
+        scanf("%d", &opcaoMenu);
+        switch (opcaoMenu) {
+            case 1:
+                printf("O nome atual da midia eh: %s", pegaNomeMidia(midia));
+                printf("\nDigite o novo nome para a midia: ");
+                getchar();
+                scanf("%[^\n]s", nome);
+                modificaNomeMidia(midia, nome);
+                atualizarArquivoMidias(midia);
+                break;
+
+            case 2:
+                printf("O tipo atual da midia eh: %d", pegaTipoMidia(midia));
+                printf("\nDigite o novo tipo para a midia (0 musica, 1 video): ");
+                scanf("%d", &tipo);
+                modificaTipoMidia(midia, tipo);
+                atualizarArquivoMidias(midia);
+                break;
+
+            case 3:
+                //compositores = pegaCompositoresMidia(midia);
+                /* compositor */
+                break;
+
+            case 4:
+                /* artista */
+                break;
+
+            case 5:
+                printf("O genero atual da midia eh: %s", pegaGeneroMidia(midia));
+                printf("\nDigite o novo genero para a midia: ");
+                scanf("%[^\n]s", genero);
+                modificaGeneroMidia(midia, genero);
+                atualizarArquivoMidias(midia);
+                break;
+
+            case 6:
+                printf("A gravadora atual da midia eh: %s", pegaGravadoraMidia(midia));
+                printf("\nDigite a nova gravadora para a midia: ");
+                scanf("%[^\n]s", gravadora);
+                modificaGravadoraMidia(midia, gravadora);
+                atualizarArquivoMidias(midia);
+                break;
+
+            case 7:
+                printf("A duracao atual da midia eh: %s", pegaDuracaoMidia(midia));
+                printf("\nDigite a nova duracao para a midia: ");
+                scanf("%[^\n]s", duracao);
+                modificaDuracaoMidia(midia, duracao);
+                atualizarArquivoMidias(midia);
+                break;
+
+            case 8:
+                excluiu = excluirMidia(midia);
+                if (excluiu) return;
+
+                break;
         }
     } while (opcaoMenu != 9);
 }
 
-void excluirMidia() {
+int excluirMidia(Midia* midia) { //retorna 1 se excluiu a midia, e 0 caso n tenha excluido
+    int op;
+    printf("Tem certeza que deseja excluir esta midia? (0/1)");
+    scanf("%d", &op);
+    if (op) {
+        excluirMidiaArquivo(midia, 0);
+        return 1;
+    }
 
+    return 0;
 }
 
 void gerenciarPlaylst() {
@@ -295,7 +375,7 @@ void gerenciarAlbuns() {
                 break;
 
             case 3:
-                //imprimeMenuBuscarAlbuns();
+                menuBuscarAlbuns();
                 break;
 
         }
@@ -339,16 +419,7 @@ void menuUsuario() {
 void menuListarTodosAlbuns() {
     printf("\nListando todos os albuns...");
     if (listarTodosAlbuns()) {
-        Album* album = alocarAlbum(album, 1);
-        int id;
-        printf("\nDigite o id do album ou 0 para voltar: ");
-        scanf("%d", &id);
-
-        if (id) {
-            album = buscarAlbum(id);
-            editarAlbum(buscarAlbum(id));
-            //free(album); usar funcao destruir ponteiro
-        }
+        selecionarAlbum();
     } else {
         printf("\nArquivo de midias vazio!");
         printf("\nPressione ENTER para voltar...");
@@ -357,15 +428,65 @@ void menuListarTodosAlbuns() {
     }
 }
 
-void editarAlbum(Album* album) {
-    char nome[50], participantes[3][50], dataLancamento[10];
+void selecionarAlbum() {
+    Album* album = alocarAlbum(1);
+    int id;
+    printf("\nDigite o id do album ou 0 para voltar: ");
+    scanf("%d", &id);
+
+    if (id) {
+        album = buscarAlbum(id);
+        opcoesAlbumAdmin(buscarAlbum(id));
+    }
+}
+
+void menuBuscarAlbuns() {
     int opcaoMenu;
+    char string[50];
+    int tipo;
+
+    do {
+        imprimeMenuBuscarAlbuns();
+        scanf("%d", &opcaoMenu);
+        getchar();
+        switch (opcaoMenu) {
+            case 1:
+                printf("Digite o nome ou parte do nome do album que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarAlbunsFiltro(1, string, tipo);
+                selecionarAlbum();
+                break;
+
+            case 2:
+                //participante
+                break;
+
+            case 3:
+                printf("Digite a data de lancamento ou parte do album que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarAlbunsFiltro(3, string, tipo);
+                selecionarAlbum();
+                break;
+
+            case 4:
+                menuListarTodosAlbuns();
+                break;
+        }
+    } while (opcaoMenu != 9);
+}
+
+void opcoesAlbumAdmin(Album* album) {
+    char nome[50], participantes[3][50], dataLancamento[10];
+    int opcaoMenu, excluiu;
 
     do {
         imprimeMenuOpcoesAlbumAdmin();
         scanf("%d", &opcaoMenu);
         switch (opcaoMenu) {
             case 1:
+                printf("O nome atual do album eh: %s", pegaNomeAlbum(album));
                 printf("\nDigite o novo nome para o album: ");
                 getchar();
                 scanf("%[^\n]s", nome);
@@ -378,6 +499,7 @@ void editarAlbum(Album* album) {
                 break;
 
             case 3:
+                printf("A data de lancamento atual do album eh: %s", pegaDataLancamentoAlbum(album));
                 printf("\nDigite a nova data de lancamento para o album: ");
                 getchar();
                 scanf("%[^\n]s", dataLancamento);
@@ -392,7 +514,25 @@ void editarAlbum(Album* album) {
             case 5:
                 imprimirMidiasAlbum(album);
                 break;
+
+            case 6:
+                excluiu = excluirAlbum(album);
+                if (excluiu) return;
+                break;
         }
 
-    } while (opcaoMenu != 6);
+    } while (opcaoMenu != 7);
+}
+
+int excluirAlbum(Album* album) {
+    int op;
+    printf("\nExcluir o album tambem apagará todas suas midias!");
+    printf("\nTem certeza que deseja excluir este album? (0/1)");
+    scanf("%d", &op);
+
+    if (op) {
+        excluirAlbumArquivo(album);
+        return 1;
+    }
+    return 0;
 }

@@ -6,13 +6,15 @@ typedef struct album Album;
 
 Album* inicializaAlbum(char* nome, char participantes[][50], char* dataLancamento);
 
-Album* alocarAlbum(Album* album, int qtd);
+Album* alocarAlbum(int qtd);
 
 void modificaNomeAlbum(Album* album, char* nNome);
 
 void modificaParticipantesAlbum(Album* album, char** nParticipantes);
 
 void modificaDataLancamentoAlbum(Album* album, char* nDataLancamento);
+
+void modificaMidiasAlbum(Album* album, int* nMidias);
 
 void modificaQtdMidias(Album* album, int nQtdMidias);
 
@@ -42,9 +44,21 @@ int quantidadeAlbunsCadastrados();
 
 void adicionarMidiasAlbum(Album* album, Midia* midia);
 
+void removeMidiaAlbum(Album* album, Midia* midia);
+
 void atualizarArquivoAlbuns(Album* listaAlbuns);
 
 void imprimirMidiasAlbum(Album* album);
+
+void excluirAlbumArquivo(Album* album);
+
+int pegaUltimoIdAlbumCadastrado();
+
+void listarAlbunsFiltro(int tipoFiltro, char* string, int numero);
+/* tipoFiltro, serve para escolhe pelo que filtrar, 1 - nome, 2 - tipo, 3 - compositor, etc...
+string, serve para receber uma string, caso queira pesquisar pelo nome do album
+numero, serve para receber um numero, caso queira pesquisar pelo tipo do album
+*/ 
 
 #endif /* ALBUM_H */
 

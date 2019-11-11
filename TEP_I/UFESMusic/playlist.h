@@ -9,15 +9,15 @@ Playlist* inicializaPlaylist(int privacidade, Usuario* usuario, Midia* midia);
 
 void modificaPrivacidadePlaylist(Playlist* playlist, int nPrivacidade);
 
-void modificaContribuintes(Playlist* playlist, Usuario* nContribuintes);
+void modificaContribuintes(Playlist* playlist, int* nContribuintes);
 
-void modificaMidiaPlaylst(Playlist* playlist, Midia* nMidia);
+void modificaMidiaPlaylst(Playlist* playlist, int* nMidia);
 
 int pegaPrivacidadePlaylist(Playlist* playlist);
 
-Usuario* pegaContribuintesPlaylist(Playlist* playlist);
+int* pegaContribuintesPlaylist(Playlist* playlist);
 
-Midia* pegaMidiaPlaylist(Playlist* playlist);
+int* pegaMidiaPlaylist(Playlist* playlist);
 
 void imprimePlaylist(Playlist* playlist);
 

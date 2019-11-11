@@ -31,10 +31,6 @@ typedef struct playlist
     Midia* midia;
 }Playlist;
 
-1 - problema com o sizeof (vi q a sctruct deve estar no .h para funcionar)
-2 - como faço para retornar artistas/compositores de uma musica
-3 - as atributos das structs devem estar como ponteiros ou vetores
-4 - struct album tendo midia e struct midia tendo album
-5 - em album.c na linha 196
-6 - as funcoes que estao na main devem passar para os outros .c
-
+1 - quando excluo uma midia do arquivo de midias, como faço para tirar as referencias de todas as playlists que possuiam tal midia.
+sem ter que fazer isso para cada playlist, (posso deixar ela como indisponivel, como o spotify faz)?
+2 - quando excluo todas as midias cadastradas, como fazer para o arquivo ficar vazio, ou como excluir um arquivo
