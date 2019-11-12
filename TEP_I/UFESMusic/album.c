@@ -142,15 +142,7 @@ int listarTodosAlbuns() {
 }
 
 Album* buscarAlbum(int idAlbum) {
-    Album *album = (Album*) malloc(sizeof (Album)*50);
-
-    int i = 0;
-
-    if (album == NULL) {
-        printf("\nErro ao alocar espaco para album!");
-        getchar();
-        scanf("%*c");
-    }
+    Album *album = alocarAlbum(1);
 
     FILE *arqAlbum;
 
@@ -158,15 +150,14 @@ Album* buscarAlbum(int idAlbum) {
         printf("\nErro ao abrir arquivo de album!");
         getchar();
         scanf("%*c");
+        return NULL;
     }
 
-    while (fread(album + i, sizeof (Album), 1, arqAlbum) == 1 && (album + i)->idAlbum != idAlbum) {
-        i++;
-    }
+    while (fread(album, sizeof (Album), 1, arqAlbum) == 1 && pegaIdAlbum(album) != idAlbum)
 
     fclose(arqAlbum);
 
-    return album + i;
+    return album;
 }
 
 void adicionarMidiasAlbum(Album* album, Midia* midia) {

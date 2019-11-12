@@ -29,7 +29,11 @@ int* pegaPlaylistsUsuario(Usuario* usuario);
 
 int pegaQtdPlaylistsUsuario(Usuario* usuario);
 
+Usuario* buscarUsuario(int idUsuario);
+
 void imprimeUsuario(Usuario* usuario);
+
+int listarTodosUsuarios();
 
 void destroiUsuario(Usuario* usuario);
 

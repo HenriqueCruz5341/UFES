@@ -8,25 +8,39 @@
 #include <string.h>
 
 void fazerLogin();
-void cadastrarUsuario(int verificador);
 void menuAdmin();
-void menuUsuario();
+//void menuUsuario();
+
 void gerenciarMidia();
-void gerenciarPlaylst();
-void gerenciarAlbuns();
-void gerenciarUsuarios();
 void lerMidia(Album* album);
 void opcoesMidiaAdmin(Midia* midia);
 void selecionarMidia();
 void menuListarTodasMidias();
 void menuBuscarMidias();
+int excluirMidia(Midia* midia);
+
+//void gerenciarPlaylst();
+
+
+void gerenciarAlbuns();
+Album* lerAlbum();
 void selecionarAlbum();
 void menuListarTodosAlbuns();
 void menuBuscarAlbuns();
 void opcoesAlbumAdmin(Album* album);
-int excluirMidia(Midia* midia);
 int excluirAlbum(Album* album);
-Album* lerAlbum();
+
+
+void gerenciarUsuarios();
+void lerUsuario(int verificador);
+void selecionarUsuario();
+void menuListarTodosUsuarios();
+void menuBuscarUsuarios();
+void opcoesUsuariosAdmin(Usuario* usuario);
+int excluirUsuario(Usuario* usuario);
+
+
+
 
 int main(int argc, char** argv) {
     int opcao;
@@ -41,7 +55,7 @@ int main(int argc, char** argv) {
                 break;
 
             case 2:
-                cadastrarUsuario(0);
+                lerUsuario(0);
                 break;
         }
 
@@ -60,27 +74,7 @@ void fazerLogin() {
         menuAdmin();
         return;
     }
-    menuUsuario();
-}
-
-void cadastrarUsuario(int verificador) {
-    char nome[50], senha[15];
-    int tipo, playlists[20];
-    Usuario* usuario;
-    printf("Digite seu nome: ");
-    scanf("%s", nome);
-    printf("Digite sua senha: ");
-    scanf("%s", senha);
-    if (verificador) {
-        printf("Digite o tipo de usuario: ");
-        scanf("%d", &tipo);
-    } else {
-        tipo = 0;
-    }
-
-    usuario = inicializaUsuario(nome, tipo, senha, playlists);
-
-    salvarUsuarioArquivo(usuario);
+    //menuUsuario();
 }
 
 void menuAdmin() {
@@ -95,7 +89,7 @@ void menuAdmin() {
                 break;
 
             case 2:
-                gerenciarPlaylst();
+                //gerenciarPlaylst();
                 break;
 
             case 3:
@@ -354,15 +348,10 @@ int excluirMidia(Midia* midia) { //retorna 1 se excluiu a midia, e 0 caso n tenh
     return 0;
 }
 
-void gerenciarPlaylst() {
-
-}
-
 void gerenciarAlbuns() {
     int opcao;
 
     do {
-        //system("clear")
         imprimeMenuGerenciarAlbuns();
         scanf("%d", &opcao);
         switch (opcao) {
@@ -380,10 +369,6 @@ void gerenciarAlbuns() {
 
         }
     } while (opcao != 4);
-}
-
-void gerenciarUsuarios() {
-
 }
 
 Album* lerAlbum() {
@@ -410,10 +395,6 @@ Album* lerAlbum() {
     salvarAlbumArquivo(album);
 
     return album;
-}
-
-void menuUsuario() {
-
 }
 
 void menuListarTodosAlbuns() {
@@ -535,4 +516,126 @@ int excluirAlbum(Album* album) {
         return 1;
     }
     return 0;
+}
+
+void gerenciarUsuarios(){
+    int opcao;
+
+    do {
+        imprimeMenuGerenciarUsuarios();
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                lerUsuario(1);
+                break;
+
+            case 2:
+                menuListarTodosUsuarios();
+                break;
+
+            case 3:
+                menuBuscarUsuarios();
+                break;
+
+        }
+    } while (opcao != 4);
+}
+
+void lerUsuario(int verificador) {
+    char nome[50], senha[15];
+    int tipo, playlists[20];
+    Usuario* usuario;
+    printf("Digite seu nome: ");
+    scanf("%s", nome);
+    printf("Digite sua senha: ");
+    scanf("%s", senha);
+    if (verificador) {
+        printf("Digite o tipo de usuario: ");
+        scanf("%d", &tipo);
+    } else {
+        tipo = 0;
+    }
+
+    usuario = inicializaUsuario(nome, tipo, senha, playlists);
+
+    salvarUsuarioArquivo(usuario);
+}
+
+void selecionarUsuario(){
+    Usuario* usuario = alocarUsuario(1);
+    int id;
+    printf("\nDigite o id do usuaro ou 0 para voltar: ");
+    scanf("%d", &id);
+
+    if (id) {
+        usuario = buscarUsuario(id);
+        opcoesUsuariosAdmin(buscarUsuario(id));
+    }
+}
+
+void menuListarTodosUsuarios(){
+    printf("\nListando todos os usuarios...");
+    if (listarTodosUsuarios()) {
+        selecionarUsuario();
+    } else {
+        printf("\nArquivo de usuarios vazio!");
+        printf("\nPressione ENTER para voltar...");
+        getchar();
+        scanf("%*c");
+    }
+}
+
+void menuBuscarUsuarios(){
+
+}
+
+void opcoesUsuariosAdmin(Usuario* usuario){
+    char nome[50], senha[15];
+    int opcaoMenu, excluiu, tipo;
+
+    do {
+        imprimeMenuOpcoesUsuarioAdmin();
+        scanf("%d", &opcaoMenu);
+        switch (opcaoMenu) {
+            case 1:
+                printf("O nome atual do usuario eh: %s", pegaNomeUsuario(usuario));
+                printf("\nDigite o novo nome para o usuario: ");
+                getchar();
+                scanf("%[^\n]s", nome);
+                modificaNomeUsuario(usuario, nome);
+                atualizarArquivoUsuarios(usuario);
+                break;
+
+            case 2:
+                printf("A senha atual do usuario eh: %s", pegaSenhaUsuario(usuario));
+                printf("\nDigite a nova senha para o usuario: ");
+                getchar();
+                scanf("%[^\n]s", senha);
+                modificaSenhaUsuario(usuario, senha);
+                atualizarArquivoUsuarios(usuario);
+                break;
+
+            case 3:
+                printf("O tipo atual do usuario eh: %s", pegaTipoUsuario(usuario));
+                printf("\nDigite o novo tipo para o usuario: ");
+                scanf("%d", &tipo);
+                modificaTipoUsuario(usuario, tipo);
+                atualizarArquivoUsuarios(usuario);
+                break;
+
+            case 4:
+                //listarPlaylistsUsuario(usuario);
+                break;
+
+            case 5:
+                excluiu = excluirUsuario(usuario);
+                if (excluiu) return;
+                break;
+        }
+
+    } while (opcaoMenu != 7);
+}
+
+int excluirUsuario(Usuario* usuario){
+
 }

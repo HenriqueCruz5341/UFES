@@ -26,4 +26,6 @@ void imprimeMenuOpcoesMidiaAdmin();
 
 void imprimeMenuOpcoesAlbumAdmin();
 
+void imprimeMenuOpcoesUsuarioAdmin();
+
 #endif

@@ -137,3 +137,15 @@ void imprimeMenuOpcoesAlbumAdmin() {
     printf("7 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
+
+void imprimeMenuOpcoesUsuarioAdmin() {
+    system("clear");
+    printf("======| MENU EDICAO ALBUM |======\n");
+    printf("1 - Trocar nome.\n");
+    printf("2 - Trocar senha.\n");
+    printf("3 - Trocar tipo.\n");
+    printf("4 - Listar playlists.\n");
+    printf("5 - Excluir usuario.\n");
+    printf("6 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}

@@ -36,7 +36,7 @@ void destroiAlbum(Album* album);
 
 int listarTodosAlbuns();
 
-Album* buscarAlbum();
+Album* buscarAlbum(int idAlbum);
 
 void salvarAlbumArquivo(Album* album);
 

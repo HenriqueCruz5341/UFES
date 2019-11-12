@@ -87,7 +87,18 @@ int pegaQtdPlaylistsUsuario(Usuario* usuario){
 
 
 void imprimeUsuario(Usuario* usuario){
-
+    printf("\nID: %d", pegaIdUsuario(usuario));
+    printf("\nNome: %s", pegaNomeUsuario(usuario));
+    printf("\nSenha: %s", pegaSenhaUsuario(usuario));
+    printf("\nQtd playlists: %d", pegaQtdPlaylistsUsuario(usuario));
+    int tipo = pegaTipoUsuario(usuario);
+    if (tipo)
+    {
+        printf("\nTipo: Administrador");
+    }else
+    {
+        printf("\nTipo: Normal");
+    }
 }
 
 void destroiUsuario(Usuario* usuario){
@@ -102,6 +113,7 @@ void salvarUsuarioArquivo(Usuario* usuario){
         printf("\nErro ao abrir arquivo de usuarios!");
         getchar();
         scanf("%*c");
+        return;
     }
 
     if ((fwrite(usuario, sizeof (Usuario), 1, arqUsuarios)) == 1) {
@@ -132,4 +144,45 @@ int pegaUltimoIdUsuarioCadastrado(){
     fclose(arqUsuarios);
 
     return ultimoId;
+}
+
+Usuario* buscarUsuario(int idUsuario){
+    Usuario* usuario = alocarUsuario(1);
+
+    FILE* arqUsuarios;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return NULL;
+    }
+
+    while (fread(usuario, sizeof(Usuario), 1, arqUsuarios) == 1 && pegaIdUsuario(usuario) != idUsuario);
+
+    return usuario;
+}
+
+int listarTodosUsuarios(){
+    Usuario* usuario = alocarUsuario(1);
+
+    FILE* arqUsuarios;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return 0;
+    }
+    
+    while (fread(usuario, sizeof(Usuario), 1, arqUsuarios) == 1){
+        imprimeUsuario(usuario);
+        printf("\n----------");
+    }
+
+    fclose(arqUsuarios);
+
+    return 1;
 }
