@@ -41,5 +41,17 @@ void salvarUsuarioArquivo(Usuario* usuario);
 
 int pegaUltimoIdUsuarioCadastrado();
 
+void excluirUsuarioArquivo(Usuario* usuario);
+
+int quantidadeUsuariosCadastrados();
+
+void atualizarArquivoUsuarios(Usuario* usuario);
+
+void listarUsuariosFiltro(int tipoFiltro, char* string, int numero);
+/* tipoFiltro, serve para escolhe pelo que filtrar, 1 - nome, 2 - tipo
+string, serve para receber uma string, caso queira pesquisar pelo nome do usuario
+numero, serve para receber um numero, caso queira pesquisar pelo tipo do usuario
+*/ 
+
 #endif /* USUARIO_H */
 

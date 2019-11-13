@@ -46,7 +46,7 @@ void adicionarMidiasAlbum(Album* album, Midia* midia);
 
 void removeMidiaAlbum(Album* album, Midia* midia);
 
-void atualizarArquivoAlbuns(Album* listaAlbuns);
+void atualizarArquivoAlbuns(Album* album);
 
 void imprimirMidiasAlbum(Album* album);
 

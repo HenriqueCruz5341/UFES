@@ -28,4 +28,6 @@ void imprimeMenuOpcoesAlbumAdmin();
 
 void imprimeMenuOpcoesUsuarioAdmin();
 
+void imprimeMenuBuscarUsuarios();
+
 #endif

@@ -149,3 +149,13 @@ void imprimeMenuOpcoesUsuarioAdmin() {
     printf("6 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
+
+void imprimeMenuBuscarUsuarios() {
+    system("clear");
+    printf("======| MENU BUSCAR ALBUNS |======\n");
+    printf("1 - Filtrar por nome.\n");
+    printf("2 - Filtrar tipo.\n");
+    printf("3 - Todos os usuarios.\n");
+    printf("4 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}

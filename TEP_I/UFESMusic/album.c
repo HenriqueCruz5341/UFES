@@ -153,7 +153,7 @@ Album* buscarAlbum(int idAlbum) {
         return NULL;
     }
 
-    while (fread(album, sizeof (Album), 1, arqAlbum) == 1 && pegaIdAlbum(album) != idAlbum)
+    while (fread(album, sizeof (Album), 1, arqAlbum) == 1 && pegaIdAlbum(album) != idAlbum);
 
     fclose(arqAlbum);
 
@@ -213,9 +213,9 @@ void salvarAlbumArquivo(Album* album) {
     fclose(arqAlbuns);
 }
 
-void atualizarArquivoAlbuns(Album* listaAlbuns) {
+void atualizarArquivoAlbuns(Album* album) {
     int i = 0;
-    Album* album = (Album*) malloc(sizeof (Album) * 50);
+    Album* albumAux = alocarAlbum(1);
 
     FILE* arqAlbuns;
 
@@ -225,20 +225,20 @@ void atualizarArquivoAlbuns(Album* listaAlbuns) {
         scanf("%*c");
     }
 
-    while (fread(album + i, sizeof (Album), 1, arqAlbuns) == 1 && pegaIdAlbum(album + i) != pegaIdAlbum(listaAlbuns)) {
+    while (fread(albumAux, sizeof (Album), 1, arqAlbuns) == 1 && pegaIdAlbum(albumAux) != pegaIdAlbum(album)) {
         i++;
     }
 
     fseek(arqAlbuns, i * sizeof (Album), SEEK_SET);
 
-    if ((fwrite(listaAlbuns, sizeof (Album), 1, arqAlbuns)) == 1) {
+    if ((fwrite(album, sizeof (Album), 1, arqAlbuns)) == 1) {
         printf("\nAlbum atualizado com sucesso!");
         printf("\nPressione ENTER para continuar...");
         getchar();
         scanf("%*c");
     }
 
-    free(album);
+    destroiAlbum(albumAux);
     fclose(arqAlbuns);
 }
 

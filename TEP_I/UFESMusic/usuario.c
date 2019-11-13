@@ -41,23 +41,26 @@ Usuario* alocarUsuario(int qtd){
 }
 
 void modificaNomeUsuario(Usuario* usuario, char* nNome){
-
+    strcpy(usuario->nome,nNome);
 }
 
 void modificaTipoUsuario(Usuario* usuario, int nTipo){
-
+    usuario->tipo = nTipo;
 }
 
-void modificaSenhaUsuario(Usuario* usuario, char* senha){
-
+void modificaSenhaUsuario(Usuario* usuario, char* nSenha){
+    strcpy(usuario->senha,nSenha);
 }
 
 void modificaPlaylistsUsuario(Usuario* usuario, int* playlists){
-
+    for (int i = 0; i < 20; i++)
+    {
+        usuario->playlists[i] = playlists[i];
+    }
 }
 
 void modificaQtdPlaylistsUsuario(Usuario* usuario, int nQtdPlaylists){
-    
+    usuario->qtdPlaylists = nQtdPlaylists;
 }
 
 
@@ -102,7 +105,9 @@ void imprimeUsuario(Usuario* usuario){
 }
 
 void destroiUsuario(Usuario* usuario){
-
+    if (usuario != NULL) {
+        free(usuario);
+    }
 }
 
 void salvarUsuarioArquivo(Usuario* usuario){
@@ -160,6 +165,8 @@ Usuario* buscarUsuario(int idUsuario){
     }
 
     while (fread(usuario, sizeof(Usuario), 1, arqUsuarios) == 1 && pegaIdUsuario(usuario) != idUsuario);
+    
+    fclose(arqUsuarios);
 
     return usuario;
 }
@@ -185,4 +192,138 @@ int listarTodosUsuarios(){
     fclose(arqUsuarios);
 
     return 1;
+}
+
+int quantidadeUsuariosCadastrados(){
+    Usuario* usuario = alocarUsuario(1);
+    int i = 0;
+    FILE* arqUsuarios;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return 0;
+    }
+
+    while (fread(usuario, sizeof(Usuario), 1, arqUsuarios) == 1) i++;
+    
+    fclose(arqUsuarios);
+    destroiUsuario(usuario);
+
+    return i;
+}
+
+void excluirUsuarioArquivo(Usuario* usuario){
+    int qtdUsuarios = quantidadeUsuariosCadastrados(), removeu = 0;
+    Usuario* listaUsuarios = alocarUsuario(qtdUsuarios);
+    Usuario* usuarioAux = alocarUsuario(1);
+    FILE* arqUsuarios;
+
+    if((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL){
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    for (int i = 0; i < qtdUsuarios; i++)
+    {
+        fread(usuarioAux, sizeof(Usuario), 1, arqUsuarios);
+        if (pegaIdUsuario(usuarioAux) == pegaIdUsuario(usuario))
+        {
+            removeu = 1;
+        }else if(removeu)
+        {
+            listaUsuarios[i-1] = *usuarioAux;
+        }else
+        {
+            listaUsuarios[i] = *usuarioAux;
+        }
+    }
+    fclose(arqUsuarios);
+    destroiUsuario(usuarioAux);
+    destroiUsuario(usuario);
+
+    if((arqUsuarios = fopen("usuarios.dat", "wb")) == NULL){
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+    
+    fwrite(listaUsuarios, sizeof(Usuario), qtdUsuarios-1, arqUsuarios);
+
+    destroiUsuario(listaUsuarios);
+    fclose(arqUsuarios);
+}
+
+void atualizarArquivoUsuarios(Usuario* usuario) {
+    int i = 0;
+    Usuario* usuarioAux = alocarUsuario(1);
+    FILE* arqUsuarios;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "r+b")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    while (fread(usuarioAux, sizeof(Usuario), 1, arqUsuarios) == 1 && pegaIdUsuario(usuarioAux) != pegaIdUsuario(usuario)) i++;
+    
+    fseek(arqUsuarios, i * sizeof (Usuario), SEEK_SET);
+
+    if(fwrite(usuario, sizeof(Usuario), 1, arqUsuarios) == 1){
+        printf("\nUsuario atualizado com sucesso!");
+        printf("\nPressione ENTER para continuar...");
+        getchar();
+        scanf("%*c");
+    }
+
+    destroiUsuario(usuarioAux);
+    fclose(arqUsuarios);
+}
+
+void listarUsuariosFiltro(int tipoFiltro, char* string, int numero){
+    FILE* arqUsuarios;
+    Usuario* usuario = alocarUsuario(1);
+    char* stringAux = NULL;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL) {
+        printf("\nAinda nao possuem usuarios cadastradas!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    printf("\nListando usuarios encontradas...");
+
+    switch (tipoFiltro) {
+        case 1:
+            while (fread(usuario, sizeof (Usuario), 1, arqUsuarios) == 1) {
+                stringAux = strstr(pegaNomeUsuario(usuario), string);
+                if (stringAux) {
+                    imprimeUsuario(usuario);
+                    printf("\n-----------");
+                    stringAux = NULL;
+                }
+            }
+            break;
+
+        case 2:
+            while (fread(usuario, sizeof (Usuario), 1, arqUsuarios) == 1) {
+                if (pegaTipoUsuario(usuario) == numero) {
+                    imprimeUsuario(usuario);
+                    printf("\n-----------");
+                    stringAux = NULL;
+                }
+            }
+            break;
+    }
+
+    fclose(arqUsuarios);
+    destroiUsuario(usuario);
 }

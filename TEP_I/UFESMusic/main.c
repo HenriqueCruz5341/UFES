@@ -455,7 +455,7 @@ void menuBuscarAlbuns() {
                 menuListarTodosAlbuns();
                 break;
         }
-    } while (opcaoMenu != 9);
+    } while (opcaoMenu != 5);
 }
 
 void opcoesAlbumAdmin(Album* album) {
@@ -586,7 +586,36 @@ void menuListarTodosUsuarios(){
 }
 
 void menuBuscarUsuarios(){
+    int opcaoMenu;
+    char string[50];
+    int tipo;
 
+    do {
+        imprimeMenuBuscarUsuarios();
+        scanf("%d", &opcaoMenu);
+        getchar();
+        switch (opcaoMenu) {
+            case 1:
+                printf("Digite o nome ou parte do nome do usuario que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarUsuariosFiltro(1, string, tipo);
+                selecionarUsuario();
+                break;
+
+            case 2:
+                printf("Digite o tipo do usuario que deseja procurar: ");
+                scanf("%d", &tipo);
+                getchar();
+                listarUsuariosFiltro(2, string, tipo);
+                selecionarUsuario();
+                break;
+
+            case 3:
+                menuListarTodosUsuarios();
+                break;
+        }
+    } while (opcaoMenu != 4);
 }
 
 void opcoesUsuariosAdmin(Usuario* usuario){
@@ -616,7 +645,7 @@ void opcoesUsuariosAdmin(Usuario* usuario){
                 break;
 
             case 3:
-                printf("O tipo atual do usuario eh: %s", pegaTipoUsuario(usuario));
+                printf("O tipo atual do usuario eh: %d", pegaTipoUsuario(usuario));
                 printf("\nDigite o novo tipo para o usuario: ");
                 scanf("%d", &tipo);
                 modificaTipoUsuario(usuario, tipo);
@@ -633,9 +662,18 @@ void opcoesUsuariosAdmin(Usuario* usuario){
                 break;
         }
 
-    } while (opcaoMenu != 7);
+    } while (opcaoMenu != 6);
 }
 
 int excluirUsuario(Usuario* usuario){
+    int op;
+    printf("\nExcluir o usuario tambem apagará todas suas playlists!");
+    printf("\nTem certeza que deseja excluir este usuario? (0/1)");
+    scanf("%d", &op);
 
+    if (op) {
+        excluirUsuarioArquivo(usuario);
+        return 1;
+    }
+    return 0;
 }
