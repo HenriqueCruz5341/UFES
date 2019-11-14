@@ -49,27 +49,27 @@ void modificaNomeMidia(Midia* midia, char* nNome) {
 }
 
 void modificaTipoMidia(Midia* midia, int nTipo) {
-
+    midia->tipo = nTipo;
 }
 
-void modificaCompositoresMidia(Midia* midia, char* nCompositor) {
-
+void modificaCompositoresMidia(Midia* midia, char* nCompositor, int pos) {
+    strcpy(midia->compositores[pos], nCompositor);
 }
 
-void modificaArtistasMidia(Midia* midia, char* nArtista) {
-
+void modificaArtistasMidia(Midia* midia, char* nArtista, int pos) {
+    strcpy(midia->artistas[pos], nArtista);
 }
 
 void modificaGeneroMidia(Midia* midia, char* nGenero) {
-
+    strcpy(midia->genero, nGenero);
 }
 
 void modificaGravadoraMidia(Midia* midia, char* nGravadora) {
-
+    strcpy(midia->gravadora, nGravadora);
 }
 
 void modificaDuracaoMidia(Midia* midia, char* nDuracao) {
-
+    strcpy(midia->duracao, nDuracao);
 }
 
 char* pegaNomeMidia(Midia* midia) {
@@ -80,12 +80,12 @@ int pegaTipoMidia(Midia* midia) {
     return midia->tipo;
 }
 
-char** pegaCompositoresMidia(Midia* midia) {
-    //return midia->compositores;
+char* pegaCompositoresMidia(Midia* midia, int pos) {
+    return midia->compositores[pos];
 }
 
-char** pegaArtistasMidia(Midia* midia) {
-    //return midia->artistas;
+char* pegaArtistasMidia(Midia* midia, int pos) {
+    return midia->artistas[pos];
 }
 
 char* pegaGeneroMidia(Midia* midia) {
@@ -111,6 +111,10 @@ int pegaAlbumMidia(Midia *midia) {
 void imprimeMidia(Midia* midia) {
     printf("\nID: %d", pegaIdMidia(midia));
     printf("\nNome: %s", pegaNomeMidia(midia));
+    for (int i = 0; i < 3 && pegaArtistasMidia(midia, i)[0] != '\0'; i++)
+        printf("\nArtista %d: %s", i+1, pegaCompositoresMidia(midia, i));
+    for (int i = 0; i < 3 && pegaCompositoresMidia(midia, i)[0] != '\0'; i++)
+        printf("\nCompositor %d: %s", i+1, pegaCompositoresMidia(midia, i));
     printf("\nDuracao: %s", pegaDuracaoMidia(midia));
     printf("\nGenero: %s", pegaGeneroMidia(midia));
     printf("\nAlbum: %s", pegaNomeAlbum(buscarAlbum(pegaAlbumMidia(midia))));
@@ -134,7 +138,8 @@ void atualizarArquivoMidias(Midia* midia) {
         return;
     }
 
-    while (fread(midiaLida, sizeof (Midia), 1, arqMidia) == 1 && pegaIdMidia(midiaLida) != pegaIdMidia(midia)) i++;
+    while (fread(midiaLida, sizeof (Midia), 1, arqMidia) == 1 && pegaIdMidia(midiaLida) != pegaIdMidia(midia)) 
+        i++;
 
     fseek(arqMidia, sizeof (Midia) * i, SEEK_SET);
 
@@ -229,7 +234,7 @@ int quantidadeMidiasCadastradas() {
 
 }
 
-void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para saber se a exclusao da midia esta sendo por ela mesmo, por excluir um album
+void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para saber se a exclusao da midia esta sendo por ela mesmo, ou por excluir um album
     FILE *arqMidia;
     Midia* listaMidias = alocarMidia(50);
     Midia* midiaAux = alocarMidia(1);

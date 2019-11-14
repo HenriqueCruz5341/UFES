@@ -10,7 +10,7 @@ Album* alocarAlbum(int qtd);
 
 void modificaNomeAlbum(Album* album, char* nNome);
 
-void modificaParticipantesAlbum(Album* album, char** nParticipantes);
+void modificaParticipantesAlbum(Album* album, char* nParticipantes, int pos);
 
 void modificaDataLancamentoAlbum(Album* album, char* nDataLancamento);
 
@@ -20,7 +20,7 @@ void modificaQtdMidias(Album* album, int nQtdMidias);
 
 char* pegaNomeAlbum(Album* album);
 
-void pegaParticipantesAlbum(Album* album, char* participantes[50]);
+char* pegaParticipantesAlbum(Album* album, int pos);
 
 char* pegaDataLancamentoAlbum(Album* album);
 

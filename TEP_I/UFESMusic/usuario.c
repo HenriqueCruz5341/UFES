@@ -272,7 +272,8 @@ void atualizarArquivoUsuarios(Usuario* usuario) {
         return;
     }
 
-    while (fread(usuarioAux, sizeof(Usuario), 1, arqUsuarios) == 1 && pegaIdUsuario(usuarioAux) != pegaIdUsuario(usuario)) i++;
+    while (fread(usuarioAux, sizeof(Usuario), 1, arqUsuarios) == 1 && pegaIdUsuario(usuarioAux) != pegaIdUsuario(usuario)) 
+        i++;
     
     fseek(arqUsuarios, i * sizeof (Usuario), SEEK_SET);
 

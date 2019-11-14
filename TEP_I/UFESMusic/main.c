@@ -137,22 +137,23 @@ void lerMidia(Album* album) {
     printf("\nDigite o tipo de midia (0 musica, 1 video): ");
     scanf("%d", &tipo);
     printf("\nDigite quantos compositores a midia possui: ");
-    scanf("%d%*c", &qtdCompositores);
+    scanf("%d", &qtdCompositores);
     for (i = 0; i < qtdCompositores; i++) {
         printf("\nDigite o compositor %d: ", i + 1);
-        scanf("%[^\n]s", compositores[i]);
         getchar();
+        scanf("%[^\n]s", compositores[i]);
     }
-    for (i; i < qtdCompositores; i++) {
+    for (i; i < 3; i++) {
         compositores[i][0] = '\0';
     }
     printf("\nDigite quantos artistas a midia possui: ");
     scanf("%d%*c", &qtdArtistas);
     for (i = 0; i < qtdArtistas; i++) {
         printf("\nDigite o artista %d: ", i + 1);
-        scanf("%[^\n]s%*c", artistas[i]);
+        getchar();
+        scanf("%[^\n]s", artistas[i]);
     }
-    for (i; i < qtdArtistas; i++) {
+    for (i; i < 3; i++) {
         artistas[i][0] = '\0';
     }
     printf("\nDigite o genero da midia: ");
@@ -379,15 +380,16 @@ Album* lerAlbum() {
     printf("\nDigite o nome do album: ");
     scanf("%[^\n]s", nome);
     printf("\nDigite a quantidade de participantes do album: ");
-    scanf("%d%*c", &qtdParticipantes);
+    scanf("%d", &qtdParticipantes);
     for (i = 0; i < qtdParticipantes; i++) {
         printf("\nDigite o participante %d: ", i);
-        scanf("%[^\n]s%*c", particiapantes[i]);
+        getchar();
+        scanf("%[^\n]s", particiapantes[i]);
     }
-    for (i; i < qtdParticipantes; i++) {
+    for (i; i < 3; i++) {
         particiapantes[i][0] = '\0';
     }
-    printf("\nDigite a data de lancamento do album (DD:MM:AAAA): ");
+    printf("\nDigite a data de lancamento do album (DD/MM/AAAA): ");
     scanf("%s", dataLancamento);
 
     album = inicializaAlbum(nome, particiapantes, dataLancamento);
@@ -459,8 +461,8 @@ void menuBuscarAlbuns() {
 }
 
 void opcoesAlbumAdmin(Album* album) {
-    char nome[50], participantes[3][50], dataLancamento[10];
-    int opcaoMenu, excluiu;
+    char nome[50], dataLancamento[10];
+    int opcaoMenu, excluiu, opcaoPart;
 
     do {
         imprimeMenuOpcoesAlbumAdmin();
@@ -476,7 +478,14 @@ void opcoesAlbumAdmin(Album* album) {
                 break;
 
             case 2:
-                //editar participantes
+                printf("Qual o indice do participante deseja alterar? ");
+                scanf("%d", &opcaoPart);
+                printf("O nome desse participante atual do album eh: %s", pegaParticipantesAlbum(album, opcaoPart-1));
+                printf("\nDigite o novo participante para o album: ");
+                getchar();
+                scanf("%[^\n]s", nome);
+                modificaParticipantesAlbum(album, nome, opcaoPart-1);
+                atualizarArquivoAlbuns(album);
                 break;
 
             case 3:
@@ -569,7 +578,7 @@ void selecionarUsuario(){
 
     if (id) {
         usuario = buscarUsuario(id);
-        opcoesUsuariosAdmin(buscarUsuario(id));
+        opcoesUsuariosAdmin(usuario);
     }
 }
 

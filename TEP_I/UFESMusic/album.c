@@ -45,8 +45,8 @@ void modificaNomeAlbum(Album* album, char* nNome) {
     strcpy(album->nome, nNome);
 }
 
-void modificaParticipantesAlbum(Album* album, char** nParticipantes) {
-
+void modificaParticipantesAlbum(Album* album, char* nParticipantes, int pos) {
+    strcpy(album->participantes[pos], nParticipantes);
 }
 
 void modificaDataLancamentoAlbum(Album* album, char* nDataLancamento) {
@@ -67,10 +67,8 @@ char* pegaNomeAlbum(Album* album) {
     return album->nome;
 }
 
-void pegaParticipantesAlbum(Album* album, char* participantes[50]) {
-    for (int i = 0; i < 3; i++) {
-        strcpy(participantes[i], album->participantes[i]);
-    }
+char* pegaParticipantesAlbum(Album* album, int pos) {
+    return album->participantes[pos];
 }
 
 char* pegaDataLancamentoAlbum(Album* album) {
@@ -96,11 +94,10 @@ int* pegaMidiaAlbum(Album* album) {
 }
 
 void imprimeAlbum(Album* album) {
-    char* participantes[50];
-    //pegaParticipantesAlbum(album, participantes);
-
     printf("\nID: %d", pegaIdAlbum(album));
     printf("\nNome: %s", pegaNomeAlbum(album));
+    for (int i = 0; i < 3 && pegaParticipantesAlbum(album, i)[0] != '\0'; i++)
+        printf("\nParticipante %d: %s", i+1, pegaParticipantesAlbum(album, i));
     printf("\nQuantidade midias: %d", pegaQtdMidiasAlbum(album));
     printf("\nLancado em: %s", pegaDataLancamentoAlbum(album));
 }

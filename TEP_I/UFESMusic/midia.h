@@ -12,9 +12,9 @@ void modificaNomeMidia(Midia* midia, char* nNome);
 
 void modificaTipoMidia(Midia* midia, int nTipo);
 
-void modificaCompositoresMidia(Midia* midia, char* nCompositor);
+void modificaCompositoresMidia(Midia* midia, char* nCompositor, int pos);
 
-void modificaArtistasMidia(Midia* midia, char* nArtista);
+void modificaArtistasMidia(Midia* midia, char* nArtista, int pos);
 
 void modificaGeneroMidia(Midia* midia, char* nGenero);
 
@@ -26,9 +26,9 @@ char* pegaNomeMidia(Midia* midia);
 
 int pegaTipoMidia(Midia* midia);
 
-char** pegaCompositoresMidia(Midia* midia);
+char* pegaCompositoresMidia(Midia* midia, int pos);
 
-char** pegaArtistasMidia(Midia* midia);
+char* pegaArtistasMidia(Midia* midia, int pos);
 
 char* pegaGeneroMidia(Midia* midia);
 
