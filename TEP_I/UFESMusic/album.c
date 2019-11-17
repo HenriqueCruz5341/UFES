@@ -358,7 +358,17 @@ void listarAlbunsFiltro(int tipoFiltro, char* string, int numero) {
             break;
 
         case 2:
-            //participantes
+            while (fread(album, sizeof (Album), 1, arqAlbum) == 1) {
+                for(int i = 0; i < 3; i++){
+                    stringAux = strstr(pegaParticipantesAlbum(album, i), string);
+                    if (stringAux) {
+                        imprimeAlbum(album);
+                        printf("\n-----------");
+                        stringAux = NULL;
+                        break;
+                    }
+                }
+            }
             break;
 
         case 3:

@@ -112,7 +112,7 @@ void imprimeMidia(Midia* midia) {
     printf("\nID: %d", pegaIdMidia(midia));
     printf("\nNome: %s", pegaNomeMidia(midia));
     for (int i = 0; i < 3 && pegaArtistasMidia(midia, i)[0] != '\0'; i++)
-        printf("\nArtista %d: %s", i+1, pegaCompositoresMidia(midia, i));
+        printf("\nArtista %d: %s", i+1, pegaArtistasMidia(midia, i));
     for (int i = 0; i < 3 && pegaCompositoresMidia(midia, i)[0] != '\0'; i++)
         printf("\nCompositor %d: %s", i+1, pegaCompositoresMidia(midia, i));
     printf("\nDuracao: %s", pegaDuracaoMidia(midia));
@@ -348,11 +348,31 @@ void listarMidiasFiltro(int tipoFiltro, char* string, int numero) {
             break;
 
         case 3:
-            /* code */
+            while (fread(midia, sizeof (Midia), 1, arqMidia) == 1) {
+                for(int i = 0; i < 3; i++){
+                    stringAux = strstr(pegaCompositoresMidia(midia, i), string);
+                    if (stringAux) {
+                        imprimeMidia(midia);
+                        printf("\n-----------");
+                        stringAux = NULL;
+                        break;
+                    }
+                }
+            }
             break;
 
         case 4:
-            /* code */
+            while (fread(midia, sizeof (Midia), 1, arqMidia) == 1) {
+                for(int i = 0; i < 3; i++){
+                    stringAux = strstr(pegaArtistasMidia(midia, i), string);
+                    if (stringAux) {
+                        imprimeMidia(midia);
+                        printf("\n-----------");
+                        stringAux = NULL;
+                        break;
+                    }
+                }
+            }
             break;
 
         case 5:

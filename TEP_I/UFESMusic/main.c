@@ -19,8 +19,13 @@ void menuListarTodasMidias();
 void menuBuscarMidias();
 int excluirMidia(Midia* midia);
 
-//void gerenciarPlaylst();
-
+void gerenciarPlaylst();
+Playlist* lerPlaylist();
+void selecionarPlaylist();
+void menuListarTodasPlaylists();
+void menuBuscarPlaylists();
+void opcoesPlaylistDono(Playlist* playlist);
+int excluirPlaylist(Playlist* playlist);
 
 void gerenciarAlbuns();
 Album* lerAlbum();
@@ -30,7 +35,6 @@ void menuBuscarAlbuns();
 void opcoesAlbumAdmin(Album* album);
 int excluirAlbum(Album* album);
 
-
 void gerenciarUsuarios();
 void lerUsuario(int verificador);
 void selecionarUsuario();
@@ -38,8 +42,6 @@ void menuListarTodosUsuarios();
 void menuBuscarUsuarios();
 void opcoesUsuariosAdmin(Usuario* usuario);
 int excluirUsuario(Usuario* usuario);
-
-
 
 
 int main(int argc, char** argv) {
@@ -89,7 +91,7 @@ void menuAdmin() {
                 break;
 
             case 2:
-                //gerenciarPlaylst();
+                gerenciarPlaylst();
                 break;
 
             case 3:
@@ -228,11 +230,19 @@ void menuBuscarMidias() {
                 break;
 
             case 3:
-                /* code */
+                printf("Digite o nome ou parte do nome do compositor da midia que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarMidiasFiltro(3, string, tipo);
+                selecionarMidia();
                 break;
 
             case 4:
-                /* code */
+                printf("Digite o nome ou parte do nome do artista da midia que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarMidiasFiltro(4, string, tipo);
+                selecionarMidia();
                 break;
 
             case 5:
@@ -262,9 +272,6 @@ void menuBuscarMidias() {
             case 8:
                 menuListarTodasMidias();
                 break;
-
-            default:
-                break;
         }
     } while (opcaoMenu != 9);
 
@@ -272,7 +279,7 @@ void menuBuscarMidias() {
 
 void opcoesMidiaAdmin(Midia* midia) {
     char nome[50], compositores[3][50], artistas[3][50], genero[15], gravadora[15], duracao[10];
-    int tipo, opcaoMenu, excluiu;
+    int tipo, opcaoMenu, excluiu, indice;
 
     do {
         imprimeMenuOpcoesMidiaAdmin();
@@ -296,12 +303,25 @@ void opcoesMidiaAdmin(Midia* midia) {
                 break;
 
             case 3:
-                //compositores = pegaCompositoresMidia(midia);
-                /* compositor */
+                printf("Qual o indice do compositor deseja alterar? ");
+                scanf("%d", &indice);
+                printf("O nome desse compositor atual da midia eh: %s", pegaCompositoresMidia(midia, indice-1));
+                printf("\nDigite o novo compositor para a midia: ");
+                getchar();
+                scanf("%[^\n]s", nome);
+                modificaCompositoresMidia(midia, nome, indice-1);
+                atualizarArquivoMidias(midia);
                 break;
 
             case 4:
-                /* artista */
+                printf("Qual o indice do artista deseja alterar? ");
+                scanf("%d", &indice);
+                printf("O nome desse artista atual da midia eh: %s", pegaArtistasMidia(midia, indice-1));
+                printf("\nDigite o novo artista para a midia: ");
+                getchar();
+                scanf("%[^\n]s", nome);
+                modificaArtistasMidia(midia, nome, indice-1);
+                atualizarArquivoMidias(midia);
                 break;
 
             case 5:
@@ -347,6 +367,81 @@ int excluirMidia(Midia* midia) { //retorna 1 se excluiu a midia, e 0 caso n tenh
     }
 
     return 0;
+}
+
+void gerenciarPlaylst(){
+    int opcao;
+
+    do {
+        imprimeMenuGerenciarPlaylists();
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                lerPlaylist(NULL);
+                break;
+
+            case 2:
+                menuListarTodasPlaylists();
+                break;
+
+            case 3:
+                menuBuscarPlaylists();
+                break;
+
+        }
+    } while (opcao != 4);
+}
+
+Playlist* lerPlaylist(Usuario* usuario){
+    char nome[50];
+    int privacidade, contribuintes[2], teraContribuinte;
+    Playlist* playlist = alocarPlaylist(1);
+
+    printf("Digite o nome da playlist: ");
+    getchar();
+    scanf("%[^\n]s", nome);
+    printf("0 - Privada | 1 - Publica | 2 - Compartilhada");
+    printf("\nDigite a privacidade da playlist: ");
+    scanf("%d", &privacidade);
+    if (usuario == NULL)
+    {
+        listarTodosUsuarios();
+        printf("\nDigite o ID do usuario que sera o dono: ");
+        scanf("%d", &contribuintes[0]);
+    }
+    if (privacidade == 2)
+    {
+        listarTodosUsuarios();
+        printf("\nDigite o ID do usuario que sera um contribuinte da playlist: ");
+        scanf("%d", &contribuintes[1]);
+    }else   contribuintes[1] = 0;
+    
+    playlist = inicializaPlaylist(nome, privacidade, contribuintes);
+    imprimePlaylist(playlist);
+    salvarPlaylistArquivo(playlist);
+
+    return playlist;
+    
+}
+
+void selecionarPlaylist(){
+
+}
+
+void menuListarTodasPlaylists(){
+
+}
+
+void menuBuscarPlaylists(){
+
+}
+
+void opcoesPlaylistDono(Playlist* playlist){
+
+}
+
+int excluirPlaylist(Playlist* playlist){
+
 }
 
 void gerenciarAlbuns() {
@@ -404,7 +499,7 @@ void menuListarTodosAlbuns() {
     if (listarTodosAlbuns()) {
         selecionarAlbum();
     } else {
-        printf("\nArquivo de midias vazio!");
+        printf("\nArquivo de albuns vazio!");
         printf("\nPressione ENTER para voltar...");
         getchar();
         scanf("%*c");
@@ -442,7 +537,11 @@ void menuBuscarAlbuns() {
                 break;
 
             case 2:
-                //participante
+                printf("Digite o nome ou parte do nome do participante que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarAlbunsFiltro(2, string, tipo);
+                selecionarAlbum();
                 break;
 
             case 3:

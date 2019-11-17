@@ -90,7 +90,7 @@ void imprimeMenuBuscarMidias() {
 }
 
 void imprimeMenuBuscarAlbuns() {
-    system("clear");
+    //system("clear");
     printf("======| MENU BUSCAR ALBUNS |======\n");
     printf("1 - Filtrar por nome.\n");
     printf("2 - Filtrar por participante.\n");
