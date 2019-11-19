@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "usuario.h"
 #include <string.h>
+#include "sistema.h"
 
 struct usuario
 {
@@ -37,7 +38,13 @@ Usuario* inicializaUsuario(char* nome, int tipo, char* senha, int* playlists){
 }
 
 Usuario* alocarUsuario(int qtd){
-    return (Usuario*) malloc(sizeof(Usuario) * qtd);
+    Usuario* u = (Usuario*) malloc(sizeof(Usuario) * qtd);
+    if (u == NULL)
+    {
+        printf("\nNao foi possivel alocar espaco para usuario!");
+        getchar();
+    }
+    return u;
 }
 
 void modificaNomeUsuario(Usuario* usuario, char* nNome){

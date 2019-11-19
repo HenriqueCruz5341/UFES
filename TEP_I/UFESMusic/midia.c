@@ -3,6 +3,7 @@
 #include <string.h>
 #include "midia.h"
 #include "album.h"
+#include "sistema.h"
 
 struct midia {
     int idMidia;
@@ -41,7 +42,13 @@ Midia* inicializaMidia(char* nome, int tipo, char compositores[][50], char artis
 }
 
 Midia* alocarMidia(int qtd) {
-    return (Midia*) malloc(sizeof (Midia) * qtd);
+    Midia* m = (Midia*) malloc(sizeof (Midia) * qtd);
+    if (m == NULL)
+    {
+        printf("\nNao foi possivel alocar espaco para midia!");
+        getchar();
+    }
+    return m;
 }
 
 void modificaNomeMidia(Midia* midia, char* nNome) {

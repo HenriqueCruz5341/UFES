@@ -3,6 +3,7 @@
 #include <string.h>
 #include "album.h"
 #include "midia.h"
+#include "sistema.h"
 
 struct album {
     int idAlbum;
@@ -38,7 +39,13 @@ Album* inicializaAlbum(char* nome, char participantes[][50], char* dataLancament
 }
 
 Album* alocarAlbum(int qtd) {
-    return (Album*) malloc(sizeof (Album) * qtd);
+    Album* a = (Album*) malloc(sizeof (Album) * qtd);
+    if (a == NULL)
+    {
+        printf("\nNao foi possivel alocar espaco para album!");
+        getchar();
+    }
+    return a;
 }
 
 void modificaNomeAlbum(Album* album, char* nNome) {
@@ -307,7 +314,7 @@ void excluirAlbumArquivo(Album* album) {
         return;
     }
 
-    if (qtd > 1) fwrite(listaAlbuns, sizeof (Album), qtd - 1, arqAlbum);
+    if (qtd >= 1) fwrite(listaAlbuns, sizeof (Album), qtd - 1, arqAlbum);
     fclose(arqAlbum);
     destroiAlbum(listaAlbuns);
 }

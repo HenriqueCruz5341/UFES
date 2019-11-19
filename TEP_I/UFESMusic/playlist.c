@@ -3,6 +3,7 @@
 #include <string.h>
 #include "playlist.h"
 #include "usuario.h"
+#include "sistema.h"
 
 struct playlist
 {
@@ -32,7 +33,13 @@ Playlist* inicializaPlaylist(char* nome, int privacidade, int* contribuintes){
 }
 
 Playlist* alocarPlaylist(int qtd){
-    return (Playlist*) malloc(sizeof(Playlist) * qtd);
+    Playlist* p = (Playlist*) malloc(sizeof(Playlist) * qtd);
+    if (p == NULL)
+    {
+        printf("\nNao foi possivel alocar espaco para playlist!");
+        getchar();
+    }
+    return p;
 }
 
 void modificaNomePlaylist(Playlist* playlist, char* nNome){
