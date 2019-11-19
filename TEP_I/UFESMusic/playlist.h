@@ -1,5 +1,6 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
+#include "midia.h"
 
 typedef struct playlist Playlist;
 
@@ -11,7 +12,7 @@ void modificaNomePlaylist(Playlist* playlist, char* nNome);
 
 void modificaPrivacidadePlaylist(Playlist* playlist, int nPrivacidade);
 
-void modificaContribuintes(Playlist* playlist, int* nContribuintes);
+void modificaContribuintesPlaylist(Playlist* playlist, int nContribuintes);
 
 void modificaMidiaPlaylst(Playlist* playlist, int* nMidia);
 
@@ -36,6 +37,24 @@ void destroiPlaylist(Playlist* playlist);
 int pegaUltimoIdPlaylistCadastrada();
 
 void salvarPlaylistArquivo(Playlist* playlist);
+
+Playlist* buscarPlaylist(int idPlaylist);
+
+int listarTodasPlaylists();
+
+void atualizarArquivoPlaylists(Playlist* playlist);
+
+void adicionarMidiaPlaylist(Playlist* playlist, Midia* midia);
+
+void removerMidiaPlaylist(Playlist* playlist, Midia* midia);
+
+void listarMidiasPlaylist(Playlist* playlist);
+
+void trocarPosicaoMidiaPlaylist(Playlist* playlist, Midia* midia, int pos);
+
+void excluirPlaylistArquivo(Playlist* playlist);
+
+int quantidadePlaylistsCadastradas();
 
 #endif /* PLAYLIST_H */
 

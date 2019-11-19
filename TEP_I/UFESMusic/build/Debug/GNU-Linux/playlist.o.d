@@ -1,7 +1,7 @@
-build/Debug/GNU-Linux/playlist.o: playlist.c playlist.h usuario.h midia.h
+build/Debug/GNU-Linux/playlist.o: playlist.c playlist.h midia.h usuario.h
 
 playlist.h:
 
-usuario.h:
-
 midia.h:
+
+usuario.h:

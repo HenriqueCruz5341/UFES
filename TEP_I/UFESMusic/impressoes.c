@@ -90,7 +90,7 @@ void imprimeMenuBuscarMidias() {
 }
 
 void imprimeMenuBuscarAlbuns() {
-    //system("clear");
+    system("clear");
     printf("======| MENU BUSCAR ALBUNS |======\n");
     printf("1 - Filtrar por nome.\n");
     printf("2 - Filtrar por participante.\n");
@@ -157,5 +157,30 @@ void imprimeMenuBuscarUsuarios() {
     printf("2 - Filtrar tipo.\n");
     printf("3 - Todos os usuarios.\n");
     printf("4 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuOpcoesPlaylist(){
+    system("clear");
+    printf("======| MENU OPCEOS PLAYLIST |======\n");
+    printf("1 - Trocar nome.\n");
+    printf("2 - Trocar privacidade.\n");
+    printf("3 - Trocar colaborador.\n");
+    printf("4 - Adicionar midias.\n");
+    printf("5 - Remover midias.\n");
+    printf("6 - Listar midias playlist.\n");
+    printf("7 - Alterar ordem midias.\n");
+    printf("8 - Deletar playlist.\n");
+    printf("9 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuOpcoesPlaylistPublico(){
+    system("clear");
+    printf("======| MENU OPCEOS PLAYLIST |======\n");
+    printf("1 - Tocar playlist.\n");
+    printf("2 - Seguir playlist.\n");
+    printf("3 - Listar midias playlist.\n");
+    printf("3 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }

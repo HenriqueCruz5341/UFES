@@ -30,4 +30,8 @@ void imprimeMenuOpcoesUsuarioAdmin();
 
 void imprimeMenuBuscarUsuarios();
 
+void imprimeMenuOpcoesPlaylist();
+
+void imprimeMenuOpcoesPlaylistPublico();
+
 #endif

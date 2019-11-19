@@ -43,9 +43,8 @@ void modificaPrivacidadePlaylist(Playlist* playlist, int nPrivacidade){
     playlist->privacidade = nPrivacidade;
 }
 
-void modificaContribuintes(Playlist* playlist, int* nContribuintes){
-    for (int i = 0; i < 2; i++)
-        playlist->contribuintes[i] = nContribuintes[i];
+void modificaContribuintesPlaylist(Playlist* playlist, int nContribuintes){
+    playlist->contribuintes[1] = nContribuintes;
 }
 
 void modificaMidiaPlaylst(Playlist* playlist, int* nMidia){
@@ -133,4 +132,207 @@ void salvarPlaylistArquivo(Playlist* playlist){
     }
 
     fclose(arqPlaylist);
+}
+
+Playlist* buscarPlaylist(int idPlaylist){
+    Playlist* playlist = alocarPlaylist(1);
+    FILE* arqPlaylist;
+
+    if ((arqPlaylist = fopen("playlists.dat", "rb")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de playlist!");
+        getchar();
+        scanf("%*c");
+        return NULL;
+    }
+
+    while (fread(playlist, sizeof(Playlist), 1, arqPlaylist) == 1 && pegaIdPlaylist(playlist) != idPlaylist);
+    
+    fclose(arqPlaylist);
+
+    return playlist;
+
+}
+
+int listarTodasPlaylists(){
+    Playlist* playlist = alocarPlaylist(1);
+    FILE* arqPlaylist;
+
+    if ((arqPlaylist = fopen("playlists.dat", "rb")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de playlist!");
+        getchar();
+        scanf("%*c");
+        return 0;
+    }
+
+    while (fread(playlist, sizeof(Playlist), 1, arqPlaylist) == 1){
+        imprimePlaylist(playlist);
+        printf("\n----------");
+    }
+    
+    destroiPlaylist(playlist);
+    fclose(arqPlaylist);
+
+    return 1;
+}
+
+void atualizarArquivoPlaylists(Playlist* playlist){
+    int i = 0;
+    Playlist* playlistAux = alocarPlaylist(1);
+
+    FILE* arqPlaylist;
+
+    if ((arqPlaylist = fopen("playlists.dat", "r+b")) == NULL) {
+        printf("\nErro ao abrir arquivo de playlists!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    while (fread(playlistAux, sizeof (Playlist), 1, arqPlaylist) == 1 && pegaIdPlaylist(playlistAux) != pegaIdPlaylist(playlist)) {
+        i++;
+    }
+
+    fseek(arqPlaylist, i * sizeof (Playlist), SEEK_SET);
+
+    if ((fwrite(playlist, sizeof (Playlist), 1, arqPlaylist)) == 1) {
+        printf("\nPlaylist atualizado com sucesso!");
+        printf("\nPressione ENTER para continuar...");
+        getchar();
+        scanf("%*c");
+    }
+
+    destroiPlaylist(playlistAux);
+    fclose(arqPlaylist);
+}
+
+void adicionarMidiaPlaylist(Playlist* playlist, Midia* midia){
+    int *midiasPlaylist = pegaMidiaPlaylist(playlist);
+    int i = 0, idMidia = pegaIdMidia(midia);
+
+    while (midiasPlaylist[i] != 0){
+        if (idMidia == midiasPlaylist[i])
+        {
+            printf("\nA midia ja esta nesta playlist!");
+            printf("\nPressione ENTER para continuar.");
+            getchar();
+            return;
+        }
+        i++;
+    }
+    modificaQtdMidiasPlaylist(playlist, pegaQtdMidiasPlaylist(playlist) + 1);
+    midiasPlaylist[i] = idMidia;
+}
+
+void removerMidiaPlaylist(Playlist* playlist, Midia* midia){
+    int *midiasPlaylist = pegaMidiaPlaylist(playlist);
+    int pos, idMidia = pegaIdMidia(midia), excluiu = 0, qtdMidiasPlaylist = pegaQtdMidiasPlaylist(playlist);
+
+    for (pos = 0; pos < qtdMidiasPlaylist; pos++) {
+        if (excluiu) {
+            midiasPlaylist[pos - 1] = midiasPlaylist[pos];
+            midiasPlaylist[pos] = 0;
+        }
+        if (midiasPlaylist[pos] == idMidia) {
+            midiasPlaylist[pos] = 0;
+            excluiu = 1;
+        }
+    }
+
+    modificaQtdMidiasPlaylist(playlist, pegaQtdMidiasPlaylist(playlist) - 1);
+}
+
+void listarMidiasPlaylist(Playlist* playlist){
+    int qtdMidias = pegaQtdMidiasPlaylist(playlist);
+    Midia* midia = alocarMidia(1);
+
+    for (int i = 0; i < qtdMidias; i++) {
+        midia = buscarMidia(pegaMidiaPlaylist(playlist)[i]);
+        imprimeMidia(midia);
+        printf("\n-----------");
+    }
+}
+
+void trocarPosicaoMidiaPlaylist(Playlist* playlist, Midia* midia, int pos){
+    int* midias = pegaMidiaPlaylist(playlist);
+    int qtdMidias = pegaQtdMidiasPlaylist(playlist), posMidia = 0, idMidia = pegaIdMidia(midia);
+    
+    if (pos > qtdMidias) pos = qtdMidias;
+
+    while(midias[posMidia] != idMidia) posMidia++;
+    
+    if (qtdMidias == pos)
+    {
+        for (int i = posMidia+1; i < qtdMidias; i++)
+        {
+            midias[i-1] = midias[i];
+        }
+        midias[qtdMidias-1] = idMidia;
+    }else
+    {
+        for (int i = posMidia-1; i >= pos-1; i--)
+        {
+            midias[i+1] = midias[i];
+        }
+        midias[pos-1] = idMidia;
+    }
+}
+
+int quantidadePlaylistsCadastradas(){
+    Playlist* playlist = alocarPlaylist(1);
+    FILE* arqPlaylists;
+    int i = 0;
+
+    if ((arqPlaylists = fopen("playlists.dat", "rb")) == NULL)
+    {
+        return 0;
+    }
+
+    while(fread(playlist, sizeof(Playlist), 1, arqPlaylists) == 1) i++;
+    
+    fclose(arqPlaylists);
+    destroiPlaylist(playlist);
+
+    return i;
+}
+
+
+void excluirPlaylistArquivo(Playlist* playlist){
+    FILE* arqPlaylist;
+    Playlist* listaPlaylists = alocarPlaylist(50);
+    Playlist* playlistAux = alocarPlaylist(1);
+    int qtd = quantidadePlaylistsCadastradas(), removeu = 0;
+
+    if ((arqPlaylist = fopen("playlists.dat", "rb")) == NULL) {
+        printf("\nErro ao abrir arquivo de playlist!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    for (int i = 0; i < qtd; i++) {
+        fread(playlistAux, sizeof (Playlist), 1, arqPlaylist);
+        if (pegaIdPlaylist(listaPlaylists + i) == pegaIdPlaylist(playlist)) {
+            removeu = 1;
+        } else if (removeu) {
+            listaPlaylists[i - 1] = *playlistAux;
+        } else {
+            listaPlaylists[i] = *playlistAux;
+        }
+    }
+
+    destroiPlaylist(playlistAux);
+    fclose(arqPlaylist);
+
+    if ((arqPlaylist = fopen("playlists.dat", "wb")) == NULL) {
+        printf("\nErro ao abrir arquivo de playlist!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    if (qtd > 1) fwrite(listaPlaylists, sizeof (Playlist), qtd - 1, arqPlaylist);
+    fclose(arqPlaylist);
+    destroiPlaylist(listaPlaylists);
 }
