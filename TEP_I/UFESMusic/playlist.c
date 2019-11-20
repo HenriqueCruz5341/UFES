@@ -3,7 +3,7 @@
 #include <string.h>
 #include "playlist.h"
 #include "usuario.h"
-#include "sistema.h"
+//#include "sistema.h"
 
 struct playlist
 {
@@ -307,9 +307,9 @@ int quantidadePlaylistsCadastradas(){
 
 void excluirPlaylistArquivo(Playlist* playlist){
     FILE* arqPlaylist;
-    Playlist* listaPlaylists = alocarPlaylist(50);
     Playlist* playlistAux = alocarPlaylist(1);
-    int qtd = quantidadePlaylistsCadastradas(), removeu = 0;
+    int qtd = quantidadePlaylistsCadastradas(), removeu = 0, idPlaylistExcluida = pegaIdPlaylist(playlist);
+    Playlist* listaPlaylists = alocarPlaylist(qtd);
 
     if ((arqPlaylist = fopen("playlists.dat", "rb")) == NULL) {
         printf("\nErro ao abrir arquivo de playlist!");
@@ -342,4 +342,47 @@ void excluirPlaylistArquivo(Playlist* playlist){
     if (qtd > 1) fwrite(listaPlaylists, sizeof (Playlist), qtd - 1, arqPlaylist);
     fclose(arqPlaylist);
     destroiPlaylist(listaPlaylists);
+    removerPlaylistTodosUsuario(idPlaylistExcluida);
+}
+
+void listarPlaylistsFiltro(int tipoFiltro, char* string){
+    FILE* arqPlaylists;
+    Playlist* playlist = alocarPlaylist(1);
+    char* stringAux = NULL;
+
+    if ((arqPlaylists = fopen("playlists.dat", "rb")) == NULL) {
+        printf("\nAinda nao possuem playlists cadastradas!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    printf("\nListando playlists encontradas...");
+
+    switch (tipoFiltro) {
+        case 1:
+            while (fread(playlist, sizeof (Playlist), 1, arqPlaylists) == 1) {
+                stringAux = strstr(pegaNomePlaylist(playlist), string);
+                if (stringAux) {
+                    imprimePlaylist(playlist);
+                    printf("\n-----------");
+                    stringAux = NULL;
+                }
+            }
+            break;
+
+        case 2:
+            while (fread(playlist, sizeof (Playlist), 1, arqPlaylists) == 1) {
+                stringAux = strstr(pegaNomeUsuario(buscarUsuario(pegaContribuintesPlaylist(playlist)[0])), string);
+                if (stringAux) {
+                    imprimePlaylist(playlist);
+                    printf("\n-----------");
+                    stringAux = NULL;
+                }
+            }
+            break;
+    }
+
+    fclose(arqPlaylists);
+    destroiPlaylist(playlist);
 }

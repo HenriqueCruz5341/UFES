@@ -14,7 +14,7 @@ void imprimeMenuGerenciarAlbuns();
 
 void imprimeMenuGerenciarUsuarios();
 
-void imprimeMenuOpcoesUsuario();
+void imprimeMenuOpcoesNormal();
 
 void imprimeMenuBuscarMidias();
 
@@ -30,8 +30,16 @@ void imprimeMenuOpcoesUsuarioAdmin();
 
 void imprimeMenuBuscarUsuarios();
 
-void imprimeMenuOpcoesPlaylist();
+void imprimeMenuOpcoesPlaylistDono();
 
 void imprimeMenuOpcoesPlaylistPublico();
+
+void imprimeMenuBuscarPlaylists();
+
+void imprimeMenuOpcoesMidiaPublico();
+
+void imprimeMenuOpcoesAlbumPublico();
+
+void imprimeMenuBuscarPlaylists();
 
 #endif

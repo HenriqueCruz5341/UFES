@@ -20,12 +20,12 @@ Usuario* pegaUsuarioLogado(Sistema* sistema);
 
 void modificaQtdMidiasCadastradas(Sistema* sistema, int nQtdMidiasCad);
 
-/*void modificaQtdMidiasCadastradas(Sistema* sistema, int nQtdMidasCad);
+void modificaQtdAlbunsCadastradas(Sistema* sistema, int nQtdAlbunsCad);
 
-void modificaQtdMidiasCadastradas(Sistema* sistema, int nQtdMidasCad);
+void modificaQtdPlaylistsCadastradas(Sistema* sistema, int nQtdPlaylistsCad);
 
-void modificaQtdMidiasCadastradas(Sistema* sistema, int nQtdMidasCad);*/
+void modificaQtdUsuariosCadastradas(Sistema* sistema, int nQtdUsuariosCad);
 
-int autenticarUsuario(Usuario* usuario);
+void modificaUsuarioLogado(Sistema* sistema, Usuario* nUsuario);
 
 #endif

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "album.h"
 #include "midia.h"
-#include "sistema.h"
+//#include "sistema.h"
 
 struct album {
     int idAlbum;
@@ -279,9 +279,9 @@ void removeMidiaAlbum(Album* album, Midia* midia) {
 
 void excluirAlbumArquivo(Album* album) {
     FILE* arqAlbum;
-    Album* listaAlbuns = alocarAlbum(50);
     Album* albumAux = alocarAlbum(1);
     int qtd = quantidadeAlbunsCadastrados(), removeu = 0, qtdMidiasAlbum = pegaQtdMidiasAlbum(album);
+    Album* listaAlbuns = alocarAlbum(qtd);
 
     if ((arqAlbum = fopen("albuns.dat", "rb")) == NULL) {
         printf("\nErro ao abrir arquivo de album!");
@@ -314,7 +314,7 @@ void excluirAlbumArquivo(Album* album) {
         return;
     }
 
-    if (qtd >= 1) fwrite(listaAlbuns, sizeof (Album), qtd - 1, arqAlbum);
+    if (qtd > 1) fwrite(listaAlbuns, sizeof (Album), qtd - 1, arqAlbum);
     fclose(arqAlbum);
     destroiAlbum(listaAlbuns);
 }

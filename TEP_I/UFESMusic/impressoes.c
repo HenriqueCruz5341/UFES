@@ -62,7 +62,7 @@ void imprimeMenuGerenciarUsuarios() {
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuOpcoesUsuario() {
+void imprimeMenuOpcoesNormal() {
     system("clear");
     printf("======| MENU OPCOES USUARIO |======\n");
     printf("1 - Buscar midias.\n");
@@ -140,7 +140,7 @@ void imprimeMenuOpcoesAlbumAdmin() {
 
 void imprimeMenuOpcoesUsuarioAdmin() {
     system("clear");
-    printf("======| MENU EDICAO ALBUM |======\n");
+    printf("======| MENU EDICAO USUARIO |======\n");
     printf("1 - Trocar nome.\n");
     printf("2 - Trocar senha.\n");
     printf("3 - Trocar tipo.\n");
@@ -152,7 +152,7 @@ void imprimeMenuOpcoesUsuarioAdmin() {
 
 void imprimeMenuBuscarUsuarios() {
     system("clear");
-    printf("======| MENU BUSCAR ALBUNS |======\n");
+    printf("======| MENU BUSCAR USUARIOS |======\n");
     printf("1 - Filtrar por nome.\n");
     printf("2 - Filtrar tipo.\n");
     printf("3 - Todos os usuarios.\n");
@@ -160,7 +160,7 @@ void imprimeMenuBuscarUsuarios() {
     printf("Digite o numero da opcao desejada: ");
 }
 
-void imprimeMenuOpcoesPlaylist(){
+void imprimeMenuOpcoesPlaylistDono(){
     system("clear");
     printf("======| MENU OPCEOS PLAYLIST |======\n");
     printf("1 - Trocar nome.\n");
@@ -181,6 +181,34 @@ void imprimeMenuOpcoesPlaylistPublico(){
     printf("1 - Tocar playlist.\n");
     printf("2 - Seguir playlist.\n");
     printf("3 - Listar midias playlist.\n");
+    printf("4 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuOpcoesMidiaPublico(){
+    system("clear");
+    printf("======| MENU OPCEOS MIDIA |======\n");
+    printf("1 - Tocar midia.\n");
+    printf("2 - Adicionar a uma playlist.\n");
     printf("3 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuOpcoesAlbumPublico(){
+    system("clear");
+    printf("======| MENU OPCEOS ALBUM |======\n");
+    printf("1 - Tocar album.\n");
+    printf("2 - Listar midias album.\n");
+    printf("3 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}
+
+void imprimeMenuBuscarPlaylists() {
+    system("clear");
+    printf("======| MENU BUSCAR PLAYLIST |======\n");
+    printf("1 - Filtrar por nome.\n");
+    printf("2 - Filtrar por nome do dono.\n");
+    printf("3 - Todas as playlists.\n");
+    printf("4 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }

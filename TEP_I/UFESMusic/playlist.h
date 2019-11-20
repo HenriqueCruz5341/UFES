@@ -56,5 +56,10 @@ void excluirPlaylistArquivo(Playlist* playlist);
 
 int quantidadePlaylistsCadastradas();
 
+void listarPlaylistsFiltro(int tipoFiltro, char* string);
+/* tipoFiltro, serve para escolhe pelo que filtrar, 1 - nome, 2 - nome dono
+string, serve para receber uma string, caso queira pesquisar pelo nome da playlist ou dono
+*/ 
+
 #endif /* PLAYLIST_H */
 

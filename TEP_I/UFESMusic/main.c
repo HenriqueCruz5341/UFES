@@ -4,35 +4,39 @@
 #include "usuario.h"
 #include "midia.h"
 #include "impressoes.h"
+#include "sistema.h"
 #include <stdlib.h>
 #include <string.h>
 
 void fazerLogin();
-void menuAdmin();
-//void menuUsuario();
+void menuAdmin(Usuario* usuarioLogado);
+void menuUsuario(Usuario* usuarioLogado);
 
-void gerenciarMidia();
+void gerenciarMidia(Usuario* usuarioLogado);
 void lerMidia(Album* album);
 void opcoesMidiaAdmin(Midia* midia);
-void selecionarMidia();
-void menuListarTodasMidias();
-void menuBuscarMidias();
+void opcoesMidiaPublico(Midia* midia, Usuario* usuarioLogado);
+void selecionarMidia(Usuario* usuarioLogado);
+void menuListarTodasMidias(Usuario* usuarioLogado);
+void menuBuscarMidias(Usuario* usuarioLogado);
 int excluirMidia(Midia* midia);
 
-void gerenciarPlaylst();
+void gerenciarPlaylst(Usuario* usuarioLogado);
 Playlist* lerPlaylist();
-void selecionarPlaylist();
-void menuListarTodasPlaylists();
-void menuBuscarPlaylists();
-void opcoesPlaylist(Playlist* playlist);
+void selecionarPlaylist(Usuario* usuarioLogado);
+void menuListarTodasPlaylists(Usuario* usuarioLogado);
+void menuBuscarPlaylists(Usuario* usuarioLogado);
+void opcoesPlaylistDono(Playlist* playlist);
+void opcoesPlaylistPublico(Playlist* playlist, Usuario* usuarioLogado);
 int excluirPlaylist(Playlist* playlist);
 
-void gerenciarAlbuns();
+void gerenciarAlbuns(Usuario* usuarioLogado);
 Album* lerAlbum();
-void selecionarAlbum();
-void menuListarTodosAlbuns();
-void menuBuscarAlbuns();
+void selecionarAlbum(Usuario* usuarioLogado);
+void menuListarTodosAlbuns(Usuario* usuarioLogado);
+void menuBuscarAlbuns(Usuario* usuarioLogado);
 void opcoesAlbumAdmin(Album* album);
+void opcoesAlbumPublico(Album* album, Usuario* usuarioLogado);
 int excluirAlbum(Album* album);
 
 void gerenciarUsuarios();
@@ -41,6 +45,7 @@ void selecionarUsuario();
 void menuListarTodosUsuarios();
 void menuBuscarUsuarios();
 void opcoesUsuariosAdmin(Usuario* usuario);
+void opcoesUsuarioPublico(Usuario* usuarioLogado);
 int excluirUsuario(Usuario* usuario);
 
 
@@ -68,7 +73,7 @@ int main(int argc, char** argv) {
 }
 
 void fazerLogin() {
-    int op;
+    /*int op;
     printf("Digite 0 para menu normal ou 1 para menu admin: ");
     scanf("%d", &op);
 
@@ -77,9 +82,32 @@ void fazerLogin() {
         return;
     }
     //menuUsuario();
+    */
+    char nome[50], senha[15];
+    printf("Digite seu nome: ");
+    scanf("%s", nome);
+    printf("Digite sua senha: ");
+    scanf("%s", senha);
+    Usuario* usuarioLogado = autenticarUsuario(nome, senha);    
+
+    if (usuarioLogado == NULL)
+    {
+        printf("\nNome ou senha estao incorretos, tente novamente.");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    if (pegaTipoUsuario(usuarioLogado))
+    {
+        menuAdmin(usuarioLogado);
+    }else
+    {
+       menuUsuario(usuarioLogado);
+    }
 }
 
-void menuAdmin() {
+void menuAdmin(Usuario* usuarioLogado) {
     int opcao;
 
     do {
@@ -87,26 +115,26 @@ void menuAdmin() {
         scanf("%d", &opcao);
         switch (opcao) {
             case 1:
-                gerenciarMidia();
+                gerenciarMidia(usuarioLogado);
                 break;
 
             case 2:
-                gerenciarPlaylst();
+                gerenciarPlaylst(usuarioLogado);
                 break;
 
             case 3:
-                gerenciarAlbuns();
+                gerenciarAlbuns(usuarioLogado);
                 break;
 
             case 4:
-                gerenciarUsuarios();
+                gerenciarUsuarios(usuarioLogado);
                 break;
 
         }
     } while (opcao != 5);
 }
 
-void gerenciarMidia() {
+void gerenciarMidia(Usuario* usuarioLogado) {
     int opcao;
 
     do {
@@ -118,11 +146,11 @@ void gerenciarMidia() {
                 break;
 
             case 2:
-                menuListarTodasMidias();
+                menuListarTodasMidias(usuarioLogado);
                 break;
 
             case 3:
-                menuBuscarMidias();
+                menuBuscarMidias(usuarioLogado);
                 break;
         }
     } while (opcao != 4);
@@ -149,7 +177,7 @@ void lerMidia(Album* album) {
         compositores[i][0] = '\0';
     }
     printf("\nDigite quantos artistas a midia possui: ");
-    scanf("%d%*c", &qtdArtistas);
+    scanf("%d", &qtdArtistas);
     for (i = 0; i < qtdArtistas; i++) {
         printf("\nDigite o artista %d: ", i + 1);
         getchar();
@@ -176,14 +204,14 @@ void lerMidia(Album* album) {
         }
     }
     midia = inicializaMidia(nome, tipo, compositores, artistas, genero, gravadora, duracao, pegaIdAlbum(album));
-    adicionarMidiasAlbum(album, midia);
     salvarMidiaArquivo(midia);
+    adicionarMidiasAlbum(album, midia);
 }
 
-void menuListarTodasMidias() {
+void menuListarTodasMidias(Usuario* usuarioLogado) {
     printf("\nListando todas as midias...");
     if (listarTodasMidias()) {
-        selecionarMidia();
+        selecionarMidia(usuarioLogado);
     } else {
         printf("\nArquivo de midias vazio!");
         printf("\nPressione ENTER para voltar...");
@@ -191,17 +219,18 @@ void menuListarTodasMidias() {
     }
 }
 
-void selecionarMidia() {
+void selecionarMidia(Usuario* usuarioLogado) {
     int id;
     printf("\nDigite o id da midia ou 0 para voltar: ");
     scanf("%d", &id);
 
     if (id) {
-        opcoesMidiaAdmin(buscarMidia(id));
+        if(pegaTipoUsuario(usuarioLogado)) opcoesMidiaAdmin(buscarMidia(id));
+        else opcoesMidiaPublico(buscarMidia(id), usuarioLogado);
     }
 }
 
-void menuBuscarMidias() {
+void menuBuscarMidias(Usuario* usuarioLogado) {
     int opcaoMenu;
     char string[50];
     int tipo;
@@ -216,7 +245,7 @@ void menuBuscarMidias() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarMidiasFiltro(1, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 2:
@@ -224,7 +253,7 @@ void menuBuscarMidias() {
                 scanf("%d", &tipo);
                 getchar();
                 listarMidiasFiltro(2, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 3:
@@ -232,7 +261,7 @@ void menuBuscarMidias() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarMidiasFiltro(3, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 4:
@@ -240,7 +269,7 @@ void menuBuscarMidias() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarMidiasFiltro(4, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 5:
@@ -248,7 +277,7 @@ void menuBuscarMidias() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarMidiasFiltro(5, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 6:
@@ -256,7 +285,7 @@ void menuBuscarMidias() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarMidiasFiltro(6, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 7:
@@ -264,11 +293,11 @@ void menuBuscarMidias() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarMidiasFiltro(7, string, tipo);
-                selecionarMidia();
+                selecionarMidia(usuarioLogado);
                 break;
 
             case 8:
-                menuListarTodasMidias();
+                menuListarTodasMidias(usuarioLogado);
                 break;
         }
     } while (opcaoMenu != 9);
@@ -367,7 +396,7 @@ int excluirMidia(Midia* midia) { //retorna 1 se excluiu a midia, e 0 caso n tenh
     return 0;
 }
 
-void gerenciarPlaylst(){
+void gerenciarPlaylst(Usuario* usuarioLogado){
     int opcao;
 
     do {
@@ -379,11 +408,11 @@ void gerenciarPlaylst(){
                 break;
 
             case 2:
-                menuListarTodasPlaylists();
+                menuListarTodasPlaylists(usuarioLogado);
                 break;
 
             case 3:
-                menuBuscarPlaylists();
+                menuBuscarPlaylists(usuarioLogado);
                 break;
 
         }
@@ -406,7 +435,7 @@ Playlist* lerPlaylist(Usuario* usuario){
         listarTodosUsuarios();
         printf("\nDigite o ID do usuario que sera o dono: ");
         scanf("%d", &contribuintes[0]);
-    }
+    }else contribuintes[0] = pegaIdUsuario(usuario);
     if (privacidade == 2)
     {
         listarTodosUsuarios();
@@ -415,14 +444,15 @@ Playlist* lerPlaylist(Usuario* usuario){
     }else   contribuintes[1] = 0;
     
     playlist = inicializaPlaylist(nome, privacidade, contribuintes);
-    imprimePlaylist(playlist);
     salvarPlaylistArquivo(playlist);
+    adicionarPlaylistUsuario(buscarUsuario(contribuintes[0]), playlist);
+    if (contribuintes[1] != 0) adicionarPlaylistUsuario(buscarUsuario(contribuintes[1]), playlist);
 
     return playlist;
     
 }
 
-void selecionarPlaylist(){
+void selecionarPlaylist(Usuario* usuarioLogado){
     Playlist* playlist = alocarPlaylist(1);
     int id;
     printf("\nDigite o id da playlist ou 0 para voltar: ");
@@ -430,14 +460,15 @@ void selecionarPlaylist(){
 
     if (id) {
         playlist = buscarPlaylist(id);
-        opcoesPlaylist(buscarPlaylist(id));
+        if(pegaTipoUsuario(usuarioLogado)) opcoesPlaylistDono(buscarPlaylist(id));
+        else opcoesPlaylistPublico(buscarPlaylist(id), usuarioLogado);
     }
 }
 
-void menuListarTodasPlaylists(){
+void menuListarTodasPlaylists(Usuario* usuarioLogado){
     printf("\nListando todas as playlists...");
     if (listarTodasPlaylists()) {
-        selecionarPlaylist();
+        selecionarPlaylist(usuarioLogado);
     } else {
         printf("\nArquivo de playlists vazio!");
         printf("\nPressione ENTER para voltar...");
@@ -445,16 +476,45 @@ void menuListarTodasPlaylists(){
     }
 }
 
-void menuBuscarPlaylists(){
+void menuBuscarPlaylists(Usuario* usuarioLogado){
+    int opcaoMenu;
+    char string[50];
+    int tipo;
 
+    do {
+        imprimeMenuBuscarPlaylists();
+        scanf("%d", &opcaoMenu);
+        getchar();
+        switch (opcaoMenu) {
+            case 1:
+                printf("Digite o nome ou parte do nome da playlist que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarPlaylistsFiltro(1, string);
+                selecionarPlaylist(usuarioLogado);
+                break;
+
+            case 2:
+                printf("Digite o nome ou parte do nome do dono que deseja procurar: ");
+                scanf("%[^\n]s", string);
+                getchar();
+                listarPlaylistsFiltro(2, string);
+                selecionarPlaylist(usuarioLogado);
+                break;
+
+            case 3:
+                menuListarTodasPlaylists(usuarioLogado);
+                break;
+        }
+    } while (opcaoMenu != 4);
 }
 
-void opcoesPlaylist(Playlist* playlist){
+void opcoesPlaylistDono(Playlist* playlist){
     char nome[50];
     int opcaoMenu, excluiu, numero, contribuinte, id, pos;
 
     do {
-        imprimeMenuOpcoesPlaylist();
+        imprimeMenuOpcoesPlaylistDono();
         scanf("%d", &opcaoMenu);
         switch (opcaoMenu) {
             case 1:
@@ -543,7 +603,7 @@ int excluirPlaylist(Playlist* playlist){
     return 0;
 }
 
-void gerenciarAlbuns() {
+void gerenciarAlbuns(Usuario* usuarioLogado) {
     int opcao;
 
     do {
@@ -555,11 +615,11 @@ void gerenciarAlbuns() {
                 break;
 
             case 2:
-                menuListarTodosAlbuns();
+                menuListarTodosAlbuns(usuarioLogado);
                 break;
 
             case 3:
-                menuBuscarAlbuns();
+                menuBuscarAlbuns(usuarioLogado);
                 break;
 
         }
@@ -593,10 +653,10 @@ Album* lerAlbum() {
     return album;
 }
 
-void menuListarTodosAlbuns() {
+void menuListarTodosAlbuns(Usuario* usuarioLogado) {
     printf("\nListando todos os albuns...");
     if (listarTodosAlbuns()) {
-        selecionarAlbum();
+        selecionarAlbum(usuarioLogado);
     } else {
         printf("\nArquivo de albuns vazio!");
         printf("\nPressione ENTER para voltar...");
@@ -605,7 +665,7 @@ void menuListarTodosAlbuns() {
     }
 }
 
-void selecionarAlbum() {
+void selecionarAlbum(Usuario* usuarioLogado) {
     Album* album = alocarAlbum(1);
     int id;
     printf("\nDigite o id do album ou 0 para voltar: ");
@@ -613,11 +673,12 @@ void selecionarAlbum() {
 
     if (id) {
         album = buscarAlbum(id);
-        opcoesAlbumAdmin(buscarAlbum(id));
+        if(pegaTipoUsuario(usuarioLogado)) opcoesAlbumAdmin(buscarAlbum(id));
+        else opcoesAlbumPublico(buscarAlbum(id), usuarioLogado);
     }
 }
 
-void menuBuscarAlbuns() {
+void menuBuscarAlbuns(Usuario* usuarioLogado) {
     int opcaoMenu;
     char string[50];
     int tipo;
@@ -632,7 +693,7 @@ void menuBuscarAlbuns() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarAlbunsFiltro(1, string, tipo);
-                selecionarAlbum();
+                selecionarAlbum(usuarioLogado);
                 break;
 
             case 2:
@@ -640,7 +701,7 @@ void menuBuscarAlbuns() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarAlbunsFiltro(2, string, tipo);
-                selecionarAlbum();
+                selecionarAlbum(usuarioLogado);
                 break;
 
             case 3:
@@ -648,11 +709,11 @@ void menuBuscarAlbuns() {
                 scanf("%[^\n]s", string);
                 getchar();
                 listarAlbunsFiltro(3, string, tipo);
-                selecionarAlbum();
+                selecionarAlbum(usuarioLogado);
                 break;
 
             case 4:
-                menuListarTodosAlbuns();
+                menuListarTodosAlbuns(usuarioLogado);
                 break;
         }
     } while (opcaoMenu != 5);
@@ -700,7 +761,11 @@ void opcoesAlbumAdmin(Album* album) {
                 break;
 
             case 5:
+                printf("Listando todas as midias do album...");
                 imprimirMidiasAlbum(album);
+                printf("\nPressione ENTER para voltar.");
+                getchar();
+                scanf("%*c");
                 break;
 
             case 6:
@@ -860,7 +925,11 @@ void opcoesUsuariosAdmin(Usuario* usuario){
                 break;
 
             case 4:
-                //listarPlaylistsUsuario(usuario);
+                printf("Listando todas as playlists do usuario...");
+                listarPlaylistsUsuario(usuario);
+                printf("\nPressione ENTER para voltar.");
+                getchar();
+                scanf("%*c");
                 break;
 
             case 5:
@@ -883,4 +952,81 @@ int excluirUsuario(Usuario* usuario){
         return 1;
     }
     return 0;
+}
+
+void menuUsuario(Usuario* usuarioLogado){
+    int opcao;
+
+    do {
+        imprimeMenuOpcoesNormal();
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                menuBuscarMidias(usuarioLogado);
+                break;
+
+            case 2:
+                menuBuscarPlaylists(usuarioLogado);
+                break;
+
+            case 3:
+                menuBuscarAlbuns(usuarioLogado);
+                break;
+
+            case 4:
+                //menuGerenciarMinhasPlaylists();
+                break;
+
+            case 5:
+                //menuEditarPerfil();
+                break;
+        }
+    } while (opcao != 6);
+}
+
+void opcoesMidiaPublico(Midia* midia, Usuario* usuarioLogado){
+    int opcao, id;
+
+    do {
+        imprimeMenuOpcoesMidiaPublico();
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                printf("\nTocando agora: %s", pegaNomeMidia(midia));
+                printf("\nPressione ENTER para voltar...");
+                getchar();
+                scanf("%*c");
+                break;
+
+            case 2:
+                printf("Listando suas playlists...");
+                listarPlaylistsUsuario(usuarioLogado);
+                printf("\nDigite o ID da playlist a qual voce deseja adicionar a midia, ou 0 para voltar: ");
+                scanf("%d", &id);
+                if(id){
+                    Playlist* playlist = buscarPlaylist(id);
+                    adicionarMidiaPlaylist(playlist, midia);
+                    atualizarArquivoPlaylists(playlist);
+                }
+                break;
+        }
+    } while (opcao != 3);
+}
+
+void opcoesPlaylistPublico(Playlist* playlist, Usuario* usuarioLogado){
+    printf("opcoesPlaylistPublico");
+    getchar();
+    getchar();
+}
+
+void opcoesAlbumPublico(Album* album, Usuario* usuarioLogado){
+    printf("opcoesAlbumPublico");
+    getchar();
+    getchar();
+}
+
+void opcoesUsuarioPublico(Usuario* usuarioLogado){
+    printf("opcoesUsuarioPublico");
+    getchar();
+    getchar();
 }

@@ -1,5 +1,6 @@
 #ifndef USUARIO_H
 #define USUARIO_H
+#include "playlist.h"
 
 typedef struct usuario Usuario;
 
@@ -52,6 +53,14 @@ void listarUsuariosFiltro(int tipoFiltro, char* string, int numero);
 string, serve para receber uma string, caso queira pesquisar pelo nome do usuario
 numero, serve para receber um numero, caso queira pesquisar pelo tipo do usuario
 */ 
+
+Usuario* autenticarUsuario(char* nome, char* senha);
+
+void listarPlaylistsUsuario(Usuario* usuario);
+
+void adicionarPlaylistUsuario(Usuario* usuario, Playlist* playlist);
+
+void removerPlaylistTodosUsuario(int idPlaylist);
 
 #endif /* USUARIO_H */
 

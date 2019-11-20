@@ -3,7 +3,7 @@
 #include <string.h>
 #include "midia.h"
 #include "album.h"
-#include "sistema.h"
+//#include "sistema.h"
 
 struct midia {
     int idMidia;
@@ -218,7 +218,7 @@ Midia* buscarMidia(int idMidia) {
 }
 
 int quantidadeMidiasCadastradas() {
-    Midia* midia = (Midia*) malloc(sizeof (Midia) * 50);
+    Midia* midia = alocarMidia(1);
     int i = 0;
 
     if (midia == NULL) {
@@ -232,7 +232,7 @@ int quantidadeMidiasCadastradas() {
 
     if ((arqMidia = fopen("midias.dat", "rb")) == NULL) return 0;
 
-    while (fread(midia + i, sizeof (Midia), 1, arqMidia) == 1) i++;
+    while (fread(midia, sizeof (Midia), 1, arqMidia) == 1) i++;
 
     fclose(arqMidia);
     destroiMidia(midia);
@@ -243,9 +243,10 @@ int quantidadeMidiasCadastradas() {
 
 void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para saber se a exclusao da midia esta sendo por ela mesmo, ou por excluir um album
     FILE *arqMidia;
-    Midia* listaMidias = alocarMidia(50);
     Midia* midiaAux = alocarMidia(1);
     int qtd = quantidadeMidiasCadastradas(), removeu = 0;
+    Midia* listaMidias = alocarMidia(qtd);
+
 
     if ((arqMidia = fopen("midias.dat", "rb")) == NULL) {
         printf("\nErro ao abrir arquivo de midia!");

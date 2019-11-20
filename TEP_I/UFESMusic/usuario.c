@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "usuario.h"
 #include <string.h>
-#include "sistema.h"
+#include "playlist.h"
+//#include "sistema.h"
 
 struct usuario
 {
@@ -334,4 +335,87 @@ void listarUsuariosFiltro(int tipoFiltro, char* string, int numero){
 
     fclose(arqUsuarios);
     destroiUsuario(usuario);
+}
+
+Usuario* autenticarUsuario(char* nome, char* senha){
+    Usuario* usuarioAux = alocarUsuario(1);
+    FILE* arqUsuarios;
+    Usuario* usuario = NULL;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL)
+    {
+        printf("\nErro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return NULL;
+    }
+
+    while (fread(usuarioAux, sizeof(Usuario), 1, arqUsuarios)){
+        if (!strcmp(pegaNomeUsuario(usuarioAux), nome) && !strcmp(pegaSenhaUsuario(usuarioAux), senha))
+        {
+            usuario = usuarioAux;
+            break;
+        }
+    }
+
+    destroiUsuario(usuarioAux);
+    fclose(arqUsuarios);
+    return usuario;
+}
+
+void listarPlaylistsUsuario(Usuario* usuario){
+    int qtdPlaylists = pegaQtdPlaylistsUsuario(usuario);
+
+    for (int i = 0; i < qtdPlaylists; i++)
+    {
+        imprimePlaylist(buscarPlaylist(usuario->playlists[i]));
+        printf("\n-----------");
+    }
+}
+
+void adicionarPlaylistUsuario(Usuario* usuario, Playlist* playlist){
+    int pos = pegaQtdPlaylistsUsuario(usuario);
+
+    usuario->playlists[pos] = pegaIdPlaylist(playlist);
+    modificaQtdPlaylistsUsuario(usuario, pos + 1);
+    atualizarArquivoUsuarios(usuario);
+}
+
+void removerPlaylistTodosUsuario(int idPlaylist){
+    int pos = 0, excluiu = 0;
+    Usuario* usuario = alocarUsuario(1);
+    FILE* arqUsuarios;
+
+    if ((arqUsuarios = fopen("usuarios.dat", "rb")) == NULL)
+    {
+        printf("Erro ao abrir arquivo de usuarios!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+    
+    while (fread(usuario, sizeof(Usuario), 1, arqUsuarios) == 1)
+    {
+        int* vetPlaylists = pegaPlaylistsUsuario(usuario);
+        int qtdPlaylistsUsuario = pegaQtdPlaylistsUsuario(usuario);
+        excluiu  = 0;
+        for (pos = 0; pos < qtdPlaylistsUsuario; pos++) {
+            if (excluiu) {
+                vetPlaylists[pos - 1] = vetPlaylists[pos];
+                vetPlaylists[pos] = 0;
+            }
+            if (vetPlaylists[pos] == idPlaylist) {
+                vetPlaylists[pos] = 0;
+                excluiu = 1;
+            }
+        }
+        if (excluiu)
+        {
+            modificaQtdPlaylistsUsuario(usuario, qtdPlaylistsUsuario-1);
+            atualizarArquivoUsuarios(usuario);
+        }
+    }
+
+    destroiUsuario(usuario);
+    fclose(arqUsuarios);
 }
