@@ -161,36 +161,36 @@ void lerMidia(Album* album) {
     getchar();
     printf("\nDigite o nome da midia: ");
     scanf("%[^\n]s", nome);
-    printf("\nDigite o tipo de midia (0 musica, 1 video): ");
+    printf("Digite o tipo de midia (0 musica, 1 video): ");
     scanf("%d", &tipo);
-    printf("\nDigite quantos compositores a midia possui: ");
+    printf("Digite quantos compositores a midia possui: ");
     scanf("%d", &qtdCompositores);
     for (i = 0; i < qtdCompositores; i++) {
-        printf("\nDigite o compositor %d: ", i + 1);
+        printf("Digite o compositor %d: ", i + 1);
         getchar();
         scanf("%[^\n]s", compositores[i]);
     }
     for (i; i < 3; i++) {
         compositores[i][0] = '\0';
     }
-    printf("\nDigite quantos artistas a midia possui: ");
+    printf("Digite quantos artistas a midia possui: ");
     scanf("%d", &qtdArtistas);
     for (i = 0; i < qtdArtistas; i++) {
-        printf("\nDigite o artista %d: ", i + 1);
+        printf("Digite o artista %d: ", i + 1);
         getchar();
         scanf("%[^\n]s", artistas[i]);
     }
     for (i; i < 3; i++) {
         artistas[i][0] = '\0';
     }
-    printf("\nDigite o genero da midia: ");
+    printf("Digite o genero da midia: ");
     scanf("%s%*c", genero);
-    printf("\nDigite a gravadora da midia: ");
+    printf("Digite a gravadora da midia: ");
     scanf("%[^\n]s", gravadora);
-    printf("\nDigite a duracao da midia (MM:SS): ");
+    printf("Digite a duracao da midia (MM:SS): ");
     scanf("%s", duracao);
     if (album == NULL) {
-        printf("\nEscolha o album a qual a midia pertence: ");
+        printf("Escolha o album a qual a midia pertence: ");
         listarTodosAlbuns();
         printf("\nDigite o id do album desejado, ou 0 para adicionar um novo album: ");
         scanf("%d", &idAlbum);
@@ -572,12 +572,14 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario** usuarioLogado) {
                 break;
 
             case 5:
-                printf("Listando todas as midias.");
-                listarMidiasPlaylist(playlist);
-                printf("\nDigite o id da midia para remover da playlist ou 0 para voltar: ");
-                scanf("%d", &id);
-                if (id) removerMidiaPlaylist(playlist, buscarMidia(id));
-                atualizarArquivoPlaylists(playlist);
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0] || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[1]) {
+                    printf("Listando todas as midias.");
+                    listarMidiasPlaylist(playlist);
+                    printf("\nDigite o id da midia para remover da playlist ou 0 para voltar: ");
+                    scanf("%d", &id);
+                    if (id) removerMidiaPlaylist(playlist, buscarMidia(id));
+                    atualizarArquivoPlaylists(playlist);
+                }
                 break;
 
             case 6:
@@ -603,7 +605,10 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario** usuarioLogado) {
             case 8:
                 if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
                     excluiu = excluirPlaylist(playlist);
-                    if (excluiu) return;
+                    if (excluiu) {
+                        *usuarioLogado = buscarUsuario(pegaIdUsuario(*usuarioLogado));
+                        return;
+                    }
                 }
                 break;
         }
@@ -653,17 +658,17 @@ Album* lerAlbum() {
     getchar();
     printf("\nDigite o nome do album: ");
     scanf("%[^\n]s", nome);
-    printf("\nDigite a quantidade de participantes do album: ");
+    printf("Digite a quantidade de participantes do album: ");
     scanf("%d", &qtdParticipantes);
     for (i = 0; i < qtdParticipantes; i++) {
-        printf("\nDigite o participante %d: ", i);
+        printf("Digite o participante %d: ", i + 1);
         getchar();
         scanf("%[^\n]s", particiapantes[i]);
     }
     for (i; i < 3; i++) {
         particiapantes[i][0] = '\0';
     }
-    printf("\nDigite a data de lancamento do album (DD/MM/AAAA): ");
+    printf("Digite a data de lancamento do album (DD/MM/AAAA): ");
     scanf("%s", dataLancamento);
 
     album = inicializaAlbum(nome, particiapantes, dataLancamento);

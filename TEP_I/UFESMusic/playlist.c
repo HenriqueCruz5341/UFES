@@ -95,8 +95,8 @@ void imprimePlaylist(Playlist* playlist){
     if (pegaContribuintesPlaylist(playlist)[1] != 0) 
     printf("\nContribuinte: %s", pegaNomeUsuario(buscarUsuario(pegaContribuintesPlaylist(playlist)[1])));
     printf("\nQtd midias: %d", pegaQtdMidiasPlaylist(playlist));
-    if (!privacidade)           printf("\nPrivacidade: Publica");
-    else                        printf("\nPrivacidade: Individual");
+    if (!privacidade)           printf("\nPrivacidade: Individual");
+    else                        printf("\nPrivacidade: Compartilhada");
 }
 
 void destroiPlaylist(Playlist* playlist){
@@ -386,4 +386,40 @@ void listarPlaylistsFiltro(int tipoFiltro, char* string){
 
     fclose(arqPlaylists);
     destroiPlaylist(playlist);
+}
+
+void removerMidiaTodasPLaylists(int idMidia){
+    int pos = 0, excluiu = 0;
+    Playlist* playlist = alocarPlaylist(1);
+    FILE* arqPlaylists;
+
+    if ((arqPlaylists = fopen("playlists.dat", "rb")) == NULL) {
+        printf("Erro ao abrir arquivo de playlists!");
+        getchar();
+        scanf("%*c");
+        return;
+    }
+
+    while (fread(playlist, sizeof (Playlist), 1, arqPlaylists) == 1) {
+        int* vetMidias = pegaMidiaPlaylist(playlist);
+        int qtdMidiasPlaylist = pegaQtdMidiasPlaylist(playlist);
+        excluiu = 0;
+        for (pos = 0; pos < qtdMidiasPlaylist; pos++) {
+            if (excluiu) {
+                vetMidias[pos - 1] = vetMidias[pos];
+                vetMidias[pos] = 0;
+            }
+            if (vetMidias[pos] == idMidia) {
+                vetMidias[pos] = 0;
+                excluiu = 1;
+            }
+        }
+        if (excluiu) {
+            modificaQtdMidiasPlaylist(playlist, qtdMidiasPlaylist - 1);
+            atualizarArquivoPlaylists(playlist);
+        }
+    }
+
+    destroiPlaylist(playlist);
+    fclose(arqPlaylists);
 }

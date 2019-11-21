@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "midia.h"
+#include "playlist.h"
 #include "album.h"
 //#include "sistema.h"
 
@@ -244,7 +245,7 @@ int quantidadeMidiasCadastradas() {
 void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para saber se a exclusao da midia esta sendo por ela mesmo, ou por excluir um album
     FILE *arqMidia;
     Midia* midiaAux = alocarMidia(1);
-    int qtd = quantidadeMidiasCadastradas(), removeu = 0;
+    int qtd = quantidadeMidiasCadastradas(), removeu = 0, midiaExcluida = pegaIdMidia(midia);
     Midia* listaMidias = alocarMidia(qtd);
 
 
@@ -280,6 +281,7 @@ void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para
     fclose(arqMidia);
 
     destroiMidia(listaMidias);
+    removerMidiaTodasPLaylists(midiaExcluida);
 }
 
 void salvarMidiaArquivo(Midia* midia) {

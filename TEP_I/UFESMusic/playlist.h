@@ -61,5 +61,7 @@ void listarPlaylistsFiltro(int tipoFiltro, char* string);
 string, serve para receber uma string, caso queira pesquisar pelo nome da playlist ou dono
 */ 
 
+void removerMidiaTodasPLaylists(int idMidia);
+
 #endif /* PLAYLIST_H */
 
