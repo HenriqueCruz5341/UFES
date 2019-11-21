@@ -9,7 +9,7 @@ struct playlist
 {
     char nome[50];
     int idPlaylist;
-    int privacidade; // Publica = 0, Privada = 1, Compartilhada = 2
+    int privacidade; // Individual = 0, Compartilhada = 1
     int qtdMidias;
     int contribuintes[2]; // a primeira posicao sera o dono, a segunda sera com quem ela esta sendo compartilhada
     int midias[50];
@@ -91,11 +91,12 @@ void imprimePlaylist(Playlist* playlist){
     int privacidade = pegaPrivacidadePlaylist(playlist);
     printf("\nID: %d", pegaIdPlaylist(playlist));
     printf("\nNome: %s", pegaNomePlaylist(playlist));
-    printf("\nDono: %s", pegaNomeUsuario(buscarUsuario(playlist->contribuintes[0])));
+    printf("\nDono: %s", pegaNomeUsuario(buscarUsuario(pegaContribuintesPlaylist(playlist)[0])));
+    if (pegaContribuintesPlaylist(playlist)[1] != 0) 
+    printf("\nContribuinte: %s", pegaNomeUsuario(buscarUsuario(pegaContribuintesPlaylist(playlist)[1])));
     printf("\nQtd midias: %d", pegaQtdMidiasPlaylist(playlist));
     if (!privacidade)           printf("\nPrivacidade: Publica");
-    else if(privacidade == 1)   printf("\nPrivacidade: Privada");
-    else                        printf("\nPrivacidade: Compartilhada");
+    else                        printf("\nPrivacidade: Individual");
 }
 
 void destroiPlaylist(Playlist* playlist){

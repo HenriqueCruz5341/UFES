@@ -212,3 +212,12 @@ void imprimeMenuBuscarPlaylists() {
     printf("4 - Voltar.\n");
     printf("Digite o numero da opcao desejada: ");
 }
+
+void imprimeMenuGerenciarPlaylistsUsuario(){
+    system("clear");
+    printf("======| MENU GERENCIAR MINHAS PLAYLISTS |======\n");
+    printf("1 - Criar nova playlist.\n");
+    printf("2 - Listar todas as minhas playlists.\n");
+    printf("3 - Voltar.\n");
+    printf("Digite o numero da opcao desejada: ");
+}

@@ -42,4 +42,6 @@ void imprimeMenuOpcoesAlbumPublico();
 
 void imprimeMenuBuscarPlaylists();
 
+void imprimeMenuGerenciarPlaylistsUsuario();
+
 #endif
