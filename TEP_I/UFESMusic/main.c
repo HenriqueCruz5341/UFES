@@ -9,35 +9,35 @@
 #include <string.h>
 
 void fazerLogin();
-void menuAdmin(Usuario* usuarioLogado);
-void menuUsuario(Usuario* usuarioLogado);
+void menuAdmin(Usuario** usuarioLogado);
+void menuUsuario(Usuario** usuarioLogado);
 
-void gerenciarMidia(Usuario* usuarioLogado);
+void gerenciarMidia(Usuario** usuarioLogado);
 void lerMidia(Album* album);
 void opcoesMidiaAdmin(Midia* midia);
-void opcoesMidiaPublico(Midia* midia, Usuario* usuarioLogado);
-void selecionarMidia(Usuario* usuarioLogado);
-void menuListarTodasMidias(Usuario* usuarioLogado);
-void menuBuscarMidias(Usuario* usuarioLogado);
+void opcoesMidiaPublico(Midia* midia, Usuario** usuarioLogado);
+void selecionarMidia(Usuario** usuarioLogado);
+void menuListarTodasMidias(Usuario** usuarioLogado);
+void menuBuscarMidias(Usuario** usuarioLogado);
 int excluirMidia(Midia* midia);
 
-void gerenciarPlaylst(Usuario* usuarioLogado);
-void menuGerenciarMinhasPlaylists(Usuario* usuarioLogado);
+void gerenciarPlaylst(Usuario** usuarioLogado);
+void menuGerenciarMinhasPlaylists(Usuario** usuarioLogado);
 Playlist* lerPlaylist();
-void selecionarPlaylist(Usuario* usuarioLogado);
-void menuListarTodasPlaylists(Usuario* usuarioLogado);
-void menuBuscarPlaylists(Usuario* usuarioLogado);
-void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado);
-void opcoesPlaylistPublico(Playlist* playlist, Usuario* usuarioLogado);
+void selecionarPlaylist(Usuario** usuarioLogado);
+void menuListarTodasPlaylists(Usuario** usuarioLogado);
+void menuBuscarPlaylists(Usuario** usuarioLogado);
+void opcoesPlaylistDono(Playlist* playlist, Usuario** usuarioLogado);
+void opcoesPlaylistPublico(Playlist* playlist, Usuario** usuarioLogado);
 int excluirPlaylist(Playlist* playlist);
 
-void gerenciarAlbuns(Usuario* usuarioLogado);
+void gerenciarAlbuns(Usuario** usuarioLogado);
 Album* lerAlbum();
-void selecionarAlbum(Usuario* usuarioLogado);
-void menuListarTodosAlbuns(Usuario* usuarioLogado);
-void menuBuscarAlbuns(Usuario* usuarioLogado);
+void selecionarAlbum(Usuario** usuarioLogado);
+void menuListarTodosAlbuns(Usuario** usuarioLogado);
+void menuBuscarAlbuns(Usuario** usuarioLogado);
 void opcoesAlbumAdmin(Album* album);
-void opcoesAlbumPublico(Album* album, Usuario* usuarioLogado);
+void opcoesAlbumPublico(Album* album, Usuario** usuarioLogado);
 int excluirAlbum(Album* album);
 
 void gerenciarUsuarios();
@@ -46,7 +46,7 @@ void selecionarUsuario();
 void menuListarTodosUsuarios();
 void menuBuscarUsuarios();
 void opcoesUsuariosAdmin(Usuario* usuario);
-void opcoesUsuarioPublico(Usuario* usuarioLogado);
+void opcoesUsuarioPublico(Usuario** usuarioLogado);
 int excluirUsuario(Usuario* usuario);
 
 int main(int argc, char** argv) {
@@ -65,7 +65,6 @@ int main(int argc, char** argv) {
                 lerUsuario(0);
                 break;
         }
-
     } while (opcao != 3);
 
 
@@ -99,13 +98,13 @@ void fazerLogin() {
     }
 
     if (pegaTipoUsuario(usuarioLogado)) {
-        menuAdmin(usuarioLogado);
+        menuAdmin(&usuarioLogado);
     } else {
-        menuUsuario(usuarioLogado);
+        menuUsuario(&usuarioLogado);
     }
 }
 
-void menuAdmin(Usuario* usuarioLogado) {
+void menuAdmin(Usuario** usuarioLogado) {
     int opcao;
 
     do {
@@ -132,7 +131,7 @@ void menuAdmin(Usuario* usuarioLogado) {
     } while (opcao != 5);
 }
 
-void gerenciarMidia(Usuario* usuarioLogado) {
+void gerenciarMidia(Usuario** usuarioLogado) {
     int opcao;
 
     do {
@@ -206,7 +205,7 @@ void lerMidia(Album* album) {
     adicionarMidiasAlbum(album, midia);
 }
 
-void menuListarTodasMidias(Usuario* usuarioLogado) {
+void menuListarTodasMidias(Usuario** usuarioLogado) {
     printf("\nListando todas as midias...");
     if (listarTodasMidias()) {
         selecionarMidia(usuarioLogado);
@@ -217,18 +216,18 @@ void menuListarTodasMidias(Usuario* usuarioLogado) {
     }
 }
 
-void selecionarMidia(Usuario* usuarioLogado) {
+void selecionarMidia(Usuario** usuarioLogado) {
     int id;
     printf("\nDigite o id da midia ou 0 para voltar: ");
     scanf("%d", &id);
 
     if (id) {
-        if (pegaTipoUsuario(usuarioLogado)) opcoesMidiaAdmin(buscarMidia(id));
+        if (pegaTipoUsuario(*usuarioLogado)) opcoesMidiaAdmin(buscarMidia(id));
         else opcoesMidiaPublico(buscarMidia(id), usuarioLogado);
     }
 }
 
-void menuBuscarMidias(Usuario* usuarioLogado) {
+void menuBuscarMidias(Usuario** usuarioLogado) {
     int opcaoMenu;
     char string[50];
     int tipo;
@@ -394,7 +393,7 @@ int excluirMidia(Midia* midia) { //retorna 1 se excluiu a midia, e 0 caso n tenh
     return 0;
 }
 
-void gerenciarPlaylst(Usuario* usuarioLogado) {
+void gerenciarPlaylst(Usuario** usuarioLogado) {
     int opcao;
 
     do {
@@ -417,7 +416,7 @@ void gerenciarPlaylst(Usuario* usuarioLogado) {
     } while (opcao != 4);
 }
 
-Playlist* lerPlaylist(Usuario* usuario) {
+Playlist* lerPlaylist(Usuario** usuario) {
     char nome[50];
     int privacidade, contribuintes[2], teraContribuinte;
     Playlist* playlist = alocarPlaylist(1);
@@ -432,7 +431,7 @@ Playlist* lerPlaylist(Usuario* usuario) {
         listarTodosUsuarios();
         printf("\nDigite o ID do usuario que sera o dono: ");
         scanf("%d", &contribuintes[0]);
-    } else contribuintes[0] = pegaIdUsuario(usuario);
+    } else contribuintes[0] = pegaIdUsuario(*usuario);
     if (privacidade) {
         listarTodosUsuarios();
         printf("\nDigite o ID do usuario que sera um contribuinte da playlist: ");
@@ -442,13 +441,14 @@ Playlist* lerPlaylist(Usuario* usuario) {
     playlist = inicializaPlaylist(nome, privacidade, contribuintes);
     salvarPlaylistArquivo(playlist);
     adicionarPlaylistUsuario(buscarUsuario(contribuintes[0]), playlist);
+    *usuario = buscarUsuario(contribuintes[0]);
     if (contribuintes[1] != 0) adicionarPlaylistUsuario(buscarUsuario(contribuintes[1]), playlist);
 
     return playlist;
 
 }
 
-void selecionarPlaylist(Usuario* usuarioLogado) {
+void selecionarPlaylist(Usuario** usuarioLogado) {
     Playlist* playlist = alocarPlaylist(1);
     int id;
     printf("\nDigite o id da playlist ou 0 para voltar: ");
@@ -456,12 +456,12 @@ void selecionarPlaylist(Usuario* usuarioLogado) {
 
     if (id) {
         playlist = buscarPlaylist(id);
-        if (pegaTipoUsuario(usuarioLogado)) opcoesPlaylistDono(buscarPlaylist(id), usuarioLogado);
+        if (pegaTipoUsuario(*usuarioLogado)) opcoesPlaylistDono(buscarPlaylist(id), usuarioLogado);
         else opcoesPlaylistPublico(buscarPlaylist(id), usuarioLogado);
     }
 }
 
-void menuListarTodasPlaylists(Usuario* usuarioLogado) {
+void menuListarTodasPlaylists(Usuario** usuarioLogado) {
     printf("\nListando todas as playlists...");
     if (listarTodasPlaylists()) {
         selecionarPlaylist(usuarioLogado);
@@ -472,7 +472,7 @@ void menuListarTodasPlaylists(Usuario* usuarioLogado) {
     }
 }
 
-void menuBuscarPlaylists(Usuario* usuarioLogado) {
+void menuBuscarPlaylists(Usuario** usuarioLogado) {
     int opcaoMenu;
     char string[50];
     int tipo;
@@ -505,7 +505,7 @@ void menuBuscarPlaylists(Usuario* usuarioLogado) {
     } while (opcaoMenu != 4);
 }
 
-void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
+void opcoesPlaylistDono(Playlist* playlist, Usuario** usuarioLogado) {
     char nome[50];
     int opcaoMenu, excluiu, numero, contribuinte, id, pos;
 
@@ -514,7 +514,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
         scanf("%d", &opcaoMenu);
         switch (opcaoMenu) {
             case 1:
-                if (pegaTipoUsuario(usuarioLogado) || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
                     printf("O nome atual da playlist eh: %s", pegaNomePlaylist(playlist));
                     printf("\nDigite o novo nome para a playlist: ");
                     getchar();
@@ -525,7 +525,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
                 break;
 
             case 2:
-                if (pegaTipoUsuario(usuarioLogado) || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
                     printf("0 - Individual | 1 - Compartilhada");
                     printf("\nA privacidade atual dessa playlist eh: %d", pegaPrivacidadePlaylist(playlist));
                     printf("\nDigite o numero para a nova privacidade da playlist: ");
@@ -536,7 +536,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
                 break;
 
             case 3:
-                if (pegaTipoUsuario(usuarioLogado) || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
                     if (pegaPrivacidadePlaylist(playlist)) {
                         contribuinte = pegaContribuintesPlaylist(playlist)[1];
                         listarTodosUsuarios();
@@ -561,7 +561,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
                 break;
 
             case 4:
-                if (pegaTipoUsuario(usuarioLogado) || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[0] || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[1]) {
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0] || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[1]) {
                     printf("Listando todas as midias.");
                     listarTodasMidias();
                     printf("\nDigite o id da midia para adicionar a playlist ou 0 para voltar: ");
@@ -588,7 +588,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
                 break;
 
             case 7:
-                if (pegaTipoUsuario(usuarioLogado) || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[0] || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[1]) {
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0] || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[1]) {
                     printf("Listando todas as midias da playlist.");
                     listarMidiasPlaylist(playlist);
                     printf("\nDigite o id da midia que deseja alterar a posicao: ");
@@ -601,7 +601,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario* usuarioLogado) {
                 break;
 
             case 8:
-                if (pegaTipoUsuario(usuarioLogado) || pegaIdUsuario(usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
+                if (pegaTipoUsuario(*usuarioLogado) || pegaIdUsuario(*usuarioLogado) == pegaContribuintesPlaylist(playlist)[0]) {
                     excluiu = excluirPlaylist(playlist);
                     if (excluiu) return;
                 }
@@ -623,7 +623,7 @@ int excluirPlaylist(Playlist* playlist) {
     return 0;
 }
 
-void gerenciarAlbuns(Usuario* usuarioLogado) {
+void gerenciarAlbuns(Usuario** usuarioLogado) {
     int opcao;
 
     do {
@@ -673,7 +673,7 @@ Album* lerAlbum() {
     return album;
 }
 
-void menuListarTodosAlbuns(Usuario* usuarioLogado) {
+void menuListarTodosAlbuns(Usuario** usuarioLogado) {
     printf("\nListando todos os albuns...");
     if (listarTodosAlbuns()) {
         selecionarAlbum(usuarioLogado);
@@ -685,7 +685,7 @@ void menuListarTodosAlbuns(Usuario* usuarioLogado) {
     }
 }
 
-void selecionarAlbum(Usuario* usuarioLogado) {
+void selecionarAlbum(Usuario** usuarioLogado) {
     Album* album = alocarAlbum(1);
     int id;
     printf("\nDigite o id do album ou 0 para voltar: ");
@@ -693,12 +693,12 @@ void selecionarAlbum(Usuario* usuarioLogado) {
 
     if (id) {
         album = buscarAlbum(id);
-        if (pegaTipoUsuario(usuarioLogado)) opcoesAlbumAdmin(buscarAlbum(id));
+        if (pegaTipoUsuario(*usuarioLogado)) opcoesAlbumAdmin(buscarAlbum(id));
         else opcoesAlbumPublico(buscarAlbum(id), usuarioLogado);
     }
 }
 
-void menuBuscarAlbuns(Usuario* usuarioLogado) {
+void menuBuscarAlbuns(Usuario** usuarioLogado) {
     int opcaoMenu;
     char string[50];
     int tipo;
@@ -974,7 +974,7 @@ int excluirUsuario(Usuario* usuario) {
     return 0;
 }
 
-void menuUsuario(Usuario* usuarioLogado) {
+void menuUsuario(Usuario** usuarioLogado) {
     int opcao;
 
     do {
@@ -1004,7 +1004,7 @@ void menuUsuario(Usuario* usuarioLogado) {
     } while (opcao != 6);
 }
 
-void opcoesMidiaPublico(Midia* midia, Usuario* usuarioLogado) {
+void opcoesMidiaPublico(Midia* midia, Usuario** usuarioLogado) {
     int opcao, id;
 
     do {
@@ -1020,7 +1020,7 @@ void opcoesMidiaPublico(Midia* midia, Usuario* usuarioLogado) {
 
             case 2:
                 printf("Listando suas playlists...");
-                listarPlaylistsUsuario(usuarioLogado);
+                listarPlaylistsUsuario(*usuarioLogado);
                 printf("\nDigite o ID da playlist a qual voce deseja adicionar a midia, ou 0 para voltar: ");
                 scanf("%d", &id);
                 if (id) {
@@ -1033,7 +1033,7 @@ void opcoesMidiaPublico(Midia* midia, Usuario* usuarioLogado) {
     } while (opcao != 3);
 }
 
-void opcoesPlaylistPublico(Playlist* playlist, Usuario* usuarioLogado) {
+void opcoesPlaylistPublico(Playlist* playlist, Usuario** usuarioLogado) {
     int opcao, id;
 
     do {
@@ -1048,8 +1048,8 @@ void opcoesPlaylistPublico(Playlist* playlist, Usuario* usuarioLogado) {
                 break;
 
             case 2:
-                adicionarPlaylistUsuario(usuarioLogado, playlist);
-                atualizarArquivoUsuarios(usuarioLogado);
+                adicionarPlaylistUsuario(*usuarioLogado, playlist);
+                atualizarArquivoUsuarios(*usuarioLogado);
                 break;
 
             case 3:
@@ -1063,7 +1063,7 @@ void opcoesPlaylistPublico(Playlist* playlist, Usuario* usuarioLogado) {
     } while (opcao != 4);
 }
 
-void opcoesAlbumPublico(Album* album, Usuario* usuarioLogado) {
+void opcoesAlbumPublico(Album* album, Usuario** usuarioLogado) {
     int opcao, id;
 
     do {
@@ -1088,7 +1088,7 @@ void opcoesAlbumPublico(Album* album, Usuario* usuarioLogado) {
     } while (opcao != 3);
 }
 
-void menuGerenciarMinhasPlaylists(Usuario* usuarioLogado) {
+void menuGerenciarMinhasPlaylists(Usuario** usuarioLogado) {
     int opcao;
 
     do {
@@ -1097,11 +1097,12 @@ void menuGerenciarMinhasPlaylists(Usuario* usuarioLogado) {
         switch (opcao) {
             case 1:
                 lerPlaylist(usuarioLogado);
+                *usuarioLogado = buscarUsuario(pegaIdUsuario(*usuarioLogado));
                 break;
 
             case 2:
                 printf("\nListando suas playlists...");
-                listarPlaylistsUsuario(usuarioLogado);
+                listarPlaylistsUsuario(*usuarioLogado);
                 int id;
                 printf("\nDigite o id da playlist ou 0 para voltar: ");
                 scanf("%d", &id);
@@ -1111,7 +1112,7 @@ void menuGerenciarMinhasPlaylists(Usuario* usuarioLogado) {
     } while (opcao != 3);
 }
 
-void opcoesUsuarioPublico(Usuario* usuarioLogado) {
+void opcoesUsuarioPublico(Usuario** usuarioLogado) {
     int opcao, id, excluiu = 0;
     char nome[50], senha[15];
 
@@ -1120,23 +1121,23 @@ void opcoesUsuarioPublico(Usuario* usuarioLogado) {
         scanf("%d", &opcao);
         switch (opcao) {
             case 1:
-                printf("Seu nome atual eh: %s", pegaNomeUsuario(usuarioLogado));
+                printf("Seu nome atual eh: %s", pegaNomeUsuario(*usuarioLogado));
                 printf("\nDigite seu novo nome: ");
                 scanf("%s", nome);
-                modificaNomeUsuario(usuarioLogado, nome);
-                atualizarArquivoUsuarios(usuarioLogado);
+                modificaNomeUsuario(*usuarioLogado, nome);
+                atualizarArquivoUsuarios(*usuarioLogado);
                 break;
 
             case 2:
-                printf("Sua senha atual eh: %s", pegaSenhaUsuario(usuarioLogado));
+                printf("Sua senha atual eh: %s", pegaSenhaUsuario(*usuarioLogado));
                 printf("\nDigite sua nova senha: ");
                 scanf("%s", senha);
-                modificaSenhaUsuario(usuarioLogado, senha);
-                atualizarArquivoUsuarios(usuarioLogado);
+                modificaSenhaUsuario(*usuarioLogado, senha);
+                atualizarArquivoUsuarios(*usuarioLogado);
                 break;
 
             case 3:
-                excluiu = excluirUsuario(usuarioLogado);
+                excluiu = excluirUsuario(*usuarioLogado);
                 if (excluiu) {
                     printf("\nUsuario deletado com sucesso, o programa sera fechado.");
                     printf("\nPressione ENTER para continuar...");

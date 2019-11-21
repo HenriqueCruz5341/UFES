@@ -321,7 +321,7 @@ void excluirPlaylistArquivo(Playlist* playlist){
 
     for (int i = 0; i < qtd; i++) {
         fread(playlistAux, sizeof (Playlist), 1, arqPlaylist);
-        if (pegaIdPlaylist(listaPlaylists + i) == pegaIdPlaylist(playlist)) {
+        if (pegaIdPlaylist(playlistAux) == pegaIdPlaylist(playlist)) {
             removeu = 1;
         } else if (removeu) {
             listaPlaylists[i - 1] = *playlistAux;
