@@ -8,46 +8,285 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*Faz a autenticação de um usuario que deseja logar
+* pre-condicao: tenha algum usuario cadastrado no sistema
+* pos-condicao: o usuario sera levado ate o menu para gerenciar sua conta  
+*/
 void fazerLogin();
+
+/*Mostra o menu de opçoes quando o usuario logado é do tipo Admin
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter conseguido logar e ele ser do tipo Admin
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente
+*/
 void menuAdmin(Usuario** usuarioLogado);
+
+/*Mostra o menu de opções quando o usuario logado é do tipo Normal
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter conseguido logar e ele ser do tipo Normal
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente  
+*/
 void menuUsuario(Usuario** usuarioLogado);
 
+
+/*Mostra o menu de opções que um usuario do tipo Admin pode fazer com o tipo midia
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario do tipo Admin deve ter escolhido a opção de gerenciar midias no menu anteriors
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente  
+*/
 void gerenciarMidia(Usuario** usuarioLogado);
+
+/*Cadastra uma nova midia no sistema
+* inputs: um ponteiro para album, caso essa função tenha sido chamada para adicionar uma midia a um album, o ponteiro de album tera o album no qual a midia pertencerá, 
+caso a função tenha sido chamada apenas para criar uma nova midia, o ponteiro de album sera nulo e durante a criacao, serao dadas as opções de albuns
+* pre-condicao: o usuario do tipo Admin deve ter escolhido a opção de criar uma nova midia
+* pos-condicao: uma nova midia sera cadastrada no arquivo de midias, e o arquivo de albuns sera atualizado
+*/
 void lerMidia(Album* album);
+
+/*Mostra o menu de opções que um usuario do tipo Admin pode fazer com uma midia
+* inputs: um ponteiro para a midia que o Admin poderá realizar as operações
+* pre-condicao: o Admin deve ter selecionado uma midia cadastrada no sistema
+* pos-condicao: dependendo da opção que o Admin escolher, será realizado alguma operação com a midia em questão
+*/
 void opcoesMidiaAdmin(Midia* midia);
+
+/*Mostra o menu de opções que um usuario do tipo Normal pode fazer com uma midia
+* inputs: um ponteiro para a midia que o usuario poderá realizar as operações
+* pre-condicao: o usuario deve ter selecionado uma midia cadastrada no sistema
+* pos-condicao: dependendo da opção que o usuario escolher, será realizado alguma operação com a midia em questão
+*/
 void opcoesMidiaPublico(Midia* midia, Usuario** usuarioLogado);
+
+/*Le o ID da midia que foi selecionada e chama a função para mostrar as opções da midia desejada
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter pedido para listar as midias, seja por filtro ou todas as midias
+* pos-condicao: envia a midia que foi selecionada para a função de opções dessa midia, dependendo do tipo de usuario que esta logado
+*/
 void selecionarMidia(Usuario** usuarioLogado);
+
+/*Função para imprimir todas as midias cadastradas, caso haja alguma
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter selecionado uma opção de listar todas as midias
+* pos-condicao: caso tenha midias cadastradas, todas serao listadas
+*/
 void menuListarTodasMidias(Usuario** usuarioLogado);
+
+/*Mostra o menu de opções de filtro que o usuario tem na hora de buscar midias
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter selecionado uma opção de buscar midias
+* pos-condicao: dependendo do filtro que o usuario escolher, as midias encontradas serão listadas
+*/
 void menuBuscarMidias(Usuario** usuarioLogado);
+
+/*Exclui uma midia do sistema
+* inputs: um ponteiro para a midia que sera excluida
+* pre-condicao: o Admin deve ter selecionado uma midia valida
+* pos-condicao: a midia é excluida do sistema  
+*/
 int excluirMidia(Midia* midia);
 
+
+/*Mostra o menu de opções que o Admin pode fazer com o tipo playlist
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario do tipo Admin deve ter escolhido a opção de gerenciar playlists no menu anteriors
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente  
+*/
 void gerenciarPlaylst(Usuario** usuarioLogado);
+
+/*Mostra o menu de opções que um usuario consegue realizar com as playlists que ele segue, é dono ou colaborador
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario do tipo normal deve ter escolhido a opção de gerenciar suas playlists
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente
+*/
 void menuGerenciarMinhasPlaylists(Usuario** usuarioLogado);
-Playlist* lerPlaylist();
+
+/*Cadastra uma nova playlist no sistema
+* inputs: caso ja se saiba qual usuario será o dono da playlist, esse mesmo usuario sera passado por parametro,
+caso nao tenha isso definido, deve ser passado NULL para que seja possivel colocar um dono no decorrer da função
+* outputs: retorna a playlist que foi criada
+* pre-condicao: o usuario que esta logado, deverá clicar na opção de criar uma nova playlist
+* pos-condicao: uma nova playlist sera criada no sistema, e o arquivo de usuarios sera atualizado
+*/
+Playlist* lerPlaylist(Usuario** usuario);
+
+/*Le o ID da playlist que foi selecionada e chama a função para mostrar as opções da playlist desejada
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter pedido para listar as playlist, seja por filtro ou todas as playlists
+* pos-condicao: envia a playlist que foi selecionada para a função de opções dessa playlist, dependendo do tipo de usuario que esta logado
+*/
 void selecionarPlaylist(Usuario** usuarioLogado);
+
+/*Função para imprimir todas as playlists cadastradas, caso haja alguma
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter selecionado uma opção de listar todas as playlists
+* pos-condicao: caso tenha playlists cadastradas, todas serao listadas
+*/
 void menuListarTodasPlaylists(Usuario** usuarioLogado);
+
+/*Mostra o menu de opções de filtro que o usuario tem na hora de buscar playlists
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter selecionado uma opção de buscar playlists
+* pos-condicao: dependendo do filtro que o usuario escolher, as playlists encontradas serão listadas  
+*/
 void menuBuscarPlaylists(Usuario** usuarioLogado);
+
+/*Mostra o menu de opções que um usuario uma playlist, caso o usuario seja o dono ou um Admin, ele terá todas 
+as opções 'desbloqueadas', caso seja um colaborador, apenas algumas, e caso seja um seguidor da playlist, podera apenas ver as midias que estão na playlist
+* inputs: um ponteiro para a playlist que o usuario poderá realizar as operações, e um ponteiro do usuario logado,
+para saber quais opções estarão 'desbloqueadas' para o mesmo
+* pre-condicao: o usuario deve ter selecionado uma plyalist cadastrada no sistema
+* pos-condicao: dependendo da opção que o usuario escolher, será realizado alguma operação com a playlist em questão
+*/
 void opcoesPlaylistDono(Playlist* playlist, Usuario** usuarioLogado);
+
+/*Mostra o menu de opções que um usuario do tipo Normal e que não segue a playlist pode fazer com uma playlist
+* inputs: um ponteiro para a playlist que o usuario poderá realizar as operações,
+e um ponteiro indicando qual usuario esta logado, para caso o mesmo queira começar a seguir a playlist selecionada
+* pre-condicao: o usuario deve ter selecionado uma midia cadastrada no sistema, e não ter escolhido a opção 
+'gerenciar minhas playlists' anteriormente
+* pos-condicao: dependendo da opção que o usuario escolher, será realizado alguma operação com a midia em questão, e caso
+o usuario tenha seguido a playlist, o arquivo de usuarios e o usuarioLogado sera atualizado
+*/
 void opcoesPlaylistPublico(Playlist* playlist, Usuario** usuarioLogado);
+
+/*Exclui uma playlist do sistema
+* inputs: um ponteiro para a playlist que sera excluida
+* pre-condicao: o Admin ou o usuario dono deve ter selecionado uma playlist valida
+* pos-condicao: a playlist é excluida do sistema
+*/
 int excluirPlaylist(Playlist* playlist);
 
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void gerenciarAlbuns(Usuario** usuarioLogado);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 Album* lerAlbum();
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void selecionarAlbum(Usuario** usuarioLogado);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void menuListarTodosAlbuns(Usuario** usuarioLogado);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void menuBuscarAlbuns(Usuario** usuarioLogado);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void opcoesAlbumAdmin(Album* album);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void opcoesAlbumPublico(Album* album, Usuario** usuarioLogado);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 int excluirAlbum(Album* album);
 
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void gerenciarUsuarios();
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void lerUsuario(int verificador);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void selecionarUsuario();
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void menuListarTodosUsuarios();
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void menuBuscarUsuarios();
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void opcoesUsuariosAdmin(Usuario* usuario);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 void opcoesUsuarioPublico(Usuario** usuarioLogado);
+
+/*Inicializa uma matriz de nlinhas e ncolunas
+* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
+* output: ponteiro para a matriz inicializada
+* pre-condicao: nlinhas e ncolunas diferentes de 0
+* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+*/
 int excluirUsuario(Usuario* usuario);
+
 
 int main(int argc, char** argv) {
     int opcao;
