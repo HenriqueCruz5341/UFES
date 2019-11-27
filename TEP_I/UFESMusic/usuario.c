@@ -119,12 +119,7 @@ void salvarUsuarioArquivo(Usuario* usuario) {
         return;
     }
 
-    if ((fwrite(usuario, sizeof (Usuario), 1, arqUsuarios)) == 1) {
-        printf("\nUsuario adicionado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(usuario, sizeof (Usuario), 1, arqUsuarios);
 
     fclose(arqUsuarios);
 }
@@ -210,7 +205,7 @@ int quantidadeUsuariosCadastrados() {
 }
 
 void excluirUsuarioArquivo(Usuario* usuario) {
-    int qtdUsuarios = quantidadeUsuariosCadastrados(), removeu = 0;
+    int qtdUsuarios = quantidadeUsuariosCadastrados(), removeu = 0, *playlistsUsuario, j = 0, idUsuarioRemovido;
     Usuario* listaUsuarios = alocarUsuario(qtdUsuarios);
     Usuario* usuarioAux = alocarUsuario(1);
     FILE* arqUsuarios;
@@ -226,12 +221,27 @@ void excluirUsuarioArquivo(Usuario* usuario) {
         fread(usuarioAux, sizeof (Usuario), 1, arqUsuarios);
         if (pegaIdUsuario(usuarioAux) == pegaIdUsuario(usuario)) {
             removeu = 1;
+            idUsuarioRemovido = pegaIdUsuario(usuarioAux);
+            playlistsUsuario = pegaPlaylistsUsuario(usuarioAux);
         } else if (removeu) {
             listaUsuarios[i - 1] = *usuarioAux;
         } else {
             listaUsuarios[i] = *usuarioAux;
         }
     }
+
+    while (playlistsUsuario[j])//para remover todas as playlists que esse usuario era dono
+    {
+        Playlist* p = alocarPlaylist(1);
+        p = buscarPlaylist(playlistsUsuario[j]);
+        if (idUsuarioRemovido == pegaContribuintesPlaylist(p)[0])
+        {
+            removerPlaylistTodosUsuario(playlistsUsuario[j]);
+            excluirPlaylistArquivo(p);
+        }
+        j++;
+    }
+
     fclose(arqUsuarios);
     destroiUsuario(usuarioAux);
     destroiUsuario(usuario);
@@ -266,12 +276,7 @@ void atualizarArquivoUsuarios(Usuario* usuario) {
 
     fseek(arqUsuarios, i * sizeof (Usuario), SEEK_SET);
 
-    if (fwrite(usuario, sizeof (Usuario), 1, arqUsuarios) == 1) {
-        printf("\nUsuario atualizado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(usuario, sizeof (Usuario), 1, arqUsuarios);
 
     destroiUsuario(usuarioAux);
     fclose(arqUsuarios);

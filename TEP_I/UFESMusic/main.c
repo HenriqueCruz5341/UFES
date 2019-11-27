@@ -46,14 +46,14 @@ void lerMidia(Album* album);
 
 /*Mostra o menu de opções que um usuario do tipo Admin pode fazer com uma midia
 * inputs: um ponteiro para a midia que o Admin poderá realizar as operações
-* pre-condicao: o Admin deve ter selecionado uma midia cadastrada no sistema
+* pre-condicao: o Admin deve ter selecionado uma midia cadastrada no sistema, o usuario logado deve ser do tipo Admin
 * pos-condicao: dependendo da opção que o Admin escolher, será realizado alguma operação com a midia em questão
 */
 void opcoesMidiaAdmin(Midia* midia);
 
 /*Mostra o menu de opções que um usuario do tipo Normal pode fazer com uma midia
 * inputs: um ponteiro para a midia que o usuario poderá realizar as operações
-* pre-condicao: o usuario deve ter selecionado uma midia cadastrada no sistema
+* pre-condicao: o usuario deve ter selecionado uma midia cadastrada no sistema, o usuario logado deve ser do tipo Normal
 * pos-condicao: dependendo da opção que o usuario escolher, será realizado alguma operação com a midia em questão
 */
 void opcoesMidiaPublico(Midia* midia, Usuario** usuarioLogado);
@@ -158,67 +158,59 @@ void opcoesPlaylistPublico(Playlist* playlist, Usuario** usuarioLogado);
 int excluirPlaylist(Playlist* playlist);
 
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções que o Admin pode fazer com o tipo album
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario do tipo Admin deve ter escolhido a opção de gerenciar albuns no menu anterior
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente
 */
 void gerenciarAlbuns(Usuario** usuarioLogado);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Cadastra um novo album no sistema
+* outputs: retorna o album que foi cadastrado no sistema
+* pre-condicao: o usuario do tipo Admin deve ter escolhido a opção de criar um novo album
+* pos-condicao: um novo album sera cadastrada no arquivo de albuns
 */
 Album* lerAlbum();
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Le o ID do album que foi selecionado e chama a função para mostrar as opções do album desejado
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter pedido para listar os albuns, seja por filtro ou todos os albuns
+* pos-condicao: envia o album que foi selecionado para a função de opções desse album, dependendo do tipo de usuario que esta logado
 */
 void selecionarAlbum(Usuario** usuarioLogado);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Função para imprimir todos os albuns cadastradas, caso haja algum
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter selecionado uma opção de listar todos os albuns
+* pos-condicao: caso tenha albuns cadastrados, todas serao listadas
 */
 void menuListarTodosAlbuns(Usuario** usuarioLogado);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções de filtro que o usuario tem na hora de buscar albuns
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario deve ter selecionado uma opção de buscar albuns
+* pos-condicao: dependendo do filtro que o usuario escolher, os albuns encontrados serão listadas
 */
 void menuBuscarAlbuns(Usuario** usuarioLogado);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções que um usuario do tipo Admin pode fazer com um album
+* inputs: um ponteiro para o album que o Admin poderá realizar as operações
+* pre-condicao: o Admin deve ter selecionado um album cadastrado no sistema, o usuario logado deve ser do tipo Admin
+* pos-condicao: dependendo da opção que o Admin escolher, será realizado alguma operação com o album em questão
 */
 void opcoesAlbumAdmin(Album* album);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções que um usuario do tipo Normal pode fazer com um album
+* inputs: um ponteiro para o album que o usuario poderá realizar as operações
+* pre-condicao: o usuario deve ter selecionado um album cadastrado no sistema, o usuario logado deve ser do tipo Normal
+* pos-condicao: dependendo da opção que o usuario escolher, será realizado alguma operação com o album em questão
 */
 void opcoesAlbumPublico(Album* album, Usuario** usuarioLogado);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Exclui um album do sistema, e todas as midias que pertenciam aquele album
+* inputs: um ponteiro para o album que sera excluida
+* pre-condicao: o Admin deve ter selecionado um album valido
+* pos-condicao: a midia é excluida do sistema, assim como todas as midias que pertenciam aquele album
 */
 int excluirAlbum(Album* album);
 
