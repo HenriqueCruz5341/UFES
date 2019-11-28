@@ -205,7 +205,7 @@ int quantidadeUsuariosCadastrados() {
 }
 
 void excluirUsuarioArquivo(Usuario* usuario) {
-    int qtdUsuarios = quantidadeUsuariosCadastrados(), removeu = 0, *playlistsUsuario, j = 0, idUsuarioRemovido;
+    int qtdUsuarios = quantidadeUsuariosCadastrados(), removeu = 0, *playlistsUsuario, j = 0, idUsuarioRemovido = 0;
     Usuario* listaUsuarios = alocarUsuario(qtdUsuarios);
     Usuario* usuarioAux = alocarUsuario(1);
     FILE* arqUsuarios;
@@ -222,24 +222,24 @@ void excluirUsuarioArquivo(Usuario* usuario) {
         if (pegaIdUsuario(usuarioAux) == pegaIdUsuario(usuario)) {
             removeu = 1;
             idUsuarioRemovido = pegaIdUsuario(usuarioAux);
-            playlistsUsuario = pegaPlaylistsUsuario(usuarioAux);
+            playlistsUsuario = pegaPlaylistsUsuario(buscarUsuario(idUsuarioRemovido));
         } else if (removeu) {
             listaUsuarios[i - 1] = *usuarioAux;
         } else {
             listaUsuarios[i] = *usuarioAux;
         }
     }
+    j = 0;
 
     while (playlistsUsuario[j])//para remover todas as playlists que esse usuario era dono
     {
-        Playlist* p = alocarPlaylist(1);
-        p = buscarPlaylist(playlistsUsuario[j]);
-        if (idUsuarioRemovido == pegaContribuintesPlaylist(p)[0])
-        {
+        Playlist* p = buscarPlaylist(playlistsUsuario[j]);
+        if (idUsuarioRemovido == pegaContribuintesPlaylist(p)[0]) {
             removerPlaylistTodosUsuario(playlistsUsuario[j]);
             excluirPlaylistArquivo(p);
         }
         j++;
+        destroiPlaylist(p);
     }
 
     fclose(arqUsuarios);
@@ -395,7 +395,6 @@ void removerPlaylistTodosUsuario(int idPlaylist) {
             atualizarArquivoUsuarios(usuario);
         }
     }
-
     destroiUsuario(usuario);
     fclose(arqUsuarios);
 }

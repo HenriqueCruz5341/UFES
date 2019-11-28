@@ -333,6 +333,7 @@ void fazerLogin() {
     } else {
         menuUsuario(&usuarioLogado);
     }
+    destroiUsuario(usuarioLogado);
 }
 
 void menuAdmin(Usuario** usuarioLogado) {
