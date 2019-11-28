@@ -3,7 +3,6 @@
 #include <string.h>
 #include "playlist.h"
 #include "usuario.h"
-//#include "sistema.h"
 
 struct playlist
 {

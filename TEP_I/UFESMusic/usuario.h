@@ -62,5 +62,7 @@ void adicionarPlaylistUsuario(Usuario* usuario, Playlist* playlist);
 
 void removerPlaylistTodosUsuario(int idPlaylist);
 
+void removerTodasPlaylistsUsuario(int* playlists, int idUsuario);
+
 #endif /* USUARIO_H */
 

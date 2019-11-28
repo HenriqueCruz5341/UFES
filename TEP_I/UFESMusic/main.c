@@ -215,67 +215,59 @@ void opcoesAlbumPublico(Album* album, Usuario** usuarioLogado);
 int excluirAlbum(Album* album);
 
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções que um usuario do tipo Admin pode fazer com o tipo usuario
+* inputs: o usuario que esta atualmente logado no sistema
+* pre-condicao: o usuario do tipo Admin deve ter escolhido a opção de gerenciar usuarios no menu anteriors
+* pos-condicao: dependendo da opção que o usuario escolher, sera redirecionado para um menu diferente  
 */
 void gerenciarUsuarios();
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Cadastra um novo usuario no sistema
+* inputs: um inteiro que ira diferenciar se a criacao esta vindo de um cadastro normal, ou é um Admin adicionando um outro usuario,
+caso seja a primeira opção esse parametro será 0, caso contrario, sera 1
+* pre-condicao: o usuario deve ter escolhido a opção de se cadastrar, ou um Admin deve ter escolhido a opção de inserir
+um novo usuario
+* pos-condicao: um novo usuario do tipo Normal ou Admin sera adicionado no sistema
 */
 void lerUsuario(int verificador);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Le o ID da usuario que foi selecionada e chama a função para mostrar as opções do usuario desejado
+* pre-condicao: o Admin deve ter pedido para listar os usuarios cadastrados, seja por filtro ou todaos os usuarios
+* pos-condicao: envia o usuario que foi selecionado para a função de opções desse usuario, dependendo do tipo de usuario que esta logado
 */
 void selecionarUsuario();
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Função para imprimir todas os usuarios cadastrados
+* pre-condicao: o Admin deve ter selecionado uma opção de listar todos os usuarios
+* pos-condicao: todos os usuarios cadastrados no sistema serao listados
 */
 void menuListarTodosUsuarios();
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções de filtro que o Admin tem na hora de buscar usuarios
+* pre-condicao: o usuario deve ter selecionado uma opção de buscar midias
+* pos-condicao: dependendo do filtro que o Admin escolher, os usuarios encontrados serao listados
 */
 void menuBuscarUsuarios();
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções que o Admin pode fazer com um usuario
+* inputs: um ponteiro para o usuario que o Admin poderá realizar as operações
+* pre-condicao: o Admin deve ter selecionado um usuario cadastrada no sistema
+* pos-condicao: dependendo da opção que o Admin escolher, será realizado alguma operação com o usuario em questão
 */
 void opcoesUsuariosAdmin(Usuario* usuario);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Mostra o menu de opções para que o usuario possa modificar seu perfil
+* inputs: um ponteiro para o usuario logado para saber qual usuario sera editado
+* pre-condicao: o usuario deve ter escolhido a opção de editar seu perfil
+* pos-condicao: dependendo da opção que o usuario escolher, sera realizada alguma operação com o usuario
 */
 void opcoesUsuarioPublico(Usuario** usuarioLogado);
 
-/*Inicializa uma matriz de nlinhas e ncolunas
-* inputs: nlinhas (no de linhas) e ncolunas (no de colunas)
-* output: ponteiro para a matriz inicializada
-* pre-condicao: nlinhas e ncolunas diferentes de 0
-* pos-condicao: matriz de retorno existe e contem nlinhas e ncolunas  
+/*Exclui um usuario do sistema
+* inputs: um ponteiro para o usuario que sera excluido
+* pre-condicao: o Admin deve ter selecionado a opção de excluir um usuario, ou um usuario deve escolher a opção de 
+deletar sua propria conta
+* pos-condicao: o usuario é excluido no sistema
 */
 int excluirUsuario(Usuario* usuario);
 

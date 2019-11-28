@@ -221,30 +221,15 @@ void excluirUsuarioArquivo(Usuario* usuario) {
         fread(usuarioAux, sizeof (Usuario), 1, arqUsuarios);
         if (pegaIdUsuario(usuarioAux) == pegaIdUsuario(usuario)) {
             removeu = 1;
-            idUsuarioRemovido = pegaIdUsuario(usuarioAux);
-            playlistsUsuario = pegaPlaylistsUsuario(buscarUsuario(idUsuarioRemovido));
         } else if (removeu) {
             listaUsuarios[i - 1] = *usuarioAux;
         } else {
             listaUsuarios[i] = *usuarioAux;
         }
     }
-    j = 0;
-
-    while (playlistsUsuario[j])//para remover todas as playlists que esse usuario era dono
-    {
-        Playlist* p = buscarPlaylist(playlistsUsuario[j]);
-        if (idUsuarioRemovido == pegaContribuintesPlaylist(p)[0]) {
-            removerPlaylistTodosUsuario(playlistsUsuario[j]);
-            excluirPlaylistArquivo(p);
-        }
-        j++;
-        destroiPlaylist(p);
-    }
 
     fclose(arqUsuarios);
     destroiUsuario(usuarioAux);
-    destroiUsuario(usuario);
 
     if ((arqUsuarios = fopen("usuarios.dat", "wb")) == NULL) {
         printf("\nErro ao abrir arquivo de usuarios!");
@@ -257,6 +242,22 @@ void excluirUsuarioArquivo(Usuario* usuario) {
 
     destroiUsuario(listaUsuarios);
     fclose(arqUsuarios);
+    removerTodasPlaylistsUsuario(pegaPlaylistsUsuario(usuario), pegaIdUsuario(usuario));
+    destroiUsuario(usuario);
+}
+
+void removerTodasPlaylistsUsuario(int* playlists, int idUsuario) {
+    int j = 0;
+
+    while (playlists[j]) {
+        Playlist* p = buscarPlaylist(playlists[j]);
+        if (idUsuario == pegaContribuintesPlaylist(p)[0]) {
+            removerPlaylistTodosUsuario(playlists[j]);
+            excluirPlaylistArquivo(p);
+        }
+        j++;
+        destroiPlaylist(p);
+    }
 }
 
 void atualizarArquivoUsuarios(Usuario* usuario) {
