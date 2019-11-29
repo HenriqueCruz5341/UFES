@@ -267,7 +267,7 @@ void opcoesUsuarioPublico(Usuario** usuarioLogado);
 * inputs: um ponteiro para o usuario que sera excluido
 * pre-condicao: o Admin deve ter selecionado a opção de excluir um usuario, ou um usuario deve escolher a opção de 
 deletar sua propria conta
-* pos-condicao: o usuario é excluido no sistema
+* pos-condicao: o usuario é excluido no sistemaaa
 */
 int excluirUsuario(Usuario* usuario);
 
