@@ -47,15 +47,15 @@ void modificaNomePlaylist(Playlist* playlist, char* nNome){
 
 void modificaPrivacidadePlaylist(Playlist* playlist, int nPrivacidade){
     playlist->privacidade = nPrivacidade;
+
+    if (!nPrivacidade)
+    {
+        modificaContribuintePlaylist(playlist, 0);
+    }
 }
 
-void modificaContribuintesPlaylist(Playlist* playlist, int nContribuintes){
-    playlist->contribuintes[1] = nContribuintes;
-}
-
-void modificaMidiaPlaylst(Playlist* playlist, int* nMidia){
-    for (int i = 0; i < 2; i++)
-        playlist->midias[i] = nMidia[i];
+void modificaContribuintePlaylist(Playlist* playlist, int nContribuinte){
+    playlist->contribuintes[1] = nContribuinte;
 }
 
 void modificaQtdMidiasPlaylist(Playlist* playlist, int nQtdMidias){

@@ -64,12 +64,6 @@ void modificaQtdMidias(Album* album, int nQtdMidias) {
     album->qtdMidias = nQtdMidias;
 }
 
-void modificaMidiasAlbum(Album* album, int* nMidias) {
-    for (int i = 0; i < 20; i++) {
-        album->midia[i] = nMidias[i];
-    }
-}
-
 char* pegaNomeAlbum(Album* album) {
     return album->nome;
 }
@@ -294,7 +288,9 @@ void excluirAlbumArquivo(Album* album) {
         fread(albumAux, sizeof (Album), 1, arqAlbum);
         if (pegaIdAlbum(listaAlbuns + i) == pegaIdAlbum(album)) {
             for (int j = 0; j < qtdMidiasAlbum; j++) {
-                excluirMidiaArquivo(buscarMidia(pegaMidiaAlbum(albumAux)[j]), 1);
+                Midia* midia  = buscarMidia(pegaMidiaAlbum(albumAux)[j]);
+                excluirMidiaArquivo(midia, 1);
+                destroiMidia(midia);
             }
             removeu = 1;
         } else if (removeu) {
@@ -338,7 +334,7 @@ int pegaUltimoIdAlbumCadastrado() {
     return ultimoId;
 }
 
-void listarAlbunsFiltro(int tipoFiltro, char* string, int numero) {
+void listarAlbunsFiltro(int tipoFiltro, char* string) {
     FILE* arqAlbum;
     Album* album = alocarAlbum(1);
     char* stringAux = NULL;

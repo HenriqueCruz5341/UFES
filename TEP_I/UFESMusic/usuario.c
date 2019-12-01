@@ -3,7 +3,6 @@
 #include "usuario.h"
 #include <string.h>
 #include "playlist.h"
-//#include "sistema.h"
 
 struct usuario {
     int idUsuario;
@@ -56,11 +55,6 @@ void modificaSenhaUsuario(Usuario* usuario, char* nSenha) {
     strcpy(usuario->senha, nSenha);
 }
 
-void modificaPlaylistsUsuario(Usuario* usuario, int* playlists) {
-    for (int i = 0; i < 20; i++) {
-        usuario->playlists[i] = playlists[i];
-    }
-}
 
 void modificaQtdPlaylistsUsuario(Usuario* usuario, int nQtdPlaylists) {
     usuario->qtdPlaylists = nQtdPlaylists;

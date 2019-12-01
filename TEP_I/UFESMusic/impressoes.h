@@ -2,6 +2,8 @@
 #include "usuario.h"
 #define IMPRESSOES_H
 
+//Todas as funções desse .h são apenas de impressão, nao contendo nenhuma lógica nelas e imprimem exatamente o que o nome das funções sugerem
+
 void imprimeMenuPrincipal();
 
 void imprimeMenuOpcoesAdmin();

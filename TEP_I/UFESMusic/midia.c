@@ -241,7 +241,7 @@ int quantidadeMidiasCadastradas() {
 
 }
 
-void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para saber se a exclusao da midia esta sendo por ela mesmo, ou por excluir um album
+void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) {
     FILE *arqMidia;
     Midia* midiaAux = alocarMidia(1);
     int qtd = quantidadeMidiasCadastradas(), removeu = 0, midiaExcluida = pegaIdMidia(midia);
@@ -278,7 +278,6 @@ void excluirMidiaArquivo(Midia* midia, int excluindoAlbum) { // esse int eh para
     }
     if (qtd > 1) fwrite(listaMidias, sizeof (Midia), qtd - 1, arqMidia);
     fclose(arqMidia);
-
     destroiMidia(listaMidias);
     removerMidiaTodasPLaylists(midiaExcluida);
 }

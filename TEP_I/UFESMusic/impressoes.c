@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "usuario.h"
 
+
 void imprimeMenuPrincipal() {
     system("clear");
     printf("======| BEM-VINDO AO UFES MUSIC |======\n");

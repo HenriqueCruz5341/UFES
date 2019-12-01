@@ -4,7 +4,6 @@
 #include "usuario.h"
 #include "midia.h"
 #include "impressoes.h"
-#include "sistema.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -267,7 +266,7 @@ void opcoesUsuarioPublico(Usuario** usuarioLogado);
 * inputs: um ponteiro para o usuario que sera excluido
 * pre-condicao: o Admin deve ter selecionado a opção de excluir um usuario, ou um usuario deve escolher a opção de 
 deletar sua propria conta
-* pos-condicao: o usuario é excluido no sistemaaa
+* pos-condicao: o usuario é excluido no sistema
 */
 int excluirUsuario(Usuario* usuario);
 
@@ -665,7 +664,7 @@ Playlist* lerPlaylist(Usuario** usuario) {
     playlist = inicializaPlaylist(nome, privacidade, contribuintes);
     salvarPlaylistArquivo(playlist);
     adicionarPlaylistUsuario(buscarUsuario(contribuintes[0]), playlist);
-    *usuario = buscarUsuario(contribuintes[0]);
+    if(usuario) *usuario = buscarUsuario(contribuintes[0]);
     if (contribuintes[1] != 0) adicionarPlaylistUsuario(buscarUsuario(contribuintes[1]), playlist);
 
     return playlist;
@@ -768,7 +767,7 @@ void opcoesPlaylistDono(Playlist* playlist, Usuario** usuarioLogado) {
                         else printf("\nA playlist nao possui contribuidor.");
                         printf("\nDigite o ID do usuario que sera o novo contribuinte da playlist: ");
                         scanf("%d", &numero);
-                        modificaContribuintesPlaylist(playlist, numero);
+                        modificaContribuintePlaylist(playlist, numero);
                         atualizarArquivoPlaylists(playlist);
                         Usuario* usuario = alocarUsuario(1);
                         usuario = buscarUsuario(numero);
@@ -930,7 +929,6 @@ void selecionarAlbum(Usuario** usuarioLogado) {
 void menuBuscarAlbuns(Usuario** usuarioLogado) {
     int opcaoMenu;
     char string[50];
-    int tipo;
 
     do {
         imprimeMenuBuscarAlbuns();
@@ -941,7 +939,7 @@ void menuBuscarAlbuns(Usuario** usuarioLogado) {
                 printf("Digite o nome ou parte do nome do album que deseja procurar: ");
                 scanf("%[^\n]s", string);
                 getchar();
-                listarAlbunsFiltro(1, string, tipo);
+                listarAlbunsFiltro(1, string);
                 selecionarAlbum(usuarioLogado);
                 break;
 
@@ -949,7 +947,7 @@ void menuBuscarAlbuns(Usuario** usuarioLogado) {
                 printf("Digite o nome ou parte do nome do participante que deseja procurar: ");
                 scanf("%[^\n]s", string);
                 getchar();
-                listarAlbunsFiltro(2, string, tipo);
+                listarAlbunsFiltro(2, string);
                 selecionarAlbum(usuarioLogado);
                 break;
 
@@ -957,7 +955,7 @@ void menuBuscarAlbuns(Usuario** usuarioLogado) {
                 printf("Digite a data de lancamento ou parte do album que deseja procurar: ");
                 scanf("%[^\n]s", string);
                 getchar();
-                listarAlbunsFiltro(3, string, tipo);
+                listarAlbunsFiltro(3, string);
                 selecionarAlbum(usuarioLogado);
                 break;
 
