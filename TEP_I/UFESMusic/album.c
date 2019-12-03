@@ -201,12 +201,8 @@ void salvarAlbumArquivo(Album* album) {
         scanf("%*c");
     }
 
-    if ((fwrite(album, sizeof (Album), 1, arqAlbuns)) == 1) {
-        printf("\nAlbum adicionado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(album, sizeof (Album), 1, arqAlbuns);
+
 
     fclose(arqAlbuns);
 }
@@ -229,12 +225,7 @@ void atualizarArquivoAlbuns(Album* album) {
 
     fseek(arqAlbuns, i * sizeof (Album), SEEK_SET);
 
-    if ((fwrite(album, sizeof (Album), 1, arqAlbuns)) == 1) {
-        printf("\nAlbum atualizado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(album, sizeof (Album), 1, arqAlbuns);
 
     destroiAlbum(albumAux);
     fclose(arqAlbuns);

@@ -384,7 +384,7 @@ void lerMidia(Album* album) {
     getchar();
     printf("\nDigite o nome da midia: ");
     scanf("%[^\n]s", nome);
-    printf("Digite o tipo de midia (0 musica, 1 video): ");
+    printf("Digite o tipo de midia (0 musica, 1 video, 2 podcast): ");
     scanf("%d", &tipo);
     printf("Digite quantos compositores a midia possui: ");
     scanf("%d", &qtdCompositores);

@@ -8,7 +8,7 @@
 struct midia {
     int idMidia;
     char nome[50];
-    int tipo; // Musica = 0, Video = 1
+    int tipo; // Musica = 0, Video = 1, Podcast = 2
     char compositores[3][50];
     char artistas[3][50];
     char genero[15];
@@ -150,12 +150,7 @@ void atualizarArquivoMidias(Midia* midia) {
 
     fseek(arqMidia, sizeof (Midia) * i, SEEK_SET);
 
-    if (fwrite(midia, sizeof (Midia), 1, arqMidia) == 1) {
-        printf("\nArquivo de midias atualizado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(midia, sizeof (Midia), 1, arqMidia);
 
     destroiMidia(midiaLida);
     fclose(arqMidia);
@@ -291,12 +286,7 @@ void salvarMidiaArquivo(Midia* midia) {
         scanf("%*c");
     }
 
-    if (fwrite(midia, sizeof (Midia), 1, arqMidias) == 1) {
-        printf("\nNova midia adicionada com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(midia, sizeof (Midia), 1, arqMidias);
 
     fclose(arqMidias);
 }

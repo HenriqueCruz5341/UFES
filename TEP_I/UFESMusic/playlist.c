@@ -130,13 +130,7 @@ void salvarPlaylistArquivo(Playlist* playlist){
         return;
     }
 
-    if (fwrite(playlist, sizeof(Playlist), 1, arqPlaylist) == 1)
-    {
-        printf("\nNova playlist criada com sucesso!");
-        printf("\nPressione ENTER para continuar.");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(playlist, sizeof(Playlist), 1, arqPlaylist);
 
     fclose(arqPlaylist);
 }
@@ -203,12 +197,8 @@ void atualizarArquivoPlaylists(Playlist* playlist){
 
     fseek(arqPlaylist, i * sizeof (Playlist), SEEK_SET);
 
-    if ((fwrite(playlist, sizeof (Playlist), 1, arqPlaylist)) == 1) {
-        printf("\nPlaylist atualizado com sucesso!");
-        printf("\nPressione ENTER para continuar...");
-        getchar();
-        scanf("%*c");
-    }
+    fwrite(playlist, sizeof (Playlist), 1, arqPlaylist);
+
 
     destroiPlaylist(playlistAux);
     fclose(arqPlaylist);

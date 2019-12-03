@@ -1,6 +1,8 @@
 clean:
 	rm *.o
 
-compile:
+compilar:
 	gcc -o executavel *.c
 
+executar:
+	./executavel
