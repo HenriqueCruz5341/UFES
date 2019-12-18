@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilo004.css">
+    <title>Exemplo</title>
+</head>
+<body>
+    <header>
+        <h1>Analisador de números</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Número (entre 1 a 100): 
+                <input type="text" id="txtNum">
+                <button id="btnAdd" onclick="adicionar()">Adicionar</button>
+            </p>
+        </div>
+        <div>
+            <p>
+                <select class="opcoes" id="listaNum" size="10">
+                </select>
+            </p>
+            <p>
+                <button id="btnRemover" onclick="remover()">Remover</button>
+                <button id="btnFinalizar" onclick="finalizar()">Finalizar</button>
+            </p>
+            <p id="resultado">
+                
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>by HenriquePC</p>
+    </footer>
+    
+    <script src="script004.js"></script>
+</body>
+</html>
