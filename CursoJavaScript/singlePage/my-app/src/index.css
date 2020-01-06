@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav{
+    background: #0088c6;
+}
+    .nav a{
+        text-align: center; 
+        padding: 10px 0; 
+        color:#fff;
+    }
+    .nav a:hover{
+        background: #005697;
+    }
+
+@media screen and (max-width: 480px){
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav{display:none; flex-direction: column; order: 2;}
+        .nav a{width: 100%; }
+
+    .buttonMob{order: 1; text-align: right; padding: 5px 5% 5px 0;}
+
+    .logo{
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+
+    .address{
+        padding: 10px 5%;
+        line-height: 35px;
+        text-align: center;
+        order: 3;
+    }
+        .address img{
+            vertical-align: middle;
+        }
+        .address strong{
+            color: #1BA73C;
+        }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    .header{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav{display:none; flex-direction: column; order: 2;}
+        .nav a{width: 100%; }
+
+    .buttonMob{order: 1; text-align: right; padding: 5px 5% 5px 0;}
+
+    .logo{
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+
+    .address{
+        padding: 10px 5%;
+        line-height: 35px;
+        text-align: center;
+        order: 3;
+    }
+        .address img{
+            vertical-align: middle;
+        }
+        .address strong{
+            color: #1BA73C;
+        }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px){
+    .nav{display:flex;}
+        .nav a{width: 25%;}
+
+    .buttonMob{
+        display: none;
+    }
+
+    .logo{
+        float: left;
+        width: 30%;
+        padding: 15px 0 15px 10%;
+    }
+
+    .address{
+        float: left;
+        width: 70%;
+        padding: 20px 5% 10px 20%;
+        line-height: 35px;
+        text-align: center;
+    }
+        .address img{
+            vertical-align: middle;
+        }
+        .address strong{
+            color: #1BA73C;
+        }
+}
+
+@media screen and (min-width: 1200px){
+    .nav{
+        display:flex;
+    }
+        .nav a{
+            width: 25%;
+        }
+    
+    .buttonMob{
+        display: none;
+    }
+
+    .logo{
+        float: left;
+        width: 30%;
+        padding: 15px 0 15px 10%;
+    }
+
+    .address{
+        float: left;
+        width: 70%;
+        padding: 20px 5% 10px 20%;
+        line-height: 35px;
+        text-align: center;
+    }
+        .address img{
+            vertical-align: middle;
+        }
+        .address strong{
+            color: #1BA73C;
+        }
+}
