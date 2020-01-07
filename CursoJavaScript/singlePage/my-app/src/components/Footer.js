@@ -4,7 +4,16 @@ export default class Footer extends React.Component{
 
     render(){
         return(
-            null
+            <div className="footer">
+                <div>
+                    <img src="/img/logo.png" alt="Logomarca" width="75px" height="75px"/>
+                </div>
+                <div>
+                    Endereço<br/>
+                    Telefone<br/>
+                    Email
+                </div>
+            </div>
         );
     }
 }
