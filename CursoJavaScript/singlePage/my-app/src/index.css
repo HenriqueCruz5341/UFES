@@ -11,6 +11,16 @@ a{
     font-weight: bold;
 }
 
+.conteudo{
+    display: none;
+}
+
+.loading{
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
 .nav{
     background: #0088c6;
 }
@@ -296,5 +306,20 @@ a{
             height: 150px;
             color: #333333;
             padding: 5px;
+        }
+    
+    .vantagens{
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+        .vantagensItem{
+            width: 28%;
+            margin: 15px 0;
+            box-shadow: 0 5px 20px #999999;
+            text-align: center;
+            padding: 15px;
         }
 }
