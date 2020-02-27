@@ -1,6 +1,7 @@
 import React from "react";
 import { MDBContainer } from "mdbreact";
 import CollapseEvent from "../CollapseEvent/CollapseEvent";
+import './eventList.css';
 
 
 function EventList(props){
@@ -9,7 +10,7 @@ function EventList(props){
         <MDBContainer>
             <ul>
           {eventos.map(evento => (
-          <li>{evento.nome}<CollapseEvent evento={evento}/></li>
+          <li key={evento.id}><CollapseEvent evento={evento}/></li>
           ))}
             </ul>
         </MDBContainer>
