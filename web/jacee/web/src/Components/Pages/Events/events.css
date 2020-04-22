@@ -1,0 +1,8 @@
+.titlePage{
+    height: 300px;
+    padding-top: 100px;
+}
+
+.imgTitle{
+    object-fit: cover
+}

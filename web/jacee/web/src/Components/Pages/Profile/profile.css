@@ -1,0 +1,16 @@
+.buttonSideMenu{
+    color: black;
+}
+
+.buttonSideMenu:hover{
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.buttonSideMenu.activeTab{
+    background-color: #2E2E2E;
+    color: #eeeeee;
+}
+
+.tabProfile{
+    width: 100%;
+}

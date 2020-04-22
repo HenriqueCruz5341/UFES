@@ -1,0 +1,30 @@
+.conteudoBotao {
+  display: flex;
+  flex-direction: row;
+}
+
+.conteudoBotao strong {
+  width: 90%;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.conteudoBotao .iconesBotao {
+  width: 10%;
+  text-align: end;
+  font-size: 20px;
+}
+
+.botaoCollapse {
+  width: 100%;
+}
+
+table.collapseEventPartTable thead th,
+table.collapseEventPartTable td {
+  padding: 5px !important;
+  vertical-align: middle;
+}
+
+table.collapseEventPartTable td:not(:first-child) {
+  text-align: center;
+}

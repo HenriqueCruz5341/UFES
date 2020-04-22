@@ -1,0 +1,81 @@
+
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion-css-transition {
+    transition: height 280ms;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+    animation: buttonRotateClose 0.35s normal;
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+    animation: buttonRotateOpen 0.35s normal;
+}
+
+.accordion__panel {
+    height: auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+@keyframes buttonRotateOpen{
+    from{
+        transform: rotate(-45deg);
+    }
+    to{
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes buttonRotateClose{
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+

@@ -1,0 +1,21 @@
+.bg {
+  background-image:url("../../../assets/cool.jpg");
+  height: 70vh;
+  background-position: 15%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;                                              
+
+}
+.bg h1{
+  padding-top: 30vh;                                                                                      
+  color: white;  
+}
+.bg h5{
+  color: white;                                                                       
+}
+.mask{
+  height: 70vh;
+}
+
+

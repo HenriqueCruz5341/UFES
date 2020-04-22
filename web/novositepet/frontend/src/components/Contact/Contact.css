@@ -1,0 +1,30 @@
+/* .center{
+    margin-top: 7vw;
+    display:grid;
+    height:65vw;
+    width:100%;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+.contactForm{
+    grid-column:2/6;
+    grid-row:3/7;
+}
+.contactTitle{
+    grid-column:4/8;
+    grid-row:2/3;
+}
+.petInformation{
+    background: lightgreen;
+    grid-column:6/10;
+    grid-row:3/7;
+}
+.textCenter{
+    text-align: center;
+} */
+.marginTop{
+    margin-top:10vw;
+}
+.marginTitle{
+    margin-top:3vw;
+}

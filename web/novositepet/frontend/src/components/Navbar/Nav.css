@@ -1,0 +1,38 @@
+#navbar {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height:10vh ;
+  background: rgb(140, 149, 153);
+  /* color: white; */
+}
+  
+.top-nav-collapse {
+  background-color: #eeeeee;
+}
+
+.optionsPerfil {
+  background-color: black;
+}
+
+.fixed-top {
+  z-index: 999 !important;
+}
+span{
+  color:black;
+  background:black
+}
+
+.nav-links{
+  color: rgb(110, 108, 108);
+}
+.nav-links:hover{
+  color: #2bbbad;
+}
+.dropDownItems{
+  color: rgb(110, 108, 108);
+  height: 5px;
+}
+.dropDownItems:hover{
+  color: #2bbbad ;
+}
