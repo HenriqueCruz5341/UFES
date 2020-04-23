@@ -4,7 +4,8 @@ const multer = require("multer");
 const multerConfig = require("../utils/multer");
 
 router.get("/", fileController.index);
-router.get("/download/:id", fileController.download);
+router.get("/downloadDocument/:id", fileController.downloadDocument);
+router.get("/downloadInscription/:id", fileController.downloadInscription);
 router.post("/", multer(multerConfig).single("file"), fileController.store);
 router.delete("/:id", fileController.destroy);
 

@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const inscriptionsController = require("../controllers/inscriptionsController");
 const multer = require("multer");
-const multerConfig = require("../utils/multer");
+const { multerConfig } = require("../utils/multer");
 
 router.get("/", inscriptionsController.index);
 router.get("/:id", inscriptionsController.show);
 router.post(
   "/",
-  multer(multerConfig).single("file"),
+  multer(multerConfig("zip")).single("file"),
   inscriptionsController.store
 );
 router.put("/:id", inscriptionsController.update);

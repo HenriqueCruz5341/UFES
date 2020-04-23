@@ -7,7 +7,18 @@ module.exports = {
     res.json({ files });
   },
 
-  async download(req, res) {
+  async downloadInscription(req, res) {
+    const file = await File.findOne({ _id: req.params.id });
+
+    const pathFile = path.join(
+      __dirname.slice(0, 34),
+      `tmp/inscriptions/${file.key}`
+    );
+
+    res.sendFile(pathFile);
+  },
+
+  async downloadDocument(req, res) {
     const file = await File.findOne({ _id: req.params.id });
 
     const pathFile = path.join(
