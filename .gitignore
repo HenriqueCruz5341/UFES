@@ -6,3 +6,9 @@ test*.py
 test*.py
 teste
 >>>>>>> 17ab70625a801ef058d5546696747ca3ae6ad168
+/TEP_I/UFESMusic/build/
+/TEP_I/UFESMusic/dist/
+/TEP_I/Ponto/build/
+/TEP_I/Ponto/dist/
+/TEP_I/Matriz/build/
+/TEP_I/Matriz/dist/
