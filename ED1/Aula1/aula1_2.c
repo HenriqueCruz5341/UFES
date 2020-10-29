@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 // 2.1)
 /*
@@ -25,23 +26,28 @@ int main(){
 
 // 2.2)
 /*
-void fatorial (int n, int* f){
-    *f = n;
+int raizes(float a, float b, float c, float* x1, float* x2) {
+    float delta = b * b - (4 * a * c);
 
-    for(n = n-1; n > 0; n--){
-        *f = (*f) * n;
-    }
+    if (delta < 0) return 0;
+
+    *x1 = (-b + (sqrtf(delta))) / (2 * a);
+    *x2 = (-b - (sqrtf(delta))) / (2 * a);
+
+    return 1;
 }
 
-int main(){
-    int n, fat;
+int main() {
+    int a, b, c;
+    float x1, x2;
 
-    printf("Digite o numero que se deseja calcular o fatorial: ");
-    scanf("%d", &n);
+    printf("Digite os valores de (a b c) separados por espaco: ");
+    scanf("%d %d %d", &a, &b, &c);
 
-    fatorial(n, &fat);
-
-    printf("O fatorial do numero digitado eh: %d\n", fat);
+    if (raizes(a, b, c, &x1, &x2))
+        printf("x1: %.2f | x2: %.2f\n", x1, x2);
+    else
+        printf("A equecao nao possui raiz real.\n");
 
     return 0;
 }
@@ -49,31 +55,31 @@ int main(){
 
 //2.3)
 /*
-int negativos (int n, float*vet){
+int pares(int n, int *vet) {
     int cont = 0;
 
-    for(n-1; n >= 0; n--){
-        if(vet[n] < 0) cont++;
+    for (int i = 0; i < n; i++) {
+        if (!(vet[i] % 2)) cont++;
     }
 
     return cont;
 }
 
-int main(){
+int main() {
     int n, i = 0;
 
     printf("Digite o tamanho do vetor desejado: ");
     scanf("%d", &n);
 
-    float *vet;
-    vet = (float*) malloc(n*sizeof(float));
+    int *vet;
+    vet = (int *)malloc(n * sizeof(int));
 
-    for(i = 0; i < n; i++){
+    for (i = 0; i < n; i++) {
         printf("\nDigite o valor de vet[%d]: ", i);
-        scanf("%f", &vet[i]);
+        scanf("%d", &vet[i]);
     }
 
-    printf("Seu vetor possui %d numeros negativos!\n", negativos(n, vet));
+    printf("Seu vetor possui %d numeros pares!\n", pares(n, vet));
 
     free(vet);
 
@@ -83,47 +89,80 @@ int main(){
 
 //2.4)
 
-void inverte (int n, int* vet){
+void inverte(int n, int* vet) {
     int aux, i;
 
-    for(i = 0; i < n/2; i++){
-        aux = vet[n-i-1];
-        vet[n-i-1] = vet[i];
+    for (i = 0; i < n / 2; i++) {
+        aux = vet[n - i - 1];
+        vet[n - i - 1] = vet[i];
         vet[i] = aux;
     }
 }
 
-int main(){
+int main() {
     int n, i = 0;
 
     printf("Digite o tamanho do vetor desejado: ");
     scanf("%d", &n);
 
-    int *vet;
-    vet = (int*) malloc(n*sizeof(int));
+    int* vet;
+    vet = (int*)malloc(n * sizeof(int));
 
-    for(i = 0; i < n; i++){
+    for (i = 0; i < n; i++) {
         printf("\nDigite o valor de vet[%d]: ", i);
         scanf("%d", &vet[i]);
     }
 
     printf("Seu vetor normal: \n");
-    for(i = 0; i < n; i++){
-        if(i != 0) printf("| ");
+    for (i = 0; i < n; i++) {
+        if (i != 0) printf("| ");
         printf("%d", vet[i]);
     }
 
     inverte(n, vet);
 
     printf("\nSeu vetor invertido: \n");
-    for(i = 0; i < n; i++){
-        if(i != 0) printf("| ");
+    for (i = 0; i < n; i++) {
+        if (i != 0) printf("| ");
         printf("%d", vet[i]);
     }
     printf("\n");
-    
 
     free(vet);
 
     return 0;
 }
+
+//2.5)
+/*
+double avalia(double* poli, int grau, double x) {
+    double result = 0;
+    for (int i = grau; i >= 0; i--)
+        result += poli[i] * pow(x, i);
+
+    return result;
+}
+
+int main() {
+    int grau;
+    double x;
+
+    printf("Digite o grau do seu polinomio: ");
+    scanf("%d", &grau);
+
+    double* poli = (double*)malloc(sizeof(double) * (grau + 1));
+
+    printf("\nDigite seu polinomio: ");
+    for (int i = 0; i <= grau; i++) scanf("%lf", poli + i);
+
+    printf("\nDigite o valor de X: ");
+    scanf("%lf", &x);
+
+    double result = avalia(poli, grau, x);
+
+    printf("Seu polinomio avaliado: %.2lf\n", result);
+
+    free(poli);
+    return 0;
+}
+*/

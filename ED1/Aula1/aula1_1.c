@@ -1,6 +1,6 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
+int main() {
     int var1, var2, var3, var4;
     int *pnt1, *pnt2, *pnt3, *pnt4;
 
