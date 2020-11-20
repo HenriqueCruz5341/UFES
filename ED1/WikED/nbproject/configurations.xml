@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Arquivos de Cabeçalho"
+                   projectFiles="true">
+      <itemPath>contribuicao.h</itemPath>
+      <itemPath>editor.h</itemPath>
+      <itemPath>impressao.h</itemPath>
+      <itemPath>link.h</itemPath>
+      <itemPath>listaCon.h</itemPath>
+      <itemPath>listaEdi.h</itemPath>
+      <itemPath>listaLin.h</itemPath>
+      <itemPath>listaPag.h</itemPath>
+      <itemPath>pagina.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Arquivos de Código-Fonte"
+                   projectFiles="true">
+      <itemPath>contribuicao.c</itemPath>
+      <itemPath>editor.c</itemPath>
+      <itemPath>impressao.c</itemPath>
+      <itemPath>link.c</itemPath>
+      <itemPath>listaCon.c</itemPath>
+      <itemPath>listaEdi.c</itemPath>
+      <itemPath>listaLin.c</itemPath>
+      <itemPath>listaPag.c</itemPath>
+      <itemPath>main.c</itemPath>
+      <itemPath>pagina.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Arquivos de Recurso"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Arquivos de Teste"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Arquivos Importantes"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="contribuicao.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="contribuicao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="editor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="editor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="impressao.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="impressao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="link.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="link.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaCon.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaCon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaEdi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaEdi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaLin.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaLin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaPag.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaPag.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pagina.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pagina.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="contribuicao.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="contribuicao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="editor.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="editor.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="impressao.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="impressao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="link.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="link.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaCon.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaCon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaEdi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaEdi.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaLin.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaLin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="listaPag.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="listaPag.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pagina.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="pagina.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
