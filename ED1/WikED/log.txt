@@ -1,13 +1,6 @@
-ERRO: não existe a pagina Psicologia
+ERRO: arquivo de entrada invalido.
+ERRO: arquivo de entrada invalido.
+HA CAMINHO DA PAGINA UFES PARA Matematica
 HA CAMINHO DA PAGINA UFES PARA Fisica
-NAO HA CAMINHO DA PAGINA Fisica PARA UFES
-NAO HA CAMINHO DA PAGINA Psicologia PARA UFES
-NAO HA CAMINHO DA PAGINA Psicologia PARA UFES
-NAO HA CAMINHO DA PAGINA Psicologia PARA UFES
-ERRO: não existe a pagina Psicologia
-HA CAMINHO DA PAGINA UFES PARA Fisica
-NAO HA CAMINHO DA PAGINA Fisica PARA UFES
-NAO HA CAMINHO DA PAGINA Psicologia PARA UFES
-ERRO: não existe a pagina Psicologia
-HA CAMINHO DA PAGINA UFES PARA Fisica
-NAO HA CAMINHO DA PAGINA Fisica PARA UFES
+HA CAMINHO DA PAGINA Fisica PARA UFES
+ERRO: não existe a pagina Historia

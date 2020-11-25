@@ -78,6 +78,8 @@ int main(int argc, char* argv[]) {
             imprimePaginaArquivo(buscaPagina(listaPagina, param1));
         } else if (!strcmp(comando, "IMPRIMEWIKED")) {
             imprimeWiked(listaPagina);
+        } else {
+            fscanf(arq, "%*[^\n]");
         }
     } while (strcmp(comando, "FIM"));
 
