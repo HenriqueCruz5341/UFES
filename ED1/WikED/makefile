@@ -1,11 +1,11 @@
 clean:
-	rm *.o
+	rm ./exec
 
 compile:
 	gcc -o exec *.c
 
 run:
-	./exec entrada1.txt
+	./exec entrada.txt
 
 valgrind:
 	valgrind ./exec entrada.txt

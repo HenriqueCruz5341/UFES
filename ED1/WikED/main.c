@@ -205,6 +205,7 @@ void copiaTextoContribuicao(char* arqOrigem, FILE* arqDestino) {
         return;
     }
 
+    //Faz a leitura char por char no arquivo da contribuição e já o escreve no arquivo da página
     while (fscanf(arq, "%c", &carac) == 1)
         fprintf(arqDestino, "%c", carac);
 
