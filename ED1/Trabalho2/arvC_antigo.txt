@@ -1,0 +1,173 @@
+#include "arv.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct arv {
+    char* info;
+    Arv* esq;
+    Arv* dir;
+};
+
+Arv* arvCriaVazia(void) {
+    return NULL;
+}
+
+Arv* arvCria(char* expressao) {
+    if (expressao[1] != '(') {
+        Arv* arv = (Arv*)malloc(sizeof(Arv));
+        arv->esq = NULL;
+        arv->dir = NULL;
+        char* aux = expressao + 1;
+        aux[strlen(aux) - 1] = '\0';
+        arv->info = strdup(aux);
+
+        return arv;
+    }
+
+    int i;
+    int count = 0, flag = 0;
+    for (i = 0; i < strlen(expressao); i++) {
+        if (expressao[i] == '(')
+            count++;
+        else if (expressao[i] == ')')
+            count--;
+
+        if (count == 1) {
+            if (flag)
+                break;
+            flag = 1;
+        }
+    }
+
+    char* operador;
+    char* esq;
+    char* dir;
+
+    operador = strdup(expressao + i + 1);
+    operador[1] = '\0';
+
+    esq = strdup(expressao + 1);
+    esq[i] = '\0';
+
+    dir = strdup(expressao + i + 2);
+    dir[strlen(dir) - 1] = '\0';
+
+    Arv* arv = (Arv*)malloc(sizeof(Arv));
+    arv->info = strdup(operador);
+    arv->esq = arvCria(esq);
+    arv->dir = arvCria(dir);
+
+    free(operador);
+    free(esq);
+    free(dir);
+
+    return arv;
+}
+
+int transformaInteiro(char* str) {
+    int i, num;
+
+    for (i = 0; i < strlen(str); i++) {
+        if (i == 0)
+            num = str[i] - '0';
+        else
+            num = num * 10 + (str[i] - '0');
+    }
+
+    return num;
+}
+
+char* transformaString(int num) {
+    int i = 0, j = 0;
+    char aux;
+    char* str = (char*)malloc(sizeof(char)*2);
+
+    while (num > 0) {
+        if(j > 0)
+            str = (char*) realloc(str, sizeof(char)*(j+2));
+        aux = (num % 10) + '0';
+        num /= 10;
+        str[j] = aux;
+        str[j+1] = '\0';
+        j++;
+    }
+    
+    for(i = 0, j = strlen(str)-1; i < strlen(str)/2; i++, j--){
+        aux = str[i];
+        str[i] = str[j];
+        str[j] = aux;
+    }
+
+    return str;
+}
+
+int calculadora(int num1, int num2, char op) {
+    if (op == '+')
+        return num1 + num2;
+    if (op == '-')
+        return num1 - num2;
+    if (op == '*')
+        return num1 * num2;
+    if (op == '/')
+        return num1 / num2;
+}
+
+char* arvCalculaExpressao(Arv* a) {
+    int resultado = 0;
+    int num1 = 0, num2 = 0, i;
+    char* info;
+    char* op;
+    
+    if (!a->esq)
+        return a->info;
+    else{
+        info = arvCalculaExpressao(a->esq);
+        op = a->info;
+    }
+        
+
+    if (info[0] >= '0' && info[0] <= '9')
+        num1 = transformaInteiro(info);
+
+    if (!a->dir)
+        return a->info;
+    else{
+        info = arvCalculaExpressao(a->dir);
+        op = a->info;
+    }
+
+
+
+    if (info[0] >= '0' && info[0] <= '9')
+        num2 = transformaInteiro(info);
+
+    resultado = calculadora(num1, num2, op[0]);
+
+    return transformaString(resultado);
+
+}
+
+Arv* arvLibera(Arv* a) {
+    if (a) {
+        arvLibera(a->esq);
+        arvLibera(a->dir);
+        free(a->info);
+        free(a);
+    }
+    return NULL;
+}
+
+void arvImprime(Arv* a) {
+    char* valor;
+    printf("(");
+    if (a) {
+        valor = a->info;
+        printf("%s", a->info);
+        arvImprime(a->esq);
+        arvImprime(a->dir);
+    }
+    printf(")");
+}
+
