@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "crivochar.h": "c",
+        "crivobit.h": "c"
+    }
+}
