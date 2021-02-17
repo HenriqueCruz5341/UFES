@@ -8,37 +8,24 @@ int main() {
     int num, i, j;
 
     // scanf("%d", &num);
-    num = 65300;
+    num = 10000;
 
     // CrivoInt* crivoInt = iniciaCrivoInt(num);
-
     // marcarPrimosCrivoInt(crivoInt, num);
-
-    // for (i = 0; i <= num; i++) {
-    //     if (!estaMarcado(crivoInt, i))
-    //         printf("%d, ", i);
-    // }
-    // destruirCrivoInt(crivoInt);
+    //destruirCrivoInt(crivoInt);
 
     // CrivoChar* crivoChar = iniciaCrivoChar(num);
-
     // marcarPrimosCrivoChar(crivoChar, num);
-
-    // // for (i = 0; i <= num; i++) {
-    // //     if (!estaMarcado(crivoChar, i))
-    // //         printf("%d, ", i);
-    // // }
     // destruirCrivoChar(crivoChar);
 
     CrivoBit* crivoBit = iniciaCrivoBit(num);
-
     marcarPrimosCrivoBit(crivoBit, num);
-
-    // // for (i = 0; i <= num; i++) {
-    // //     if (!estaMarcado(crivoBit, i))
-    // //         printf("%d, ", i);
-    // // }
     destruirCrivoBit(crivoBit);
+
+    // for (i = 0; i <= num; i++) {
+    //     if (!estaMarcadoCrivoBit(crivoBit, i))
+    //         printf("%d, ", i);
+    // }
 
     return 0;
 }
