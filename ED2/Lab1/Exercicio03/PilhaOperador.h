@@ -5,7 +5,7 @@ typedef struct pilhaOperador PilhaOperador;
 
 PilhaOperador* inicializaPilhaOperador();
 
-void pushPilhaOperador(PilhaOperador* p, int num);
+void pushPilhaOperador(PilhaOperador* p, char num);
 
 char popPilhaOperador(PilhaOperador* p);
 

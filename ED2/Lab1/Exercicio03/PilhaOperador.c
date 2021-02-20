@@ -6,7 +6,7 @@
 #define MAXTAM 50
 
 struct pilhaOperador {
-    char operando[MAXTAM];
+    char operador[MAXTAM];
     int topo;
 };
 
@@ -18,18 +18,18 @@ PilhaOperador* inicializaPilhaOperador() {
     return p;
 }
 
-void pushPilhaOperador(PilhaOperador* p, int num) {
+void pushPilhaOperador(PilhaOperador* p, char op) {
     if (!p || (p->topo) + 1 == MAXTAM) {
         printf("A pilhaOperador não foi inicializada ou estão cheias!!!\n");
         return;
     }
 
     (p->topo)++;
-    p->operando[p->topo] = num;
+    p->operador[p->topo] = op;
 }
 
 char popPilhaOperador(PilhaOperador* p) {
-    int removido = p->operando[p->topo];
+    char removido = p->operador[p->topo];
     (p->topo)--;
 
     return removido;
@@ -44,7 +44,7 @@ void imprimePilhaOperador(PilhaOperador* p) {
     }
 
     for (aux = p->topo; aux >= 0; aux--) {
-        printf(" - %d\n", p->operando[aux]);
+        printf(" - %c\n", p->operador[aux]);
     }
 }
 
