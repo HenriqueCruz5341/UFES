@@ -1,6 +1,6 @@
 package aula04;
 
-public class Triangulo {
+class Triangulo {
 	Ponto[] pontos;
 
 	public Ponto[] getPontos() {

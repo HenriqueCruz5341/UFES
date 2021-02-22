@@ -1,6 +1,6 @@
 package aula04;
 
-public class Aluno {
+class Aluno {
     String nome;
     double[] notas;
 

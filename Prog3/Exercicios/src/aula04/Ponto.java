@@ -1,6 +1,6 @@
 package aula04;
 
-public class Ponto {
+class Ponto {
 	double x;
 	double y;
 

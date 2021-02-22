@@ -1,6 +1,6 @@
 package aula04;
 
-public class Funcionario {
+class Funcionario {
     String nome;
     double salario;
     String dataAdmissao;

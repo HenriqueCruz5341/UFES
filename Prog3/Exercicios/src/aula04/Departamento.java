@@ -1,6 +1,6 @@
 package aula04;
 
-public class Departamento {
+class Departamento {
     String nome;
     Funcionario[] funcionarios;
 

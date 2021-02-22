@@ -1,6 +1,6 @@
 package aula04;
 
-public class Empresa {
+class Empresa {
     String nome;
     String cnpj;
     Departamento[] departamentos;
