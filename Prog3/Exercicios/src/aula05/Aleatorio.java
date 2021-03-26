@@ -12,6 +12,7 @@ public class Aleatorio {
         Scanner scan = new Scanner(System.in);
         long seed = scan.nextLong();
         rand = new Random(seed);
+        scan.close();
     }
 
     Aleatorio() {
