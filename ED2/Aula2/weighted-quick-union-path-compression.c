@@ -33,16 +33,28 @@ void UF_union(int p, int q, int *id, int *sz) {
 }
 
 int main() {
-    int id[10], sz[10];
+    int id[16], sz[16];
 
-    UF_init(10, id, sz);
-    UF_union(4, 3, id, sz);
-    UF_union(3, 8, id, sz);
-    UF_union(6, 5, id, sz);
-    UF_union(9, 4, id, sz);
-    UF_union(2, 1, id, sz);
-    UF_union(5, 0, id, sz);
-    UF_union(7, 2, id, sz);
-    UF_union(6, 1, id, sz);
-    UF_union(7, 3, id, sz);
+    UF_init(16, id, sz);
+    UF_union(0, 1, id, sz);
+    UF_union(0, 2, id, sz);
+    UF_union(0, 3, id, sz);
+    UF_union(0, 4, id, sz);
+    UF_union(1, 5, id, sz);
+    UF_union(1, 6, id, sz);
+    UF_union(1, 7, id, sz);
+    UF_union(5, 11, id, sz);
+    UF_union(5, 12, id, sz);
+    UF_union(11, 15, id, sz);
+    UF_union(6, 4, id, sz);
+    UF_union(13, 4, id, sz);
+    UF_union(2, 8, id, sz);
+    UF_union(2, 9, id, sz);
+    UF_union(8, 14, id, sz);
+    UF_union(3, 10, id, sz);
+    
+    for(int i = 0; i < 16; i++){
+        printf("Index: %d\n", i);
+        printf("Parent: %d\n\n", id[i]);
+    }  
 }
