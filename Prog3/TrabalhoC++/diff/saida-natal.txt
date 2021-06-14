@@ -1,0 +1,156 @@
+0a1,154
+> Número de vagas: 29
+> 
+> Vereadores eleitos:
+> 1 - HERBERTH AUGUSTO SENA SOUZA E SILVA / HERBERTH SENA (PL, 6029 votos)
+> 2 - MARIA DIVANEIDE BASILIO / DIVANEIDE (PT, 5966 votos)
+> 3 - PAULO EDUARDO DA COSTA FREIRE / PAULINHO FREIRE (PDT, 5547 votos)
+> 4 - KLEBER FERNANDES DA SILVA / KLEBER FERNANDES (PSDB, 5409 votos)
+> 5 - ALDO CLEMENTE DE ARAÚJO FILHO / ALDO CLEMENTE (PDT, 5181 votos)
+> 6 - ROBSON RICARDO MACHADO LIMA DE CARVALHO / ROBSON CARVALHO (PDT, 4837 votos)
+> 7 - FELIPE QUEIROZ DA CUNHA ALVES / FELIPE ALVES (PDT, 4765 votos)
+> 8 - AROLDO ALVES DA SILVA / AROLDO ALVES (PSDB, 4284 votos)
+> 9 - FRANCISCO DE ASSIS VALENTIM DA COSTA / BISPO FRANCISCO (REPUBLICANOS, 4213 votos)
+> 10 - YRAGUACI ARAÚJO ALMEIDA DE SOUZA / NINA SOUZA (PDT, 3852 votos)
+> 11 - ANA PAULA DE ARAÚJO CORREIA / ANA PAULA (PL, 3843 votos)
+> 12 - FRANCISCO DAS CHAGAS CATARINO / CHAGAS CATARINO (PSDB, 3801 votos)
+> 13 - ANTONIO FRANCO DE AQUINO NETO / PRETO AQUINO (PSD, 3490 votos)
+> 14 - STANLEY LUCIANO DA SILVA NASCIMENTO / LUCIANO NASCIMENTO (PTB, 3464 votos)
+> 15 - ANTONIO GEOVANE ARAUJO PEIXOTO / PEIXOTO (PTB, 3109 votos)
+> 16 - TERCIO BARRETO RAMOS TINÔCO / TÉRCIO TINÔCO (PP, 3101 votos)
+> 17 - RANIERE DE MEDEIROS BARBOSA / RANIERE BARBOSA (AVANTE, 3040 votos)
+> 18 - ERIKO SAMUEL XAVIER DE OLIVEIRA / ERIKO JÁCOME (MDB, 3040 votos)
+> 19 - BRISA SILVA BRACCHI / BRISA (PT, 2901 votos)
+> 20 - JULIA DE PAIVA SOUSA ARRUDA CÂMARA / JULIA ARRUDA (PC do B, 2817 votos)
+> 21 - KLAUS ASSIS DOS ANJOS ARAUJO / KLAUS (SOLIDARIEDADE, 2797 votos)
+> 22 - HERMES CAMARA DE SOUZA / HERMES (PTB, 2751 votos)
+> 23 - MILKLEI LEITE DE FARIAS / MILKLEI LEITE (PV, 2721 votos)
+> 24 - CAMILA ROUSE DE ARAUJO CABRAL / CAMILA ARAUJO (PSD, 2447 votos)
+> 25 - MARGARETE RÉGIA DE LIMA / MARGARETE RÉGIA (PROS, 2291 votos)
+> 26 - ANDERSON LOPES DA SILVA / ANDERSON LOPES (SOLIDARIEDADE, 2225 votos)
+> 27 - NIVALDO VARELA BACURAU / NIVALDO BACURAU (PSB, 2153 votos)
+> 28 - ERIBALDO MEDEIROS DA SILVA / ERIBALDO MEDEIROS (PSB, 2148 votos)
+> 29 - ROBERIO PAULINO RODRIGUES / ROBERIO PAULINO (PSOL, 1886 votos)
+> 
+> Candidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):
+> 1 - HERBERTH AUGUSTO SENA SOUZA E SILVA / HERBERTH SENA (PL, 6029 votos)
+> 2 - MARIA DIVANEIDE BASILIO / DIVANEIDE (PT, 5966 votos)
+> 3 - PAULO EDUARDO DA COSTA FREIRE / PAULINHO FREIRE (PDT, 5547 votos)
+> 4 - KLEBER FERNANDES DA SILVA / KLEBER FERNANDES (PSDB, 5409 votos)
+> 5 - ALDO CLEMENTE DE ARAÚJO FILHO / ALDO CLEMENTE (PDT, 5181 votos)
+> 6 - ROBSON RICARDO MACHADO LIMA DE CARVALHO / ROBSON CARVALHO (PDT, 4837 votos)
+> 7 - FELIPE QUEIROZ DA CUNHA ALVES / FELIPE ALVES (PDT, 4765 votos)
+> 8 - AROLDO ALVES DA SILVA / AROLDO ALVES (PSDB, 4284 votos)
+> 9 - FRANCISCO DE ASSIS VALENTIM DA COSTA / BISPO FRANCISCO (REPUBLICANOS, 4213 votos)
+> 10 - LEONARDO WINICIUS DE SOUZA EUZEBIO / LÉO SOUZA (CIDADANIA, 4022 votos)
+> 11 - YRAGUACI ARAÚJO ALMEIDA DE SOUZA / NINA SOUZA (PDT, 3852 votos)
+> 12 - ANA PAULA DE ARAÚJO CORREIA / ANA PAULA (PL, 3843 votos)
+> 13 - FRANCISCO DAS CHAGAS CATARINO / CHAGAS CATARINO (PSDB, 3801 votos)
+> 14 - LUIZ ALMIR FILGUEIRAS MAGALHÃES / LUIZ ALMIR (PSDB, 3527 votos)
+> 15 - ANTONIO FRANCO DE AQUINO NETO / PRETO AQUINO (PSD, 3490 votos)
+> 16 - STANLEY LUCIANO DA SILVA NASCIMENTO / LUCIANO NASCIMENTO (PTB, 3464 votos)
+> 17 - DICKSON RICARDO NASSER DOS SANTOS JÚNIOR / DICKSON JÚNIOR (PDT, 3409 votos)
+> 18 - PAULO JACKSON CASSIANO PESSOA / PAULO PESSOA (PL, 3276 votos)
+> 19 - ANTONIO GEOVANE ARAUJO PEIXOTO / PEIXOTO (PTB, 3109 votos)
+> 20 - TERCIO BARRETO RAMOS TINÔCO / TÉRCIO TINÔCO (PP, 3101 votos)
+> 21 - RANIERE DE MEDEIROS BARBOSA / RANIERE BARBOSA (AVANTE, 3040 votos)
+> 22 - ERIKO SAMUEL XAVIER DE OLIVEIRA / ERIKO JÁCOME (MDB, 3040 votos)
+> 23 - BRISA SILVA BRACCHI / BRISA (PT, 2901 votos)
+> 24 - DINARTE TORRES CRUZ / DINARTE TORRES (PDT, 2846 votos)
+> 25 - JULIA DE PAIVA SOUSA ARRUDA CÂMARA / JULIA ARRUDA (PC do B, 2817 votos)
+> 26 - KLAUS ASSIS DOS ANJOS ARAUJO / KLAUS (SOLIDARIEDADE, 2797 votos)
+> 27 - HERMES CAMARA DE SOUZA / HERMES (PTB, 2751 votos)
+> 28 - MILKLEI LEITE DE FARIAS / MILKLEI LEITE (PV, 2721 votos)
+> 29 - CAMILA ROUSE DE ARAUJO CABRAL / CAMILA ARAUJO (PSD, 2447 votos)
+> 
+> Teriam sido eleitos se a votação fosse majoritária, e não foram eleitos:
+> (com sua posição no ranking de mais votados)
+> 10 - LEONARDO WINICIUS DE SOUZA EUZEBIO / LÉO SOUZA (CIDADANIA, 4022 votos)
+> 14 - LUIZ ALMIR FILGUEIRAS MAGALHÃES / LUIZ ALMIR (PSDB, 3527 votos)
+> 17 - DICKSON RICARDO NASSER DOS SANTOS JÚNIOR / DICKSON JÚNIOR (PDT, 3409 votos)
+> 18 - PAULO JACKSON CASSIANO PESSOA / PAULO PESSOA (PL, 3276 votos)
+> 24 - DINARTE TORRES CRUZ / DINARTE TORRES (PDT, 2846 votos)
+> 
+> Eleitos, que se beneficiaram do sistema proporcional:
+> (com sua posição no ranking de mais votados)
+> 32 - MARGARETE RÉGIA DE LIMA / MARGARETE RÉGIA (PROS, 2291 votos)
+> 34 - ANDERSON LOPES DA SILVA / ANDERSON LOPES (SOLIDARIEDADE, 2225 votos)
+> 36 - NIVALDO VARELA BACURAU / NIVALDO BACURAU (PSB, 2153 votos)
+> 39 - ERIBALDO MEDEIROS DA SILVA / ERIBALDO MEDEIROS (PSB, 2148 votos)
+> 46 - ROBERIO PAULINO RODRIGUES / ROBERIO PAULINO (PSOL, 1886 votos)
+> 
+> Votação dos partidos e número de candidatos eleitos:
+> 1 - PDT - 12, 45939 votos (44978 nominais e 961 de legenda), 5 candidatos eleitos
+> 2 - PSDB - 45, 28570 votos (21320 nominais e 7250 de legenda), 3 candidatos eleitos
+> 3 - PTB - 14, 28205 votos (27840 nominais e 365 de legenda), 3 candidatos eleitos
+> 4 - PT - 13, 26929 votos (24295 nominais e 2634 de legenda), 2 candidatos eleitos
+> 5 - SOLIDARIEDADE - 77, 26151 votos (25469 nominais e 682 de legenda), 2 candidatos eleitos
+> 6 - PSB - 40, 24232 votos (23673 nominais e 559 de legenda), 2 candidatos eleitos
+> 7 - PL - 22, 23321 votos (22954 nominais e 367 de legenda), 2 candidatos eleitos
+> 8 - PSD - 55, 21026 votos (20717 nominais e 309 de legenda), 2 candidatos eleitos
+> 9 - MDB - 15, 16094 votos (15744 nominais e 350 de legenda), 1 candidato eleito
+> 10 - PV - 43, 15370 votos (15068 nominais e 302 de legenda), 1 candidato eleito
+> 11 - PMB - 35, 11907 votos (11758 nominais e 149 de legenda), 0 candidato eleito
+> 12 - PP - 11, 11680 votos (11365 nominais e 315 de legenda), 1 candidato eleito
+> 13 - REPUBLICANOS - 10, 10172 votos (10010 nominais e 162 de legenda), 1 candidato eleito
+> 14 - PROS - 90, 9965 votos (9832 nominais e 133 de legenda), 1 candidato eleito
+> 15 - PSOL - 50, 9594 votos (9189 nominais e 405 de legenda), 1 candidato eleito
+> 16 - PC do B - 65, 9550 votos (9413 nominais e 137 de legenda), 1 candidato eleito
+> 17 - AVANTE - 70, 9510 votos (9378 nominais e 132 de legenda), 1 candidato eleito
+> 18 - PSC - 20, 6867 votos (6621 nominais e 246 de legenda), 0 candidato eleito
+> 19 - PRTB - 28, 5888 votos (5603 nominais e 285 de legenda), 0 candidato eleito
+> 20 - CIDADANIA - 23, 5360 votos (5233 nominais e 127 de legenda), 0 candidato eleito
+> 21 - PODE - 19, 4920 votos (4731 nominais e 189 de legenda), 0 candidato eleito
+> 22 - NOVO - 30, 3625 votos (3414 nominais e 211 de legenda), 0 candidato eleito
+> 23 - PSL - 17, 2838 votos (1542 nominais e 1296 de legenda), 0 candidato eleito
+> 24 - PATRIOTA - 51, 1205 votos (1153 nominais e 52 de legenda), 0 candidato eleito
+> 25 - UP - 80, 737 votos (694 nominais e 43 de legenda), 0 candidato eleito
+> 26 - DC - 27, 526 votos (488 nominais e 38 de legenda), 0 candidato eleito
+> 27 - PSTU - 16, 369 votos (291 nominais e 78 de legenda), 0 candidato eleito
+> 28 - REDE - 18, 206 votos (162 nominais e 44 de legenda), 0 candidato eleito
+> 
+> Primeiro e último colocados de cada partido:
+> 1 - PL - 22, HERBERTH SENA (22222, 6029 votos) / PATRICA DA FÉ (22179, 0 voto)
+> 2 - PT - 13, DIVANEIDE (13613, 5966 votos) / DEDE DA PASTORAL (13130, 184 votos)
+> 3 - PDT - 12, PAULINHO FREIRE (12345, 5547 votos) / ISAC LEOCADIO (12013, 18 votos)
+> 4 - PSDB - 45, KLEBER FERNANDES (45222, 5409 votos) / BORGES FAIXA DE GAZA (45356, 10 votos)
+> 5 - REPUBLICANOS - 10, BISPO FRANCISCO (10333, 4213 votos) / MICHELE BARROS (10006, 0 voto)
+> 6 - CIDADANIA - 23, LÉO SOUZA (23333, 4022 votos) / VAL OLIVEIRA (23033, 20 votos)
+> 7 - PSD - 55, PRETO AQUINO (55610, 3490 votos) / PROFESSOR IVANILSON JUSTINO (55410, 70 votos)
+> 8 - PTB - 14, LUCIANO NASCIMENTO (14123, 3464 votos) / CIDINHA (14455, 3 votos)
+> 9 - PP - 11, TÉRCIO TINÔCO (11111, 3101 votos) / MYLLA ENFERMEIRA (11113, 11 votos)
+> 10 - MDB - 15, ERIKO JÁCOME (15133, 3040 votos) / VENESSA LIMA (15900, 2 votos)
+> 11 - AVANTE - 70, RANIERE BARBOSA (70123, 3040 votos) / ISABELA NASCIMENTO (70345, 11 votos)
+> 12 - PC do B - 65, JULIA ARRUDA (65777, 2817 votos) / LEILA LURENTINO (65577, 9 votos)
+> 13 - SOLIDARIEDADE - 77, KLAUS (77555, 2797 votos) / NADIEJINA (77111, 12 votos)
+> 14 - PV - 43, MILKLEI LEITE (43100, 2721 votos) / DENISE PAIVA (43334, 6 votos)
+> 15 - PROS - 90, MARGARETE RÉGIA (90111, 2291 votos) / SÂMARA RAFAELA (90206, 17 votos)
+> 16 - PSB - 40, NIVALDO BACURAU (40122, 2153 votos) / REGIVALDO SILVA (40111, 24 votos)
+> 17 - PSOL - 50, ROBERIO PAULINO (50000, 1886 votos) / WALKIRIA KOZAKEVIC (50505, 11 votos)
+> 18 - PRTB - 28, CABO GONÇALVES (28405, 1862 votos) / CRISTINA LEITÃO (28333, 20 votos)
+> 19 - PODE - 19, GLACIA MARILLAC (19180, 1426 votos) / ALBA BRASIL (19084, 47 votos)
+> 20 - PSC - 20, JANDERRÊ MELO (20123, 1358 votos) / RENATA ARAÚJO (20800, 16 votos)
+> 21 - NOVO - 30, ALAYDE PASSAIA (30000, 1148 votos) / IARA FARAJ (30333, 56 votos)
+> 22 - PMB - 35, PROFESSOR LENILSON  (35666, 846 votos) / ARNALDO RODRIGUES (35010, 12 votos)
+> 23 - PSL - 17, CAPITÃO GONDIN (17777, 555 votos) / JANAÍNA ALVES (17066, 0 voto)
+> 24 - UP - 80, SAMARA MARTINS (80180, 515 votos) / FRANCISCO DIAS (80599, 179 votos)
+> 25 - PATRIOTA - 51, VALECIA ANDRADE (51321, 201 votos) / KARINE SILVA (51177, 2 votos)
+> 26 - DC - 27, VALQUIRIA DIAS (27007, 156 votos) / RANIER FIGUEREDO (27432, 11 votos)
+> 27 - PSTU - 16, LUCIANA LIMA (16123, 139 votos) / SILVINO BAÚ (16456, 57 votos)
+> 28 - REDE - 18, PETRONILO (18018, 114 votos) / FREITAS JÚNIOR (18000, 48 votos)
+> 
+> Eleitos, por faixa etária (na data da eleição):
+>       Idade < 30: 1 (3,45%)
+> 30 <= Idade < 40: 11 (37,93%)
+> 40 <= Idade < 50: 8 (27,59%)
+> 50 <= Idade < 60: 4 (13,79%)
+> 60 <= Idade     : 5 (17,24%)
+> 
+> Eleitos, por sexo:
+> Feminino:  7 (24,14%)
+> Masculino: 22 (75,86%)
+> 
+> Total de votos válidos:    360756
+> Total de votos nominais:   342935 (95,06%)
+> Total de votos de Legenda: 17821 (4,94%)
+\ Nenhum caractere de nova linha no final do arquivo

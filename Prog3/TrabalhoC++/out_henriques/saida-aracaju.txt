@@ -1,0 +1,140 @@
+Número de vagas: 24
+
+Vereadores eleitos:
+1 - LINDA BRASIL AZEVEDO SANTOS / LINDA BRASIL (PSOL, 5773 votos)
+2 - EMÍLIA CORRÊA SANTOS / DRA EMÍLIA CORRÊA (PATRIOTA, 5025 votos)
+3 - JOSENITO VITALE DE JESUS / NITINHO (PSD, 4720 votos)
+4 - CARLOS EDUARDO DE ARAUJO LIMA / EDUARDO LIMA (REPUBLICANOS, 3929 votos)
+5 - BRENO VIANA DE MENDONÇA / BRENO GARIBALDE (DEM, 3781 votos)
+6 - VINICIUS PORTO MENEZES / VINICIUS PORTO (PDT, 3638 votos)
+7 - FÁBIO MEIRELES DE OLIVEIRA / FÁBIO MEIRELES (PSC, 3461 votos)
+8 - ISAC DE OLIVEIRA SILVEIRA / ISAC (PDT, 3337 votos)
+9 - ALEXSANDRO DA CONCEIÇÃO / PALHAÇO SONECA (PSD, 3280 votos)
+10 - MANUEL MARCOS DOS SANTOS / DR. MANUEL MARCOS (PSD, 3171 votos)
+11 - ANDERSON SANTOS DA SILVA / ANDERSON DE TUCA (PDT, 3026 votos)
+12 - VITOR DIEGO LIMA FORTUNATO / PASTOR DIEGO (PP, 3016 votos)
+13 - FABIANO LUIS DE ALMEIDA OLIVEIRA / FABIANO OLIVEIRA (PP, 2974 votos)
+14 - SHEYLA GALBA DA COSTA SANTOS / SHEYLA GALBA (CIDADANIA, 2929 votos)
+15 - JOSÉ JOAQUIM SANTOS NASCIMENTO / JOAQUIM DA JANELINHA (PROS, 2829 votos)
+16 - RICARDO VASCONCELOS SILVA / RICARDO VASCONCELOS (REDE, 2585 votos)
+17 - JOSÉ RICARDO MARQUES DOS SANTOS / RICARDO MARQUES (CIDADANIA, 2501 votos)
+18 - JOSE SÁVIO GOIS SILVA / SÁVIO NETO DE VARDO LOTÉRICA (PSC, 2409 votos)
+19 - ANTONIO BITTENCOURT JUNIOR / PROFESSOR BITTENCOURT (PC do B, 1969 votos)
+20 - ANGELA MARIA DE MELO / PROFESSORA ÂNGELA MELO (PT, 1882 votos)
+21 - BYRON VIRGILIO DOS SANTOS SILVA / SGT. BYRON ESTRELAS DO MAR (REPUBLICANOS, 1743 votos)
+22 - JOSE AILTON NASCIMENTO / PAQUITO DE TODOS (SOLIDARIEDADE, 1486 votos)
+23 - JOSÉ CÍCERO DE SOUZA / CÍCERO DO SANTA MARIA (PODE, 1470 votos)
+24 - ALDEILSON SOARES DOS SANTOS / BINHO (PMN, 1376 votos)
+
+Candidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):
+1 - LINDA BRASIL AZEVEDO SANTOS / LINDA BRASIL (PSOL, 5773 votos)
+2 - EMÍLIA CORRÊA SANTOS / DRA EMÍLIA CORRÊA (PATRIOTA, 5025 votos)
+3 - JOSENITO VITALE DE JESUS / NITINHO (PSD, 4720 votos)
+4 - CARLOS EDUARDO DE ARAUJO LIMA / EDUARDO LIMA (REPUBLICANOS, 3929 votos)
+5 - BRENO VIANA DE MENDONÇA / BRENO GARIBALDE (DEM, 3781 votos)
+6 - VINICIUS PORTO MENEZES / VINICIUS PORTO (PDT, 3638 votos)
+7 - FÁBIO MEIRELES DE OLIVEIRA / FÁBIO MEIRELES (PSC, 3461 votos)
+8 - SONIA MEIRE SANTOS AZEVEDO DE JESUS / PROFESSORA SONIA MEIRE (PSOL, 3342 votos)
+9 - ISAC DE OLIVEIRA SILVEIRA / ISAC (PDT, 3337 votos)
+10 - ALEXSANDRO DA CONCEIÇÃO / PALHAÇO SONECA (PSD, 3280 votos)
+11 - MANUEL MARCOS DOS SANTOS / DR. MANUEL MARCOS (PSD, 3171 votos)
+12 - ANDERSON SANTOS DA SILVA / ANDERSON DE TUCA (PDT, 3026 votos)
+13 - VITOR DIEGO LIMA FORTUNATO / PASTOR DIEGO (PP, 3016 votos)
+14 - FABIANO LUIS DE ALMEIDA OLIVEIRA / FABIANO OLIVEIRA (PP, 2974 votos)
+15 - SHEYLA GALBA DA COSTA SANTOS / SHEYLA GALBA (CIDADANIA, 2929 votos)
+16 - JOSÉ JOAQUIM SANTOS NASCIMENTO / JOAQUIM DA JANELINHA (PROS, 2829 votos)
+17 - MARCOS ANTONIO SOARES DE SOUZA / SEU MARCOS (PDT, 2721 votos)
+18 - NORBERTO ALVES JUNIOR / ZEZINHO DO BUGIO (PSD, 2627 votos)
+19 - RICARDO VASCONCELOS SILVA / RICARDO VASCONCELOS (REDE, 2585 votos)
+20 - JOSÉ RICARDO MARQUES DOS SANTOS / RICARDO MARQUES (CIDADANIA, 2501 votos)
+21 - MILTON DANTAS DE FARIAS JÚNIOR / MILTON DANTAS (PROS, 2443 votos)
+22 - JOSE SÁVIO GOIS SILVA / SÁVIO NETO DE VARDO LOTÉRICA (PSC, 2409 votos)
+23 - EVERTON BATISTA SOUZA / EVERTON SOUZA (PDT, 2298 votos)
+24 - ELBER ANDRADE BATALHA DE GOES / ELBER BATALHA (PSB, 2225 votos)
+
+Teriam sido eleitos se a votação fosse majoritária, e não foram eleitos:
+(com sua posição no ranking de mais votados)
+8 - SONIA MEIRE SANTOS AZEVEDO DE JESUS / PROFESSORA SONIA MEIRE (PSOL, 3342 votos)
+17 - MARCOS ANTONIO SOARES DE SOUZA / SEU MARCOS (PDT, 2721 votos)
+18 - NORBERTO ALVES JUNIOR / ZEZINHO DO BUGIO (PSD, 2627 votos)
+21 - MILTON DANTAS DE FARIAS JÚNIOR / MILTON DANTAS (PROS, 2443 votos)
+23 - EVERTON BATISTA SOUZA / EVERTON SOUZA (PDT, 2298 votos)
+24 - ELBER ANDRADE BATALHA DE GOES / ELBER BATALHA (PSB, 2225 votos)
+
+Eleitos, que se beneficiaram do sistema proporcional:
+(com sua posição no ranking de mais votados)
+28 - ANTONIO BITTENCOURT JUNIOR / PROFESSOR BITTENCOURT (PC do B, 1969 votos)
+30 - ANGELA MARIA DE MELO / PROFESSORA ÂNGELA MELO (PT, 1882 votos)
+37 - BYRON VIRGILIO DOS SANTOS SILVA / SGT. BYRON ESTRELAS DO MAR (REPUBLICANOS, 1743 votos)
+47 - JOSE AILTON NASCIMENTO / PAQUITO DE TODOS (SOLIDARIEDADE, 1486 votos)
+49 - JOSÉ CÍCERO DE SOUZA / CÍCERO DO SANTA MARIA (PODE, 1470 votos)
+53 - ALDEILSON SOARES DOS SANTOS / BINHO (PMN, 1376 votos)
+
+Votação dos partidos e número de candidatos eleitos:
+1 - PSD - 55, 27735 votos (27402 nominais e 333 de legenda), 3 candidatos eleitos
+2 - PDT - 12, 25559 votos (20521 nominais e 5038 de legenda), 3 candidatos eleitos
+3 - PP - 11, 20662 votos (20318 nominais e 344 de legenda), 2 candidatos eleitos
+4 - CIDADANIA - 23, 17989 votos (16209 nominais e 1780 de legenda), 2 candidatos eleitos
+5 - PSC - 20, 16282 votos (16119 nominais e 163 de legenda), 2 candidatos eleitos
+6 - REPUBLICANOS - 10, 15848 votos (15663 nominais e 185 de legenda), 2 candidatos eleitos
+7 - PT - 13, 13437 votos (11766 nominais e 1671 de legenda), 1 candidato eleito
+8 - DEM - 25, 11171 votos (10676 nominais e 495 de legenda), 1 candidato eleito
+9 - PSOL - 50, 10863 votos (10455 nominais e 408 de legenda), 1 candidato eleito
+10 - REDE - 18, 10651 votos (10528 nominais e 123 de legenda), 1 candidato eleito
+11 - PROS - 90, 10607 votos (10493 nominais e 114 de legenda), 1 candidato eleito
+12 - SOLIDARIEDADE - 77, 10540 votos (10420 nominais e 120 de legenda), 1 candidato eleito
+13 - PATRIOTA - 51, 10311 votos (10186 nominais e 125 de legenda), 1 candidato eleito
+14 - PC do B - 65, 10286 votos (10179 nominais e 107 de legenda), 1 candidato eleito
+15 - PODE - 19, 9735 votos (9576 nominais e 159 de legenda), 1 candidato eleito
+16 - PMN - 33, 9287 votos (9153 nominais e 134 de legenda), 1 candidato eleito
+17 - PSB - 40, 7877 votos (7767 nominais e 110 de legenda), 0 candidato eleito
+18 - PTB - 14, 7213 votos (6521 nominais e 692 de legenda), 0 candidato eleito
+19 - PL - 22, 6089 votos (5950 nominais e 139 de legenda), 0 candidato eleito
+20 - PSL - 17, 5878 votos (5741 nominais e 137 de legenda), 0 candidato eleito
+21 - PSDB - 45, 4517 votos (4385 nominais e 132 de legenda), 0 candidato eleito
+22 - AVANTE - 70, 2891 votos (2546 nominais e 345 de legenda), 0 candidato eleito
+23 - DC - 27, 1230 votos (1183 nominais e 47 de legenda), 0 candidato eleito
+24 - PV - 43, 997 votos (969 nominais e 28 de legenda), 0 candidato eleito
+25 - PSTU - 16, 198 votos (128 nominais e 70 de legenda), 0 candidato eleito
+
+Primeiro e último colocados de cada partido:
+1 - PSOL - 50, LINDA BRASIL (50180, 5773 votos) / ROBERTO (50321, 26 votos)
+2 - PATRIOTA - 51, DRA EMÍLIA CORRÊA (51555, 5025 votos) / CATHARINA MIRANDA (51500, 10 votos)
+3 - PSD - 55, NITINHO (55555, 4720 votos) / ROBIN (55100, 20 votos)
+4 - REPUBLICANOS - 10, EDUARDO LIMA (10123, 3929 votos) / BEKA SILVA (10001, 2 votos)
+5 - DEM - 25, BRENO GARIBALDE (25111, 3781 votos) / ARARA DO CAJU (25334, 12 votos)
+6 - PDT - 12, VINICIUS PORTO (12123, 3638 votos) / JOSY MARTINS (12010, 13 votos)
+7 - PSC - 20, FÁBIO MEIRELES (20777, 3461 votos) / CLEBINHO DO BUGIO (20024, 0 voto)
+8 - PP - 11, PASTOR DIEGO (11444, 3016 votos) / EDNA CELL (11999, 30 votos)
+9 - CIDADANIA - 23, SHEYLA GALBA (23200, 2929 votos) / JOAO PAULO SPINOLA (23948, 14 votos)
+10 - PROS - 90, JOAQUIM DA JANELINHA (90123, 2829 votos) / PATRÍCIA LIMA (90007, 29 votos)
+11 - REDE - 18, RICARDO VASCONCELOS (18000, 2585 votos) / DEBORAH MELO (18018, 13 votos)
+12 - PSB - 40, ELBER BATALHA (40640, 2225 votos) / SANDRA ARGOLO (40020, 6 votos)
+13 - PC do B - 65, PROFESSOR BITTENCOURT (65100, 1969 votos) / ANDRÉA MODESTO (65135, 9 votos)
+14 - PT - 13, PROFESSORA ÂNGELA MELO (13900, 1882 votos) / CARLOS LEAL (13079, 14 votos)
+15 - SOLIDARIEDADE - 77, PAQUITO DE TODOS (77222, 1486 votos) / NICOLAS (77411, 0 voto)
+16 - PODE - 19, CÍCERO DO SANTA MARIA (19033, 1470 votos) / BETH SEMPRE AMIGA (19088, 10 votos)
+17 - PMN - 33, BINHO (33555, 1376 votos) / ERICA TUR (33614, 2 votos)
+18 - PSL - 17, CABO AMINTAS (17190, 1336 votos) / RAMON THIERS (17654, 15 votos)
+19 - PL - 22, PEDRINHO BARRETO (22022, 975 votos) / FERNANDA VERÔNICA (22024, 28 votos)
+20 - PTB - 14, DANIEL MAFORT (14000, 796 votos) / ROBSON JARRÃO (14888, 5 votos)
+21 - PSDB - 45, ACÁCIO CARDOSO (45555, 680 votos) / NATALI ARAGÃO (45554, 0 voto)
+22 - DC - 27, HÉLIO DA SAÚDE (27500, 376 votos) / ALFA SIMÕES (27555, 14 votos)
+23 - AVANTE - 70, JÚLIO POPOTA (70888, 365 votos) / WILMA NASCIMENTO (70333, 5 votos)
+24 - PV - 43, SOUZA DA ENFERMAGEM (43456, 191 votos) / ROBÉRIO TOLDOS E VASSOURAS (43111, 27 votos)
+25 - PSTU - 16, PAULO DA MANGABEIRA (16678, 69 votos) / LEIDI LIMA (16123, 59 votos)
+
+Eleitos, por faixa etária (na data da eleição):
+      Idade < 30: 2 (8,33%)
+30 <= Idade < 40: 7 (29,17%)
+40 <= Idade < 50: 6 (25,00%)
+50 <= Idade < 60: 7 (29,17%)
+60 <= Idade     : 2 (8,33%)
+
+Eleitos, por sexo:
+Feminino:  4 (16,67%)
+Masculino: 20 (83,33%)
+
+Total de votos válidos:    267853
+Total de votos nominais:   254854 (95,15%)
+Total de votos de Legenda: 12999 (4,85%)

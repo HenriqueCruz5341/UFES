@@ -1,0 +1,140 @@
+0a1,138
+> Número de vagas: 21
+> 
+> Vereadores eleitos:
+> 1 - VANDERLEI DOS SANTOS SILVA / VANDERLEI SILVA (REPUBLICANOS, 3722 votos)
+> 2 - FRANCISCO EDWILSON BESSA HOLANDA DE NEGREIROS / EDVILSON NEGREIROS (PSB, 3427 votos)
+> 3 - ELLIS REGINA BATISTA LEAL OLIVEIRA / ELLIS REGINA DO SINDEPROF (PODE, 3137 votos)
+> 4 - ALEKSANDER ALLEN NINA PALITOT / PROFESSOR ALEKS PALITOT (PTB, 2950 votos)
+> 5 - MARCIO PACELE VIEIRA DA SILVA / MARCIO PACELE (PSB, 2856 votos)
+> 6 - MILITINO FEDER JUNIOR / DR JUNIOR QUEIROZ (PL, 2724 votos)
+> 7 - JURANDIR RODRIGUES DE OLIVEIRA / JURANDIR BENGALA (PL, 2527 votos)
+> 8 - MÁRCIO JOSÉ SCHEFFER DE OLIVEIRA / MÁRCIO OLIVEIRA (MDB, 2270 votos)
+> 9 - GILBER ROCHA MERCES / DR GILBER (PODE, 2214 votos)
+> 10 - EDEVALDO MARCOLINO NEVES / EDEVALDO NEVES (PROS, 2191 votos)
+> 11 - ISAQUE LIMA MACHADO / ISAQUE MACHADO (PATRIOTA, 1927 votos)
+> 12 - JOSÉ IRACY MACÁRIO BARROS / DR MACÁRIO BARROS (PODE, 1839 votos)
+> 13 - WANOEL CHAVES MARTINS / WANOEL (PV, 1806 votos)
+> 14 - NAIDIO RAI GONÇALVES FERREIRA WAGNER / RAI FERREIRA (PSD, 1767 votos)
+> 15 - PAULO TICO FLORESTA / PAULO TICO (AVANTE, 1696 votos)
+> 16 - EDIMILSON DOURADO GOMES / EDIMILSON DOURADO (AVANTE, 1565 votos)
+> 17 - WALDISON FREITAS NEVES / VALTINHO CANUTO (DEM, 1533 votos)
+> 18 - MARCELO REIS LOUZEIRO / MARCELO REIS (PSDB, 1526 votos)
+> 19 - MÁRCIA HELENA MARTINS HENRIQUE / MÁRCIA SOCORRISTAS ANIMAIS (PP, 1425 votos)
+> 20 - EVERALDO ALVES FOGAÇA / FOGAÇA DO SITE O OBSERVADOR (REPUBLICANOS, 1290 votos)
+> 21 - CARLOS AUGUSTO FARIAS DAMACENO / CARLOS DAMACENO (PATRIOTA, 1245 votos)
+> 
+> Candidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):
+> 1 - VANDERLEI DOS SANTOS SILVA / VANDERLEI SILVA (REPUBLICANOS, 3722 votos)
+> 2 - FRANCISCO EDWILSON BESSA HOLANDA DE NEGREIROS / EDVILSON NEGREIROS (PSB, 3427 votos)
+> 3 - ELLIS REGINA BATISTA LEAL OLIVEIRA / ELLIS REGINA DO SINDEPROF (PODE, 3137 votos)
+> 4 - ALEKSANDER ALLEN NINA PALITOT / PROFESSOR ALEKS PALITOT (PTB, 2950 votos)
+> 5 - MARCIO PACELE VIEIRA DA SILVA / MARCIO PACELE (PSB, 2856 votos)
+> 6 - MILITINO FEDER JUNIOR / DR JUNIOR QUEIROZ (PL, 2724 votos)
+> 7 - JURANDIR RODRIGUES DE OLIVEIRA / JURANDIR BENGALA (PL, 2527 votos)
+> 8 - JOSE ASSIS JUNIOR REGO CAVALCANTE / JUNIOR CAVALCANTE (PL, 2284 votos)
+> 9 - MÁRCIO JOSÉ SCHEFFER DE OLIVEIRA / MÁRCIO OLIVEIRA (MDB, 2270 votos)
+> 10 - GILBER ROCHA MERCES / DR GILBER (PODE, 2214 votos)
+> 11 - EDEVALDO MARCOLINO NEVES / EDEVALDO NEVES (PROS, 2191 votos)
+> 12 - SANDRO DE CARVALHO / PASTOR SANDRO (PSB, 2074 votos)
+> 13 - ISAQUE LIMA MACHADO / ISAQUE MACHADO (PATRIOTA, 1927 votos)
+> 14 - JOELNA RAMOS HOLDER AGUIAR / JOELNA HOLDER (PSC, 1856 votos)
+> 15 - JOSÉ IRACY MACÁRIO BARROS / DR MACÁRIO BARROS (PODE, 1839 votos)
+> 16 - BRUNO LUCIANO DO COUTO ARAÚJO / PASTOR BRUNO LUCIANO (PSC, 1826 votos)
+> 17 - WANOEL CHAVES MARTINS / WANOEL (PV, 1806 votos)
+> 18 - ANTÔNIO CARLOS DA SILVA / DA SILVA DO SINTTRAR (PSB, 1784 votos)
+> 19 - NAIDIO RAI GONÇALVES FERREIRA WAGNER / RAI FERREIRA (PSD, 1767 votos)
+> 20 - ADA CLEIA SICHINEL DANTAS BOABAID / ADA DANTAS BOABAID (PDT, 1714 votos)
+> 21 - NILTON DE SOUZA MELO / NILTON SOUZA (PV, 1711 votos)
+> 
+> Teriam sido eleitos se a votação fosse majoritária, e não foram eleitos:
+> (com sua posição no ranking de mais votados)
+> 8 - JOSE ASSIS JUNIOR REGO CAVALCANTE / JUNIOR CAVALCANTE (PL, 2284 votos)
+> 12 - SANDRO DE CARVALHO / PASTOR SANDRO (PSB, 2074 votos)
+> 14 - JOELNA RAMOS HOLDER AGUIAR / JOELNA HOLDER (PSC, 1856 votos)
+> 16 - BRUNO LUCIANO DO COUTO ARAÚJO / PASTOR BRUNO LUCIANO (PSC, 1826 votos)
+> 18 - ANTÔNIO CARLOS DA SILVA / DA SILVA DO SINTTRAR (PSB, 1784 votos)
+> 20 - ADA CLEIA SICHINEL DANTAS BOABAID / ADA DANTAS BOABAID (PDT, 1714 votos)
+> 21 - NILTON DE SOUZA MELO / NILTON SOUZA (PV, 1711 votos)
+> 
+> Eleitos, que se beneficiaram do sistema proporcional:
+> (com sua posição no ranking de mais votados)
+> 24 - PAULO TICO FLORESTA / PAULO TICO (AVANTE, 1696 votos)
+> 26 - EDIMILSON DOURADO GOMES / EDIMILSON DOURADO (AVANTE, 1565 votos)
+> 28 - WALDISON FREITAS NEVES / VALTINHO CANUTO (DEM, 1533 votos)
+> 29 - MARCELO REIS LOUZEIRO / MARCELO REIS (PSDB, 1526 votos)
+> 32 - MÁRCIA HELENA MARTINS HENRIQUE / MÁRCIA SOCORRISTAS ANIMAIS (PP, 1425 votos)
+> 36 - EVERALDO ALVES FOGAÇA / FOGAÇA DO SITE O OBSERVADOR (REPUBLICANOS, 1290 votos)
+> 41 - CARLOS AUGUSTO FARIAS DAMACENO / CARLOS DAMACENO (PATRIOTA, 1245 votos)
+> 
+> Votação dos partidos e número de candidatos eleitos:
+> 1 - PODE - 19, 22688 votos (22440 nominais e 248 de legenda), 3 candidatos eleitos
+> 2 - PL - 22, 17326 votos (17045 nominais e 281 de legenda), 2 candidatos eleitos
+> 3 - PSB - 40, 16453 votos (16206 nominais e 247 de legenda), 2 candidatos eleitos
+> 4 - AVANTE - 70, 15111 votos (14442 nominais e 669 de legenda), 2 candidatos eleitos
+> 5 - REPUBLICANOS - 10, 14414 votos (13536 nominais e 878 de legenda), 2 candidatos eleitos
+> 6 - PATRIOTA - 51, 14379 votos (14231 nominais e 148 de legenda), 2 candidatos eleitos
+> 7 - PV - 43, 14252 votos (14120 nominais e 132 de legenda), 1 candidato eleito
+> 8 - PSDB - 45, 13561 votos (10926 nominais e 2635 de legenda), 1 candidato eleito
+> 9 - PSD - 55, 11200 votos (11060 nominais e 140 de legenda), 1 candidato eleito
+> 10 - PP - 11, 9345 votos (8145 nominais e 1200 de legenda), 1 candidato eleito
+> 11 - DEM - 25, 8714 votos (8548 nominais e 166 de legenda), 1 candidato eleito
+> 12 - PTB - 14, 8680 votos (8491 nominais e 189 de legenda), 1 candidato eleito
+> 13 - PROS - 90, 7731 votos (7633 nominais e 98 de legenda), 1 candidato eleito
+> 14 - MDB - 15, 7192 votos (6708 nominais e 484 de legenda), 1 candidato eleito
+> 15 - PSC - 20, 6653 votos (6452 nominais e 201 de legenda), 0 candidato eleito
+> 16 - PDT - 12, 5930 votos (5605 nominais e 325 de legenda), 0 candidato eleito
+> 17 - PT - 13, 5195 votos (4523 nominais e 672 de legenda), 0 candidato eleito
+> 18 - PSL - 17, 4782 votos (4494 nominais e 288 de legenda), 0 candidato eleito
+> 19 - SOLIDARIEDADE - 77, 4759 votos (4390 nominais e 369 de legenda), 0 candidato eleito
+> 20 - CIDADANIA - 23, 4494 votos (3830 nominais e 664 de legenda), 0 candidato eleito
+> 21 - PC do B - 65, 3955 votos (3859 nominais e 96 de legenda), 0 candidato eleito
+> 22 - PRTB - 28, 3045 votos (2991 nominais e 54 de legenda), 0 candidato eleito
+> 23 - DC - 27, 786 votos (766 nominais e 20 de legenda), 0 candidato eleito
+> 24 - PSOL - 50, 613 votos (487 nominais e 126 de legenda), 0 candidato eleito
+> 25 - REDE - 18, 198 votos (164 nominais e 34 de legenda), 0 candidato eleito
+> 26 - PSTU - 16, 158 votos (116 nominais e 42 de legenda), 0 candidato eleito
+> 
+> Primeiro e último colocados de cada partido:
+> 1 - REPUBLICANOS - 10, VANDERLEI SILVA (10123, 3722 votos) / DAGUIMAR CAVALCANTE (10318, 16 votos)
+> 2 - PSB - 40, EDVILSON NEGREIROS (40140, 3427 votos) / CAROL SUAREZ (40444, 12 votos)
+> 3 - PODE - 19, ELLIS REGINA DO SINDEPROF (19333, 3137 votos) / SÂMIA COSTA (19011, 55 votos)
+> 4 - PTB - 14, PROFESSOR ALEKS PALITOT (14222, 2950 votos) / PASTORA ETELVINA (14233, 2 votos)
+> 5 - PL - 22, DR JUNIOR QUEIROZ (22123, 2724 votos) / MARISA AMORIM (22220, 26 votos)
+> 6 - MDB - 15, MÁRCIO OLIVEIRA (15140, 2270 votos) / ADEMAR DE SOUZA (15321, 11 votos)
+> 7 - PROS - 90, EDEVALDO NEVES (90100, 2191 votos) / PROF. ZUILA BRAGA (90966, 5 votos)
+> 8 - PATRIOTA - 51, ISAQUE MACHADO (51500, 1927 votos) / CARLAO DO POVO (51345, 42 votos)
+> 9 - PSC - 20, JOELNA HOLDER (20300, 1856 votos) / LUCIANA (20150, 16 votos)
+> 10 - PV - 43, WANOEL (43100, 1806 votos) / ROSE DA PONTA DO ABUNÃ (43122, 12 votos)
+> 11 - PSD - 55, RAI FERREIRA (55555, 1767 votos) / ROZIMEIRE CARVALHO (55039, 0 voto)
+> 12 - PDT - 12, ADA DANTAS BOABAID (12345, 1714 votos) / LIZANIA KATTY (12456, 18 votos)
+> 13 - PC do B - 65, CLAUDIO DA PADARIA (65130, 1697 votos) / TEIXEIRINHA (65061, 9 votos)
+> 14 - AVANTE - 70, PAULO TICO (70300, 1696 votos) / BELZ FERREIRA (70222, 28 votos)
+> 15 - DEM - 25, VALTINHO CANUTO (25500, 1533 votos) / VERA DO LAGOA AZUL (25007, 4 votos)
+> 16 - PSDB - 45, MARCELO REIS (45444, 1526 votos) / BERTA LUTANDO PELA COMUNIDADE (45005, 22 votos)
+> 17 - PP - 11, MÁRCIA SOCORRISTAS ANIMAIS (11500, 1425 votos) / OLINDA FERREIRA (11900, 28 votos)
+> 18 - SOLIDARIEDADE - 77, JULIO KASPER (77777, 1226 votos) / RAIMUNDO DE PAULA (77900, 2 votos)
+> 19 - PT - 13, ALYNE MAYRA E COLETIVO (13133, 857 votos) / RODRIGO RODRIGUES (13005, 22 votos)
+> 20 - PSL - 17, ALEXANDRE POTENCIA (17777, 767 votos) / ELTON FABIAN (17031, 14 votos)
+> 21 - PRTB - 28, JOÃO MANDÍ (28789, 547 votos) / ANA LORA (28107, 1 voto)
+> 22 - CIDADANIA - 23, PROFESSORA VAL BARRETO (23777, 428 votos) / ALCILENE PAIVA (23224, 9 votos)
+> 23 - DC - 27, MECANICO OLIVEIRA (27888, 292 votos) / EDNA DA KAARISMA MENSAGENS (27727, 1 voto)
+> 24 - PSOL - 50, ERICK LUCENA (50000, 118 votos) / RICARDO MOTOTAXI (50349, 16 votos)
+> 25 - REDE - 18, PROFESSORA ANGELITA (18123, 98 votos) / REI DOS VARAIS (18007, 25 votos)
+> 26 - PSTU - 16, DIDAS CORDEIRO (16364, 62 votos) / JACKELINE (16333, 17 votos)
+> 
+> Eleitos, por faixa etária (na data da eleição):
+>       Idade < 30: 1 (4,76%)
+> 30 <= Idade < 40: 4 (19,05%)
+> 40 <= Idade < 50: 10 (47,62%)
+> 50 <= Idade < 60: 5 (23,81%)
+> 60 <= Idade     : 1 (4,76%)
+> 
+> Eleitos, por sexo:
+> Feminino:  2 (9,52%)
+> Masculino: 19 (90,48%)
+> 
+> Total de votos válidos:    221614
+> Total de votos nominais:   211208 (95,30%)
+> Total de votos de Legenda: 10406 (4,70%)
+\ Nenhum caractere de nova linha no final do arquivo

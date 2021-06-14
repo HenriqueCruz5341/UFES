@@ -1,0 +1,90 @@
+Número de vagas: 0
+
+Vereadores eleitos:
+
+Candidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):
+
+Teriam sido eleitos se a votação fosse majoritária, e não foram eleitos:
+(com sua posição no ranking de mais votados)
+
+Eleitos, que se beneficiaram do sistema proporcional:
+(com sua posição no ranking de mais votados)
+
+Votação dos partidos e número de candidatos eleitos:
+1 - AVANTE - 70, 86971 votos (80150 nominais e 6821 de legenda), 0 candidato eleito
+2 - PSC - 20, 81893 votos (80866 nominais e 1027 de legenda), 0 candidato eleito
+3 - PATRIOTA - 51, 64139 votos (61215 nominais e 2924 de legenda), 0 candidato eleito
+4 - REPUBLICANOS - 10, 57208 votos (55146 nominais e 2062 de legenda), 0 candidato eleito
+5 - PMN - 33, 56973 votos (56368 nominais e 605 de legenda), 0 candidato eleito
+6 - PODE - 19, 54190 votos (44003 nominais e 10187 de legenda), 0 candidato eleito
+7 - PSDB - 45, 47735 votos (46941 nominais e 794 de legenda), 0 candidato eleito
+8 - PTB - 14, 45830 votos (45273 nominais e 557 de legenda), 0 candidato eleito
+9 - PSL - 17, 38377 votos (37868 nominais e 509 de legenda), 0 candidato eleito
+10 - PSB - 40, 37362 votos (36800 nominais e 562 de legenda), 0 candidato eleito
+11 - PL - 22, 36968 votos (34896 nominais e 2072 de legenda), 0 candidato eleito
+12 - PROS - 90, 36919 votos (36531 nominais e 388 de legenda), 0 candidato eleito
+13 - DC - 27, 35047 votos (34488 nominais e 559 de legenda), 0 candidato eleito
+14 - PT - 13, 34168 votos (28689 nominais e 5479 de legenda), 0 candidato eleito
+15 - PRTB - 28, 33861 votos (33518 nominais e 343 de legenda), 0 candidato eleito
+16 - PV - 43, 33816 votos (33486 nominais e 330 de legenda), 0 candidato eleito
+17 - CIDADANIA - 23, 32481 votos (31895 nominais e 586 de legenda), 0 candidato eleito
+18 - PTC - 36, 31650 votos (31318 nominais e 332 de legenda), 0 candidato eleito
+19 - DEM - 25, 23936 votos (23432 nominais e 504 de legenda), 0 candidato eleito
+20 - PP - 11, 19644 votos (19053 nominais e 591 de legenda), 0 candidato eleito
+21 - PC do B - 65, 18148 votos (17873 nominais e 275 de legenda), 0 candidato eleito
+22 - SOLIDARIEDADE - 77, 17890 votos (17632 nominais e 258 de legenda), 0 candidato eleito
+23 - PMB - 35, 13439 votos (13274 nominais e 165 de legenda), 0 candidato eleito
+24 - MDB - 15, 11861 votos (11225 nominais e 636 de legenda), 0 candidato eleito
+25 - PSOL - 50, 10097 votos (9664 nominais e 433 de legenda), 0 candidato eleito
+26 - PDT - 12, 9546 votos (8674 nominais e 872 de legenda), 0 candidato eleito
+27 - PSD - 55, 7953 votos (4035 nominais e 3918 de legenda), 0 candidato eleito
+28 - NOVO - 30, 5772 votos (4684 nominais e 1088 de legenda), 0 candidato eleito
+29 - REDE - 18, 2145 votos (2015 nominais e 130 de legenda), 0 candidato eleito
+30 - PSTU - 16, 309 votos (107 nominais e 202 de legenda), 0 candidato eleito
+
+Primeiro e último colocados de cada partido:
+1 - REPUBLICANOS - 10, JOÃO CARLOS (10123, 13880 votos) / NIDY SOUZA (10154, 0 voto)
+2 - PATRIOTA - 51, JOELSON SILVA (51051, 12493 votos) / DOMINIQUE ARAUJO (51432, 0 voto)
+3 - PODE - 19, PROFESSORA JACQUELINE (19300, 9208 votos) / DOS SANTOS (19419, 16 votos)
+4 - PSOL - 50, MICHELLE DA BANCADA COLETIVA (50123, 7662 votos) / DANIELA MASSULO (50600, 84 votos)
+5 - PMN - 33, KENNEDY DA ANJOS DE RUA (33000, 6956 votos) / PROFª CLAUDIA REGINA (33773, 15 votos)
+6 - PP - 11, THAYSA LIPPY (11000, 6736 votos) / DONA RAI DO MULTIRÃO (11654, 1 voto)
+7 - PSDB - 45, ROSIVALDO CORDOVIL (45455, 6358 votos) / RAIMUNDO LUNA (45669, 21 votos)
+8 - PC do B - 65, JAILDO OLIVEIRA (65144, 6022 votos) / MARLEANY SOARES (65126, 5 votos)
+9 - PSB - 40, MARCELO SERAFIM (40111, 5806 votos) / LENE BARROS (40622, 21 votos)
+10 - AVANTE - 70, DAVID REIS (70123, 5148 votos) / SUELEN SANTOS (70470, 6 votos)
+11 - PSC - 20, DR DANIEL VASCONCELOS (20000, 5031 votos) / HANNA (20220, 12 votos)
+12 - DEM - 25, SANDRO MAIA (25025, 5021 votos) / ANTONIO COSTA (25146, 14 votos)
+13 - PROS - 90, WALLACE OLIVEIRA (90144, 4918 votos) / SIMONE TABOCAL (90008, 1 voto)
+14 - PSL - 17, EVERTON ASSIS (17123, 4859 votos) / RAQUEL FERNANDES (17153, 7 votos)
+15 - PV - 43, FRANSUA (43333, 4828 votos) / MARCIA  SOARES (43550, 0 voto)
+16 - DC - 27, RAIFF MATOS (27027, 4621 votos) / DOM SAMPAIO (27999, 4 votos)
+17 - PL - 22, PROFESSOR SAMUEL (22123, 4461 votos) / NIRA NERES (22220, 20 votos)
+18 - PRTB - 28, YOMARA LINS (28228, 4278 votos) / ALBERTO SERRÃO (28005, 15 votos)
+19 - PTB - 14, MITOSO (14777, 4277 votos) / BIA DA QUATORZE (14927, 1 voto)
+20 - MDB - 15, GEDEÃO AMORIM (15555, 3966 votos) / ZENITA CASTRO (15177, 8 votos)
+21 - CIDADANIA - 23, WILLIAM ALEMÃO (23456, 3237 votos) / EUGENIA RODRIGUES (23567, 1 voto)
+22 - PT - 13, SASSÁ DA CONSTRUÇÃO CIVIL (13418, 3023 votos) / MOISES ALVES (13457, 18 votos)
+23 - SOLIDARIEDADE - 77, BESSA (77123, 2573 votos) / SABÁ CEARÁ DA RAPADURA (77033, 4 votos)
+24 - PTC - 36, PEIXOTO (36888, 2450 votos) / IRMÃ PAIZINHA (36050, 0 voto)
+25 - PMB - 35, LUIZINHO MELO (35123, 1511 votos) / THAIS MOTA (35250, 0 voto)
+26 - NOVO - 30, WANESSA PACHECO (30030, 1321 votos) / GLEDSON LIMA (30333, 316 votos)
+27 - PSD - 55, CORONEL WILSON (55555, 1129 votos) / LEDA BARATA (55891, 38 votos)
+28 - PDT - 12, RENIER SOUZA (12123, 1027 votos) / GIOVANA VASQUES (12745, 0 voto)
+29 - REDE - 18, PEDRO NETO (18333, 430 votos) / ENILSON TAVEIRA (18232, 40 votos)
+30 - PSTU - 16, TARCÍSIO LEÃO (16016, 107 votos) / TARCÍSIO LEÃO (16016, 107 votos)
+
+Eleitos, por faixa etária (na data da eleição):
+      Idade < 30: 0 (NaN%)
+30 <= Idade < 40: 0 (NaN%)
+40 <= Idade < 50: 0 (NaN%)
+50 <= Idade < 60: 0 (NaN%)
+60 <= Idade     : 0 (NaN%)
+
+Eleitos, por sexo:
+Feminino:  0 (NaN%)
+Masculino: 0 (NaN%)
+
+Total de votos válidos:    986328
+Total de votos nominais:   941119 (95,42%)
+Total de votos de Legenda: 45209 (4,58%)

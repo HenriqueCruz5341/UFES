@@ -1,0 +1,140 @@
+0a1,138
+> Número de vagas: 23
+> 
+> Vereadores eleitos:
+> 1 - MARCOS JOSÉ DE ABREU / MARQUITO (PSOL, 5858 votos)
+> 2 - JOSIMAR PEREIRA / JOSIMAR PEREIRA ''MAMA'' (DEM, 4015 votos)
+> 3 - GABRIEL MEURER / GABRIELZINHO (PODE, 3690 votos)
+> 4 - MANOELLA VIEIRA DA SILVA / MANU VIEIRA (NOVO, 3522 votos)
+> 5 - EDMILSON CARLOS PEREIRA JUNIOR / ED PEREIRA (PSDB, 3477 votos)
+> 6 - ROBERTO KATUMI ODA / ROBERTO KATUMI (PSD, 3038 votos)
+> 7 - CLAUDINEI MARQUES / CLAUDINEI MARQUES (REPUBLICANOS, 2998 votos)
+> 8 - AFRÂNIO TADEU BOPPRÉ / AFRÂNIO BOPPRÉ (PSOL, 2961 votos)
+> 9 - EDINON MANOEL DA ROSA / DINHO (DEM, 2749 votos)
+> 10 - GUILHERME PEREIRA DE PAULO / GUI PEREIRA (PSC, 2700 votos)
+> 11 - JOAO LUIZ AUGUSTO COBALCHINI / JOÃO COBALCHINI (DEM, 2337 votos)
+> 12 - DALMO DEUSDEDIT MENESES / DALMO (DEM, 2239 votos)
+> 13 - JOÃO PAULO FERREIRA / JOÃO DO BERICÓ (PSL, 2172 votos)
+> 14 - RENATO GESKE / RENATO DA FARMÁCIA (PSDB, 2132 votos)
+> 15 - CARLA SIMARA LUCIANA DA SILVA SALASARIO AYRES / CARLA AYRES (PT, 2094 votos)
+> 16 - PRISCILA FERNANDES FARIAS / PRI FERNANDES ADOTE (PODE, 2092 votos)
+> 17 - RICARDO JOSÉ DE SOUZA / DIACONO RICARDO (PSD, 2089 votos)
+> 18 - JOÃO LUIZ DA SILVEIRA / JOÃO LUIZ DA BEGA (PSC, 1889 votos)
+> 19 - GILBERTO ALCEBIADES PINHEIRO / GEMADA GILBERTO PINHEIRO (PODE, 1839 votos)
+> 20 - MAIKON DA COSTA / MAIKON COSTA (PL, 1796 votos)
+> 21 - MARYANNE TEREZINHA MATTOS / MARYANNE MATTOS (PL, 1718 votos)
+> 22 - CINTIA MOURA MENDONÇA / CÍNTIA COLETIVA BEM VIVER (PSOL, 1660 votos)
+> 23 - ADRIANO ANALDINO FLOR / ADRIANINHO (REPUBLICANOS, 1571 votos)
+> 
+> Candidatos mais votados (em ordem decrescente de votação e respeitando número de vagas):
+> 1 - MARCOS JOSÉ DE ABREU / MARQUITO (PSOL, 5858 votos)
+> 2 - JOSIMAR PEREIRA / JOSIMAR PEREIRA ''MAMA'' (DEM, 4015 votos)
+> 3 - GABRIEL MEURER / GABRIELZINHO (PODE, 3690 votos)
+> 4 - MANOELLA VIEIRA DA SILVA / MANU VIEIRA (NOVO, 3522 votos)
+> 5 - EDMILSON CARLOS PEREIRA JUNIOR / ED PEREIRA (PSDB, 3477 votos)
+> 6 - ROBERTO KATUMI ODA / ROBERTO KATUMI (PSD, 3038 votos)
+> 7 - CLAUDINEI MARQUES / CLAUDINEI MARQUES (REPUBLICANOS, 2998 votos)
+> 8 - AFRÂNIO TADEU BOPPRÉ / AFRÂNIO BOPPRÉ (PSOL, 2961 votos)
+> 9 - EDINON MANOEL DA ROSA / DINHO (DEM, 2749 votos)
+> 10 - GUILHERME PEREIRA DE PAULO / GUI PEREIRA (PSC, 2700 votos)
+> 11 - JOAO LUIZ AUGUSTO COBALCHINI / JOÃO COBALCHINI (DEM, 2337 votos)
+> 12 - DALMO DEUSDEDIT MENESES / DALMO (DEM, 2239 votos)
+> 13 - JOÃO PAULO FERREIRA / JOÃO DO BERICÓ (PSL, 2172 votos)
+> 14 - MILTON DONIZETE BARCELOS JUNIOR / MILTINHO BARCELOS (DEM, 2144 votos)
+> 15 - RENATO GESKE / RENATO DA FARMÁCIA (PSDB, 2132 votos)
+> 16 - ROSELI MARIA DA SILVA PEREIRA / ROSELI PEREIRA (DEM, 2107 votos)
+> 17 - THIAGO JOSE DE CHAVES / THIAGO CHAVES (DEM, 2102 votos)
+> 18 - GABRIEL EUCLIDES LEMOS / GABI (PSL, 2098 votos)
+> 19 - CARLA SIMARA LUCIANA DA SILVA SALASARIO AYRES / CARLA AYRES (PT, 2094 votos)
+> 20 - PRISCILA FERNANDES FARIAS / PRI FERNANDES ADOTE (PODE, 2092 votos)
+> 21 - RICARDO JOSÉ DE SOUZA / DIACONO RICARDO (PSD, 2089 votos)
+> 22 - FÁBIO GOMES BRAGA / FÁBIO BRAGA (PSD, 2059 votos)
+> 23 - GABRIEL CESAR DE ANDRADE / GABRIEL CESAR (NOVO, 2018 votos)
+> 
+> Teriam sido eleitos se a votação fosse majoritária, e não foram eleitos:
+> (com sua posição no ranking de mais votados)
+> 14 - MILTON DONIZETE BARCELOS JUNIOR / MILTINHO BARCELOS (DEM, 2144 votos)
+> 16 - ROSELI MARIA DA SILVA PEREIRA / ROSELI PEREIRA (DEM, 2107 votos)
+> 17 - THIAGO JOSE DE CHAVES / THIAGO CHAVES (DEM, 2102 votos)
+> 18 - GABRIEL EUCLIDES LEMOS / GABI (PSL, 2098 votos)
+> 22 - FÁBIO GOMES BRAGA / FÁBIO BRAGA (PSD, 2059 votos)
+> 23 - GABRIEL CESAR DE ANDRADE / GABRIEL CESAR (NOVO, 2018 votos)
+> 
+> Eleitos, que se beneficiaram do sistema proporcional:
+> (com sua posição no ranking de mais votados)
+> 27 - JOÃO LUIZ DA SILVEIRA / JOÃO LUIZ DA BEGA (PSC, 1889 votos)
+> 29 - GILBERTO ALCEBIADES PINHEIRO / GEMADA GILBERTO PINHEIRO (PODE, 1839 votos)
+> 30 - MAIKON DA COSTA / MAIKON COSTA (PL, 1796 votos)
+> 33 - MARYANNE TEREZINHA MATTOS / MARYANNE MATTOS (PL, 1718 votos)
+> 36 - CINTIA MOURA MENDONÇA / CÍNTIA COLETIVA BEM VIVER (PSOL, 1660 votos)
+> 40 - ADRIANO ANALDINO FLOR / ADRIANINHO (REPUBLICANOS, 1571 votos)
+> 
+> Votação dos partidos e número de candidatos eleitos:
+> 1 - DEM - 25, 33671 votos (30421 nominais e 3250 de legenda), 4 candidatos eleitos
+> 2 - PODE - 19, 23348 votos (23147 nominais e 201 de legenda), 3 candidatos eleitos
+> 3 - PSOL - 50, 22096 votos (20571 nominais e 1525 de legenda), 3 candidatos eleitos
+> 4 - PSC - 20, 18471 votos (18203 nominais e 268 de legenda), 2 candidatos eleitos
+> 5 - REPUBLICANOS - 10, 16196 votos (15960 nominais e 236 de legenda), 2 candidatos eleitos
+> 6 - PSDB - 45, 15608 votos (15356 nominais e 252 de legenda), 2 candidatos eleitos
+> 7 - PL - 22, 14398 votos (13553 nominais e 845 de legenda), 2 candidatos eleitos
+> 8 - PSD - 55, 13914 votos (13708 nominais e 206 de legenda), 2 candidatos eleitos
+> 9 - PT - 13, 12362 votos (11815 nominais e 547 de legenda), 1 candidato eleito
+> 10 - NOVO - 30, 12145 votos (11019 nominais e 1126 de legenda), 1 candidato eleito
+> 11 - PSL - 17, 10651 votos (10460 nominais e 191 de legenda), 1 candidato eleito
+> 12 - PP - 11, 6090 votos (5359 nominais e 731 de legenda), 0 candidato eleito
+> 13 - MDB - 15, 5650 votos (5364 nominais e 286 de legenda), 0 candidato eleito
+> 14 - PDT - 12, 5393 votos (5082 nominais e 311 de legenda), 0 candidato eleito
+> 15 - PATRIOTA - 51, 5340 votos (5208 nominais e 132 de legenda), 0 candidato eleito
+> 16 - PC do B - 65, 4090 votos (4030 nominais e 60 de legenda), 0 candidato eleito
+> 17 - PSB - 40, 3092 votos (3016 nominais e 76 de legenda), 0 candidato eleito
+> 18 - SOLIDARIEDADE - 77, 2548 votos (2447 nominais e 101 de legenda), 0 candidato eleito
+> 19 - PRTB - 28, 1962 votos (1676 nominais e 286 de legenda), 0 candidato eleito
+> 20 - CIDADANIA - 23, 1608 votos (1414 nominais e 194 de legenda), 0 candidato eleito
+> 21 - UP - 80, 575 votos (562 nominais e 13 de legenda), 0 candidato eleito
+> 22 - PV - 43, 499 votos (457 nominais e 42 de legenda), 0 candidato eleito
+> 23 - PCB - 21, 318 votos (250 nominais e 68 de legenda), 0 candidato eleito
+> 24 - PSTU - 16, 191 votos (138 nominais e 53 de legenda), 0 candidato eleito
+> 25 - AVANTE - 70, 53 votos (38 nominais e 15 de legenda), 0 candidato eleito
+> 
+> Primeiro e último colocados de cada partido:
+> 1 - PSOL - 50, MARQUITO (50150, 5858 votos) / WLADIMIR CRIPPA (50042, 29 votos)
+> 2 - DEM - 25, JOSIMAR PEREIRA ''MAMA'' (25100, 4015 votos) / ARLENE RAMON (25484, 22 votos)
+> 3 - PODE - 19, GABRIELZINHO (19151, 3690 votos) / YANKA CORRÊA (19999, 19 votos)
+> 4 - NOVO - 30, MANU VIEIRA (30048, 3522 votos) / LIRA (30001, 82 votos)
+> 5 - PSDB - 45, ED PEREIRA (45123, 3477 votos) / PAULA DUTRA (45591, 7 votos)
+> 6 - PSD - 55, ROBERTO KATUMI (55555, 3038 votos) / GABRIELA (55455, 51 votos)
+> 7 - REPUBLICANOS - 10, CLAUDINEI MARQUES (10123, 2998 votos) / JULIANA PRADO (10125, 21 votos)
+> 8 - PSC - 20, GUI PEREIRA (20100, 2700 votos) / ARQUITETO DANIEL MELIM (20369, 36 votos)
+> 9 - PSL - 17, JOÃO DO BERICÓ (17017, 2172 votos) / CRISTINA (17890, 8 votos)
+> 10 - PT - 13, CARLA AYRES (13044, 2094 votos) / NIVALDO LEAL (13626, 5 votos)
+> 11 - MDB - 15, MARCELINO DUTRA (15000, 1972 votos) / NORBERTO (15151, 7 votos)
+> 12 - PDT - 12, VANDERLEI LELA (12666, 1866 votos) / JORDANA VANESSA SAGE (12699, 19 votos)
+> 13 - PL - 22, MAIKON COSTA (22777, 1796 votos) / EDUARDA SILVA (22007, 62 votos)
+> 14 - PATRIOTA - 51, PEDRO NEVES (51777, 1299 votos) / PEDRO PROTETOR (51654, 4 votos)
+> 15 - PP - 11, RAFAEL DAUX (11123, 1166 votos) / CAETANO NOPES HONRICH (11112, 22 votos)
+> 16 - PSB - 40, MAK PEZENATTO (40123, 1070 votos) / CRISTIANO VIEIRA (40100, 8 votos)
+> 17 - PC do B - 65, FAFÁ CAPELA (65650, 792 votos) / HENRIQUE RAMOS (65651, 6 votos)
+> 18 - PRTB - 28, CELSO LINO (28777, 600 votos) / DANYEL VICTOR MACIEL NUNES (28033, 11 votos)
+> 19 - SOLIDARIEDADE - 77, PROFESSOR BALTAZAR (77777, 473 votos) / PAOLA CRISTINE (77188, 0 voto)
+> 20 - UP - 80, JÚLIA EW (80000, 377 votos) / MATHEUS MENEZES (80123, 185 votos)
+> 21 - CIDADANIA - 23, GILMAR VIGANIGO (23222, 259 votos) / DELILE GUERRA (23999, 13 votos)
+> 22 - PSTU - 16, MARIAH MADEIRA  (16160, 138 votos) / MARIAH MADEIRA  (16160, 138 votos)
+> 23 - PV - 43, CARLOS (43023, 118 votos) / LU DO PV (43111, 16 votos)
+> 24 - PCB - 21, FILIPE BEZERRA (21000, 102 votos) / MESSIAS (21033, 69 votos)
+> 25 - AVANTE - 70, CAMILA MELO (70700, 38 votos) / CAMILA MELO (70700, 38 votos)
+> 
+> Eleitos, por faixa etária (na data da eleição):
+>       Idade < 30: 0 (0,00%)
+> 30 <= Idade < 40: 7 (30,43%)
+> 40 <= Idade < 50: 9 (39,13%)
+> 50 <= Idade < 60: 4 (17,39%)
+> 60 <= Idade     : 3 (13,04%)
+> 
+> Eleitos, por sexo:
+> Feminino:  5 (21,74%)
+> Masculino: 18 (78,26%)
+> 
+> Total de votos válidos:    230269
+> Total de votos nominais:   219254 (95,22%)
+> Total de votos de Legenda: 11015 (4,78%)
+\ Nenhum caractere de nova linha no final do arquivo
